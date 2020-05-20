@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joris Delorme</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="loading-page">
+        <div class="loading-page__circular-text">
+            <span id="loading-page__text">•JORIS DELORME•JORIS DELORME</span>
+        </div>
+    </div>
+
+    <div id="home" class="home">
+
+        <h1 class="home__name">
+            <span class="home__text-wrapper">
+              <span class="home__letters">Joris Delorme</span>
+            </span>
+          </h1>
+
+        <nav>
+            <a href="#home" class="home__indicator">HOME</a>
+            
+            <div id="nav__line"></div>
+            <ul>
+                <li class="navHome"><a href="#"></a></li>
+                <li class="aboutMe"><a href="#"></a></li>
+                <li class="project"><a href="#"></a></li>
+                <li class="contact"><a href="#"></a></li>
+            </ul>
+        </nav>
+
+        <a href="#youtube" class="scroll-down">
+            <div class="scroll-down__indicator"></div>
+        </a>
+    </div>
+
+    <div id="youtube" class="youtube">
+        <div class="youtube__title reveal">
+            <h2>youtube</h2>
+            <div class="youtube__icon">
+                <img src="img/youtube.png" alt="">
+            </div>
+        </div>
+
+        <h3>Mes dèrnieres vidéos :</h3>
+
+        <div class="youtube__last-videos">
+            <div class="last-videos__container">
+                <div class="last-videos__video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4Ja7trAK1aQ" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+            <div class="last-videos__container">
+                <div class="last-videos__video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GB9nfyI0Hs4" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+            <div class="last-videos__container">
+                <div class="last-videos__video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/voWWm1hAG90" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact">
+        <div class="contact__instagram">
+            <div class="contact__instagram-story">
+                <img src="img/instagram.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+        integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script src="circletype.min.js"></script>
+
+    <script>
+        new CircleType(document.getElementById('loading-page__text'));
+    </script>
+    
+</body>
+
+</html>
