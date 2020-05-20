@@ -1,0 +1,45 @@
+@keyframes circleTextShow {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg); 
+    }
+}
+
+@keyframes circleTextRotate {
+    0% {
+        opacity: 1;
+        transform: rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes circleTextHidde {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+
+@keyframes scrollDown {
+    0% {
+        transform: translate(-50,-50%) rotate(-45deg);
+    }
+    50% {
+        transform: translate(-50%,50%) rotate(-45deg);
+    }
+    100% {
+        transform: translate(-50,-50%) rotate(-45deg);
+    }
+}

@@ -1,78 +1,78 @@
 @-webkit-keyframes circleTextShow {
   0% {
     opacity: 0;
-    -webkit-transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
-            transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: scale(0.5) rotate(0deg);
+            transform: scale(0.5) rotate(0deg);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1) translate(-50%, -50%) rotate(180deg);
-            transform: scale(1) translate(-50%, -50%) rotate(180deg);
+    -webkit-transform: scale(1) rotate(180deg);
+            transform: scale(1) rotate(180deg);
   }
 }
 
 @keyframes circleTextShow {
   0% {
     opacity: 0;
-    -webkit-transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
-            transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: scale(0.5) rotate(0deg);
+            transform: scale(0.5) rotate(0deg);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1) translate(-50%, -50%) rotate(180deg);
-            transform: scale(1) translate(-50%, -50%) rotate(180deg);
+    -webkit-transform: scale(1) rotate(180deg);
+            transform: scale(1) rotate(180deg);
   }
 }
 
 @-webkit-keyframes circleTextRotate {
   0% {
     opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotate(-180deg);
-            transform: translate(-50%, -50%) rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotate(180deg);
-            transform: translate(-50%, -50%) rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
 @keyframes circleTextRotate {
   0% {
     opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotate(-180deg);
-            transform: translate(-50%, -50%) rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotate(180deg);
-            transform: translate(-50%, -50%) rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
 @-webkit-keyframes circleTextHidde {
   0% {
     opacity: 1;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate(-50%, -50%) scale(2);
-            transform: translate(-50%, -50%) scale(2);
+    -webkit-transform: scale(2);
+            transform: scale(2);
   }
 }
 
 @keyframes circleTextHidde {
   0% {
     opacity: 1;
-    -webkit-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate(-50%, -50%) scale(2);
-            transform: translate(-50%, -50%) scale(2);
+    -webkit-transform: scale(2);
+            transform: scale(2);
   }
 }
 
@@ -115,19 +115,24 @@
   scroll-behavior: smooth;
 }
 
-.loading-page__circular-text {
+.loading-page {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 2;
   position: fixed;
-  opacity: 0;
   top: 50%;
   left: 50%;
+}
+
+.loading-page .loading-page__circular-text {
+  opacity: 0;
   letter-spacing: 10px;
   font-size: 15px;
   -webkit-animation: circleTextShow 1s 1s ease-in, circleTextRotate 2s 2s ease-out, circleTextHidde 1s 4s ease-out;
           animation: circleTextShow 1s 1s ease-in, circleTextRotate 2s 2s ease-out, circleTextHidde 1s 4s ease-out;
 }
 
-.loading-page__circular-text #loading-page__text {
+.loading-page .loading-page__circular-text #loading-page__text {
   color: #dfc7a4;
   opacity: 0;
 }
@@ -157,8 +162,31 @@
   letter-spacing: 2px;
   font-size: 25px;
   white-space: nowrap;
+  text-align: center;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.home .home__citation {
+  top: 60%;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.home .home__citation .home__citation-text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.home .home__citation .letter {
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
 }
 
 .home nav {

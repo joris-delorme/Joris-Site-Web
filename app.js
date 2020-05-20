@@ -90,3 +90,16 @@ window.addEventListener("DOMContentLoaded", function () {
     observer.observe(target)
   })
 })
+
+// Wrap every letter in a span
+let citationTextWrapper = document.querySelector('.home__citation .home__citation-letters');
+citationTextWrapper.innerHTML = citationTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.home__citation .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 6000 + 45 * (i+1)
+  });
