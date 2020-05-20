@@ -1,3 +1,81 @@
+@-webkit-keyframes circleTextShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
+            transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1) translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes circleTextShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
+            transform: scale(0.5) translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translate(-50%, -50%) rotate(180deg);
+            transform: scale(1) translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes circleTextRotate {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(-180deg);
+            transform: translate(-50%, -50%) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes circleTextRotate {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(-180deg);
+            transform: translate(-50%, -50%) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes circleTextHidde {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(2);
+            transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+@keyframes circleTextHidde {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(2);
+            transform: translate(-50%, -50%) scale(2);
+  }
+}
+
 @-webkit-keyframes scrollDown {
   0% {
     -webkit-transform: translate(-50, -50%) rotate(-45deg);
@@ -45,6 +123,8 @@
   left: 50%;
   letter-spacing: 10px;
   font-size: 15px;
+  -webkit-animation: circleTextShow 1s 1s ease-in, circleTextRotate 2s 2s ease-out, circleTextHidde 1s 4s ease-out;
+          animation: circleTextShow 1s 1s ease-in, circleTextRotate 2s 2s ease-out, circleTextHidde 1s 4s ease-out;
 }
 
 .loading-page__circular-text #loading-page__text {
