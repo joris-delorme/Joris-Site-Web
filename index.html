@@ -10,46 +10,53 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Fonts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="loading-page">
-        <div class="loading-page__circular-text">
-            <span id="loading-page__text">•JORIS DELORME•JORIS DELORME</span>
-        </div>
-    </div>
-
     <div id="home" class="home">
-
         <h1 class="home__name">
             <span class="home__text-wrapper">
-              <span class="home__letters">Joris Delorme</span>
+                <span class="home__letters">Joris Delorme</span>
             </span>
         </h1>
 
         <h1 class="home__citation">
             <span class="home__citation-text-wrapper">
-              <span class="home__citation-letters">Je crée juste pour le plaisir</span>
+                <span class="home__citation-letters">Je crée juste pour le plaisir</span>
             </span>
         </h1>
-
-        <nav>
-            <a href="#home" class="home__indicator">HOME</a>
-            
-            <div id="nav__line"></div>
-            <ul>
-                <li class="navHome"><a href="#"></a></li>
-                <li class="aboutMe"><a href="#"></a></li>
-                <li class="project"><a href="#"></a></li>
-                <li class="contact"><a href="#"></a></li>
-            </ul>
-        </nav>
 
         <a href="#youtube" class="scroll-down">
             <div class="scroll-down__indicator"></div>
         </a>
+
+        <div class="nex-page top">
+            <div class="nex-page__indicator"></div>
+        </div>
+    </div>
+
+    <div class="about-me">
+        <div class="about-me__button">
+            <div class="about-me__icon"></div>
+            <div class="about-me__content">
+                <h2>About Me</h2>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt excepturi quae mollitia, nulla fugit id
+                    delectus consequatur quidem velit tempora, non iste totam inventore distinctio maxime hic ipsam quia optio.
+                    Odio iste maiores, officiis quia repellat debitis veniam maxime odit doloremque praesentium perferendis
+                    optio, ducimus rerum dolores doloribus incidunt. Alias mollitia veritatis quod ipsa repudiandae ducimus odio
+                    commodi? Eveniet, ea?
+                    Rem iure, architecto voluptatum consectetur cum, fugit omnis, veritatis dolor tempore sed aliquid earum esse
+                    molestiae assumenda corporis officiis accusamus sunt maiores unde iste temporibus impedit perferendis!
+                    Veniam, nostrum rem.
+                </p>
+            </div>
+            </div>
+        </div>
     </div>
 
     <div id="youtube" class="youtube">
@@ -60,10 +67,12 @@
             </div>
         </div>
 
-        <h3>Mes dèrnieres vidéos :</h3>
+        <div class="youtube__text reveal">
+            <h3>Mes dèrnieres vidéos :</h3>
+        </div>
 
         <div class="youtube__last-videos">
-            <div class="last-videos__container">
+            <div class="last-videos__container reveal">
                 <div class="last-videos__video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/4Ja7trAK1aQ" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -71,7 +80,7 @@
                 </div>
 
             </div>
-            <div class="last-videos__container">
+            <div class="last-videos__container reveal">
                 <div class="last-videos__video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/GB9nfyI0Hs4" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -79,7 +88,7 @@
                 </div>
 
             </div>
-            <div class="last-videos__container">
+            <div class="last-videos__container reveal">
                 <div class="last-videos__video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/voWWm1hAG90" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -90,6 +99,7 @@
     </div>
 
     <div id="contact" class="contact">
+        <div class="nex-page bottom"></div>
         <div class="contact__instagram">
             <div class="contact__instagram-story">
                 <img src="img/instagram.png" alt="">
@@ -99,23 +109,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
-        integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
-        integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
     <script src="app.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
-    <script src="circletype.min.js"></script>
-
-    <script>
-        new CircleType(document.getElementById('loading-page__text'));
-    </script>
-    
 </body>
 
 </html>

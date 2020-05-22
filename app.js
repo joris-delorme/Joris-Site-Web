@@ -1,26 +1,4 @@
-const nav = document.querySelector('nav')
-const body = document.querySelector("body");
-const scrollbar = document.querySelector("#nav__line");
-
-
-window.addEventListener('scroll', ()=> {
-
-    let scrollValue = window.scrollY;
-    let bodyHeight = body.clientHeight - window.innerHeight;
-
-    let progressPercentage = (scrollValue / bodyHeight) * 70;
-
-    scrollbar.style.height = progressPercentage + 20 + "%";
-
-    let y = window.scrollY;
-    if (y == 0) {
-        nav.classList.remove("active");
-    } else {
-        nav.classList.add("active")
-    }
-})
-
-// Wrap every letter in a span
+// Name reveal
 let textWrapper = document.querySelector('.home__name .home__letters');
         
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -34,40 +12,35 @@ anime.timeline({loop: false})
     rotateZ: [180, 0],
     duration: 750,
     easing: "easeOutExpo",
-    delay: (el, i) => 5000 + 50 * i
+    delay: (el, i) => 50 * i
 });
 
-// Wrap every letter in a span
-let homeIndicator__textWrapper = document.querySelector('.home__indicator');
-homeIndicator__textWrapper.innerHTML = homeIndicator__textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// Citation reveal
+let citationTextWrapper = document.querySelector('.home__citation .home__citation-letters');
+citationTextWrapper.innerHTML = citationTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: false})
   .add({
-    targets: '.home__indicator .letter',
-    opacity: '1',
-    translateX: [100,-5],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 6000 + 90 * i
+    targets: '.home__citation .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 1000 + 45 * (i+1)
   });
-  
-// Wrap every letter in a span
 
-let line__textWrapper = document.querySelector('#nav__line');
-
+// Scroll Down reveal
 anime.timeline({loop: false})
   .add({
-    targets: '#nav__line',
+    targets: '.scroll-down',
     opacity: '1',
-    height: [0, '20%'],
     easing: "easeOutExpo",
     duration: 1000,
-    delay: (el, i) => 5000 + 90 * i
+    delay: 5000
   });
 
 // reavel on scroll
 
-const threshold = .9
+const threshold = .2
 const options = {
   root: null,
   rootMargin: '0px',
@@ -91,15 +64,16 @@ window.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-// Wrap every letter in a span
-let citationTextWrapper = document.querySelector('.home__citation .home__citation-letters');
-citationTextWrapper.innerHTML = citationTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// about me
 
-anime.timeline({loop: false})
-  .add({
-    targets: '.home__citation .letter',
-    scale: [0, 1],
-    duration: 1500,
-    elasticity: 600,
-    delay: (el, i) => 6000 + 45 * (i+1)
-  });
+$(document).ready(function () {
+  $('.about-me__button').click(function () {
+      $('.about-me__button').toggleClass('active');
+      $('.about-me').toggleClass('active');
+      if ($('.about-me__button').hasClass('active')) {
+          document.body.style.overflowY = "hidden";
+    } else {
+          document.body.style.overflowY = "scroll";
+    }
+  })
+})
