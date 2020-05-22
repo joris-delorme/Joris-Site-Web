@@ -91,6 +91,7 @@
   margin: 0;
   font-family: 'Lato', sans-serif;
   scroll-behavior: smooth;
+  outline: 0;
 }
 
 .home {
@@ -165,30 +166,6 @@
   border-left: solid 1px #050505;
   -webkit-animation: scrollDown 1.5s ease-in-out infinite;
           animation: scrollDown 1.5s ease-in-out infinite;
-}
-
-.home .nex-page {
-  position: absolute;
-  height: 30px;
-  width: 100%;
-  background-color: #fff;
-}
-
-.home .nex-page.top {
-  bottom: -1px;
-  border-radius: 50px 50px 0 0;
-}
-
-.home .nex-page .nex-page__indicator {
-  width: 130px;
-  height: 5px;
-  background-color: #050505;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border-radius: 50px;
 }
 
 .about-me .about-me__button {
@@ -324,6 +301,31 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.youtube .nex-page {
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.youtube .nex-page.top {
+  position: relative;
+  top: -29px;
+  border-radius: 50px 50px 0 0;
+}
+
+.youtube .nex-page .nex-page__indicator {
+  width: 130px;
+  height: 5px;
+  background-color: #050505;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50px;
 }
 
 .youtube .youtube__title {
