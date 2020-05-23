@@ -33,3 +33,34 @@
         transform: translate(-50%, -15%) scale(1);
     }
 }
+
+@keyframes glowLine {
+    0% {
+        animation-timing-function: cubic-bezier(.27,.01,1,.77);
+        transform: translateX(-160%) scaleX(0);
+        opacity: 0.2;
+    }
+    35% {
+        animation-timing-function: cubic-bezier(0,.13,.59,1);
+        transform: translateX(0%) scaleX(1.5);
+        opacity: 0.8;
+    }
+    65% {
+        transform: translateX(160%) scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(160%) scaleX(0);
+        background: white;
+        opacity: 0;
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: -60%;
+    }
+    100% {
+        background-position: 160%;
+    }
+}

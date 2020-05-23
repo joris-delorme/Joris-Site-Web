@@ -25,18 +25,28 @@ anime.timeline({loop: false})
     scale: [0, 1],
     duration: 1500,
     elasticity: 600,
-    delay: (el, i) => 1000 + 45 * (i+1)
+    delay: (el, i) => 600 + 45 * (i+1)
   });
 
 // Scroll Down reveal
 anime.timeline({loop: false})
   .add({
-    targets: '.scroll-down',
+    targets: '.scroll-down, .presets-button-wrapper',
     opacity: '1',
     easing: "easeOutExpo",
     duration: 1000,
-    delay: 5000
-  });
+    delay: 2500
+});
+
+// Scroll Down reveal
+anime.timeline({loop: false})
+  .add({
+    targets: '.scroll__line',
+    height: '20vh',
+    easing: "easeOutExpo",
+    duration: 2000,
+    delay: 2500
+});
 
 // reavel on scroll
 
@@ -77,3 +87,31 @@ $(document).ready(function () {
     }
   })
 })
+
+window.onscroll = function() {scrollIndicator()};
+
+function scrollIndicator() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("scroll__indicator").style.top = scrolled + "%";
+}
+
+let mousex;
+let mousey;
+
+$(document).mousemove(function(e) {
+  $('.cursor').eq(0).css({left: e.clientX, top: e.clientY});
+  $('.rond').eq(0).css({left: e.clientX, top: e.clientY});
+  mousex = e.clientX;
+  mousey = e.clientY;
+});
+
+let timer;
+document.onmousemove = function() {
+  document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(0.9, 0.8)";
+  clearTimeout(timer);
+  timer = setTimeout(function() {
+    document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(1, 1)";
+  }, 50)
+};

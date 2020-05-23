@@ -11,28 +11,47 @@
 
     <!-- Fonts -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
+    <link rel="stylesheet" href="https://use.typekit.net/boi5ley.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div id="home" class="home">
-        <h1 class="home__name">
-            <span class="home__text-wrapper">
-                <span class="home__letters">Joris Delorme</span>
-            </span>
-        </h1>
+    <div id="cursor" class="cursor no-res"></div>
+    <div class="rond"></div>
 
-        <h1 class="home__citation">
-            <span class="home__citation-text-wrapper">
-                <span class="home__citation-letters">Je crée juste pour le plaisir</span>
-            </span>
-        </h1>
+    <div id="home" class="home">
+
+        <div class="home__text-container">
+            <h1 class="home__name">
+                <span class="home__text-wrapper">
+                    <span class="home__letters">Joris Delorme</span>
+                </span>
+            </h1>
+    
+            <h1 class="home__citation">
+                <span class="home__citation-text-wrapper">
+                    <span class="home__citation-letters">Je crée juste pour le plaisir</span>
+                </span>
+            </h1>
+        </div>
 
         <a href="#youtube" class="scroll-down">
             <div class="scroll-down__indicator"></div>
         </a>
+
+        <a href="#" class="presets-button-wrapper">
+            <div class="presets-button shine" data-text="PRESETS PACK">
+                <span class="presets-button__text">PRESETS PACK</span>
+                <span class="presets-button__line"></span>
+            </div>
+        </a>
+
+        <div class="scroll">
+            <div id="scroll__indicator" class="scroll__indicator"></div>
+            <div class="scroll__line"></div>
+        </div>
     </div>
 
     <div class="about-me">
@@ -69,29 +88,37 @@
         <div class="youtube__text reveal">
             <h3>Mes dèrnieres vidéos :</h3>
         </div>
-
         <div class="youtube__last-videos">
-            <div class="last-videos__container reveal">
-                <div class="last-videos__video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4Ja7trAK1aQ" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe>
+            <div class="cl-1">
+                <div class="last-videos__container reveal">
+                    <div class="last-videos__video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4Ja7trAK1aQ" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
-
-            </div>
-            <div class="last-videos__container reveal">
-                <div class="last-videos__video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GB9nfyI0Hs4" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe>
+                <div class="last-videos__container reveal">
+                    <div class="last-videos__video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GB9nfyI0Hs4" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
-
             </div>
-            <div class="last-videos__container reveal">
-                <div class="last-videos__video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/voWWm1hAG90" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe>
+            <div class="cl-2">
+                <div class="last-videos__container reveal">
+                    <div class="last-videos__video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/voWWm1hAG90" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="last-videos__container reveal no-res">
+                    <div class="last-videos__video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/voWWm1hAG90" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
