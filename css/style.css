@@ -182,7 +182,7 @@ body {
   cursor: none;
 }
 
-a {
+a, iframe {
   cursor: none;
 }
 
@@ -206,11 +206,12 @@ body::-webkit-scrollbar {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
+  z-index: 9999;
 }
 
 .home {
   z-index: 99;
-  background-color: #0d1614;
+  background-color: #204039;
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -384,7 +385,7 @@ body::-webkit-scrollbar {
 .home .scroll .scroll__indicator {
   height: 3vh;
   width: 1px;
-  background-color: #0d1614;
+  background-color: #204039;
   position: absolute;
   top: 0%;
 }
@@ -703,7 +704,7 @@ body::-webkit-scrollbar {
 .contact {
   height: 100vh;
   width: 100%;
-  background-color: #0d1614;
+  background-color: #204039;
 }
 
 .contact .contact__instagram {
@@ -801,7 +802,7 @@ body::-webkit-scrollbar {
     display: none;
   }
   .youtube {
-    background-color: #0d1614;
+    background-color: #204039;
   }
 }
 /*# sourceMappingURL=style.css.map */

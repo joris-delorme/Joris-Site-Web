@@ -19,7 +19,7 @@ body {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     cursor: none;
 }
-a {
+a, iframe {
     cursor: none;
 }
 body::-webkit-scrollbar { /* WebKit */
@@ -36,12 +36,13 @@ body::-webkit-scrollbar { /* WebKit */
     transform: translate(-50%,-50%);
     transition: 1s;
     transition-property: transform;
+    z-index: 9999;
 }
 
 
 .home {
     z-index: 99;
-    background-color: #0d1614;
+    background-color: #204039;
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -184,7 +185,7 @@ body::-webkit-scrollbar { /* WebKit */
         .scroll__indicator {
             height: 3vh;
             width: 1px;
-            background-color: #0d1614;
+            background-color: #204039;
             position: absolute;
             top: 0%;
         }
@@ -439,7 +440,7 @@ body::-webkit-scrollbar { /* WebKit */
 .contact {
     height: 100vh;
     width: 100%;
-    background-color: #0d1614;
+    background-color: #204039;
 
     .contact__instagram {
         position: relative;
@@ -539,6 +540,6 @@ body::-webkit-scrollbar { /* WebKit */
     }
 
     .youtube {
-        background-color: #0d1614;
+        background-color: #204039;
     }
 }

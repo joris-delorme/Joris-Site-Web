@@ -109,7 +109,7 @@ $(document).mousemove(function(e) {
 
 let timer;
 document.onmousemove = function() {
-  document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(0.9, 0.8)";
+  document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(0.3, 0.3)";
   clearTimeout(timer);
   timer = setTimeout(function() {
     document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(1, 1)";

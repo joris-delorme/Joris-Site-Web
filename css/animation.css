@@ -1,0 +1,160 @@
+@-webkit-keyframes scrollDown {
+  0% {
+    -webkit-transform: translate(-50, -50%) rotate(-45deg);
+            transform: translate(-50, -50%) rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, 50%) rotate(-45deg);
+            transform: translate(-50%, 50%) rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: translate(-50, -50%) rotate(-45deg);
+            transform: translate(-50, -50%) rotate(-45deg);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    -webkit-transform: translate(-50, -50%) rotate(-45deg);
+            transform: translate(-50, -50%) rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, 50%) rotate(-45deg);
+            transform: translate(-50%, 50%) rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: translate(-50, -50%) rotate(-45deg);
+            transform: translate(-50, -50%) rotate(-45deg);
+  }
+}
+
+@-webkit-keyframes rebond {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(0);
+            transform: translate(-50%, -15%) scale(0);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1.5);
+            transform: translate(-50%, -15%) scale(1.5);
+  }
+  45% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1.2);
+            transform: translate(-50%, -15%) scale(1.2);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1.4);
+            transform: translate(-50%, -15%) scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1);
+            transform: translate(-50%, -15%) scale(1);
+  }
+}
+
+@keyframes rebond {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(0);
+            transform: translate(-50%, -15%) scale(0);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1.5);
+            transform: translate(-50%, -15%) scale(1.5);
+  }
+  45% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1.2);
+            transform: translate(-50%, -15%) scale(1.2);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1.4);
+            transform: translate(-50%, -15%) scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -15%) scale(1);
+            transform: translate(-50%, -15%) scale(1);
+  }
+}
+
+@-webkit-keyframes glowLine {
+  0% {
+    -webkit-animation-timing-function: cubic-bezier(0.27, 0.01, 1, 0.77);
+            animation-timing-function: cubic-bezier(0.27, 0.01, 1, 0.77);
+    -webkit-transform: translateX(-160%) scaleX(0);
+            transform: translateX(-160%) scaleX(0);
+    opacity: 0.2;
+  }
+  35% {
+    -webkit-animation-timing-function: cubic-bezier(0, 0.13, 0.59, 1);
+            animation-timing-function: cubic-bezier(0, 0.13, 0.59, 1);
+    -webkit-transform: translateX(0%) scaleX(1.5);
+            transform: translateX(0%) scaleX(1.5);
+    opacity: 0.8;
+  }
+  65% {
+    -webkit-transform: translateX(160%) scaleX(0);
+            transform: translateX(160%) scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(160%) scaleX(0);
+            transform: translateX(160%) scaleX(0);
+    background: white;
+    opacity: 0;
+  }
+}
+
+@keyframes glowLine {
+  0% {
+    -webkit-animation-timing-function: cubic-bezier(0.27, 0.01, 1, 0.77);
+            animation-timing-function: cubic-bezier(0.27, 0.01, 1, 0.77);
+    -webkit-transform: translateX(-160%) scaleX(0);
+            transform: translateX(-160%) scaleX(0);
+    opacity: 0.2;
+  }
+  35% {
+    -webkit-animation-timing-function: cubic-bezier(0, 0.13, 0.59, 1);
+            animation-timing-function: cubic-bezier(0, 0.13, 0.59, 1);
+    -webkit-transform: translateX(0%) scaleX(1.5);
+            transform: translateX(0%) scaleX(1.5);
+    opacity: 0.8;
+  }
+  65% {
+    -webkit-transform: translateX(160%) scaleX(0);
+            transform: translateX(160%) scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(160%) scaleX(0);
+            transform: translateX(160%) scaleX(0);
+    background: white;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position: -60%;
+  }
+  100% {
+    background-position: 160%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -60%;
+  }
+  100% {
+    background-position: 160%;
+  }
+}
+/*# sourceMappingURL=animation.css.map */
