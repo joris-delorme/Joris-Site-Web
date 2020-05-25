@@ -18,6 +18,7 @@ body {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     cursor: none;
+    background-color: #204039;
 }
 a, iframe {
     cursor: none;
@@ -36,7 +37,6 @@ body::-webkit-scrollbar { /* WebKit */
     transform: translate(-50%,-50%);
     transition: 1s;
     transition-property: transform;
-    z-index: 9999;
 }
 
 
@@ -197,128 +197,13 @@ body::-webkit-scrollbar { /* WebKit */
     }
 }
 
-.about-me {
-    .about-me__button {
-        position: absolute;
-        bottom: 20%; 
-        left: 50%;
-        transform: translate(-50%,-50%);
-        border-radius: 50px; 
-        background-color: #ffe6c2;
-        height: 60px;
-        width: 60px;
-        cursor: pointer;
-        animation: rebond 1s 1.5s forwards;
-        opacity: 0;
-        transition: all 0.78s cubic-bezier(.9,0,.88,1.01);
-        .about-me__icon {
-            height: 3px;
-            border-radius: 50px;
-            width: 35px;
-            position: relative;
-            top: 50%;
-            left: 50%;
-            background-color: #050505;
-            transform: translate(-50%,-50%) rotate(0deg);
-            transition: all 0.5s;
-            &::after {
-                content: '';
-                position: absolute;
-                height: 3px;
-                border-radius: 20%;
-                width: 35px;
-                top: 50%;
-                left: 50%;
-                background-color: #050505;
-                transform: translate(-50%,-50%) rotate(90deg);
-            }
-        }
-    }
-    .about-me__content {
-        position: relative;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 90%;
-        h2 {
-            display: block;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #050505;
-            font-weight: 900;
-            font-size: 30px;
-            white-space: nowrap;
-            opacity: 0;
-            transition: all 1s .5s;
-        }
-        .text {
-            padding: 10%;
-            p {
-                text-align: justify;
-                opacity: 0;
-                transition: all 1s .5s;
-            }
-        }
-    }
-}
-
-.about-me {
-    display: none;
-    &.active {
-    .about-me__button {
-        height: 80vh;
-        width: 90%;
-        border-radius: 50px;
-        bottom: 0;
-        transform: translate(-50%,-15%);
-        .about-me__icon {
-            transform: translate(-50%,-50%) rotate(225deg);
-            &::after {
-                transform: translate(-50%,-50%) rotate(270deg);
-            }
-        }
-    }
-    h2 {
-        opacity: 1;
-    }
-    p {
-        opacity: 1!important;
-    }
-}
-}
-
 .youtube {
-    background-color: #fff;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    .nex-page {
-        position: absolute;
-        height: 30px;
-        width: 100%;
-        background-color: #fff;
-        &.top {
-            position: relative;
-            top: -29px;
-            border-radius: 50px 50px 0 0;
-        }
-
-        .nex-page__indicator {
-            width: 130px;
-            height: 5px;
-            background-color: #050505;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50px;
-        }
-    }
+    margin: 4em 0 4em 0;
 
     .youtube__title {
         display: flex;
@@ -329,36 +214,15 @@ body::-webkit-scrollbar { /* WebKit */
             position: relative;
             letter-spacing: 10px;
             text-transform: uppercase;
-            color: #ffe6c2;
+            color: #050505;
             font-weight: 900;
             font-size: 60px;
             font-family: 'Lato', sans-serif;
-
-            &:after{
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 45px;
-                width: 145px;
-                background-color: #fff;
-                transition: all 1s cubic-bezier(.9,0,.88,1.01);
-            }
-        }
-
-        .youtube__icon {
-            transition: all 1s cubic-bezier(.9,0,.88,1.01);
-            transform: translateX(-220px);
-
-            img {
-            margin-left: 10px;
-            height: 65px;
-            }
         }
     }
 
     h3 {
-        color: #ffe6c2; 
+        color: #050505; 
         margin-top: 15px;
         margin-bottom: 15px;
         letter-spacing: 3px;
@@ -368,14 +232,27 @@ body::-webkit-scrollbar { /* WebKit */
         transition: all 1s cubic-bezier(.9,0,.88,1.01);
     }
 
-    .youtube__last-videos {
+    .youtube__container {
+        width: 90%;
+        background-color: #ffe6c2;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .youtube__content > * {
+        flex: 1 1;
+    }
+
+    .youtube__content {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        flex-direction: column;
+        flex-direction: row;
 
-        .last-videos__container {
+        .youtube__last-videos {
             width: 100%;
             margin: 2% 2%;
             opacity: 0;
@@ -397,20 +274,6 @@ body::-webkit-scrollbar { /* WebKit */
         }
         
     }
-
-    .cl-1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-    }
-    .cl-2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-    }
-
     // reavel
 
     .reveal-visible {
@@ -424,7 +287,7 @@ body::-webkit-scrollbar { /* WebKit */
             }
         }
     }
-    .last-videos__container.reveal-visible {
+    .youtube__last-videos.reveal-visible {
         opacity: 1;
     }
 
@@ -458,16 +321,6 @@ body::-webkit-scrollbar { /* WebKit */
             }
         }
     }
-    .nex-page {
-        position: relative;
-        height: 30px;
-        width: 100%;
-        background-color: #fff;
-        &.bottom {
-            top: -1px;
-            border-radius: 0 0 50px 50px;
-        }
-    }
 }
 
 @media screen and (max-width: 700px) {
@@ -475,44 +328,40 @@ body::-webkit-scrollbar { /* WebKit */
         bottom: 15%!important;
     }
     .youtube {
+
         h2 {
-            color: #050505!important;
             font-size: 35px!important;
         }
-        h3 {
-            color: #050505;
+
+        .youtube__container {
+            padding: 10%;
         }
-    }
-    .youtube__last-videos {
-        flex-direction: column;
-        align-items: center!important;
 
-        .last-videos__container {
-            width: 90%!important;
-            margin: 10% 0 0 0!important;
-            .last-videos__video-wrapper {
-                position: relative;
-                padding-bottom: 56.25%; /* 16:9 */
-                height: 0;
-
-              }
-              .last-videos__video-wrapper iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              }
-            
+        .youtube__content {
+            flex-direction: column;
+    
+            .youtube__last-videos {
+                margin: 1em 0 1em 0!important;
+                .last-videos__video-wrapper {
+                    position: relative;
+                    padding-bottom: 56.25%; /* 16:9 */
+                    height: 0;
+    
+                  }
+                  .last-videos__video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  }
+                
+            }
         }
     }
 
     .no-res {
         display: none;
-    }
-
-    .cl-1 {
-        flex-direction: column;
     }
 
     .scroll-down {
@@ -534,10 +383,6 @@ body::-webkit-scrollbar { /* WebKit */
 }
 
 @media screen and (min-width: 700px) {
-    .nex-page {
-        display: none;
-    }
-
     .youtube {
         background-color: #204039;
     }
