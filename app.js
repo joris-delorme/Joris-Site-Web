@@ -74,19 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-// about me
-
-$(document).ready(function () {
-  $('.about-me__button').click(function () {
-      $('.about-me__button').toggleClass('active');
-      $('.about-me').toggleClass('active');
-      if ($('.about-me__button').hasClass('active')) {
-          document.body.style.overflowY = "hidden";
-    } else {
-          document.body.style.overflowY = "scroll";
-    }
-  })
-})
+// Scoll indicator
 
 window.onscroll = function() {scrollIndicator()};
 
@@ -96,6 +84,8 @@ function scrollIndicator() {
   let scrolled = (winScroll / height) * 100;
   document.getElementById("scroll__indicator").style.top = scrolled + "%";
 }
+
+// Cursor
 
 let mousex;
 let mousey;

@@ -158,6 +158,36 @@
   }
 }
 
+@-webkit-keyframes pack {
+  0% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes pack {
+  0% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -179,7 +209,6 @@ body {
   /* Firefox */
   -ms-overflow-style: none;
   /* Internet Explorer 10+ */
-  cursor: none;
   background-color: #204039;
 }
 
@@ -375,7 +404,7 @@ body::-webkit-scrollbar {
 
 .home .scroll {
   position: fixed;
-  left: 3%;
+  left: 2.5%;
   bottom: 3%;
   z-index: 99;
 }
@@ -394,195 +423,339 @@ body::-webkit-scrollbar {
   background-color: #ffe6c2;
 }
 
-.youtube {
+.presets {
+  z-index: -1;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+
+.presets .presets__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 4em 0 4em 0;
-}
-
-.youtube .youtube__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.youtube .youtube__title h2 {
-  display: block;
-  position: relative;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  color: #050505;
-  font-weight: 900;
-  font-size: 60px;
-  font-family: 'Lato', sans-serif;
-}
-
-.youtube h3 {
-  color: #050505;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  letter-spacing: 3px;
-  opacity: 0;
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
-  display: inline-block;
-  -webkit-transition: all 1s cubic-bezier(0.9, 0, 0.88, 1.01);
-  transition: all 1s cubic-bezier(0.9, 0, 0.88, 1.01);
-}
-
-.youtube .youtube__container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 90%;
   background-color: #ffe6c2;
-  padding: 5%;
+  padding: 40px;
+}
+
+.presets .presets__container h1 {
+  color: #050505;
+  font-family: 'lato', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.presets .presets__container .presets__pack {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.youtube .youtube__content > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1;
-          flex: 1 1;
-}
-
-.youtube .youtube__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-.youtube .youtube__content .youtube__last-videos {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
-  margin: 2% 2%;
-  opacity: 0;
-  -webkit-transition: all 1s cubic-bezier(0.9, 0, 0.88, 1.01);
-  transition: all 1s cubic-bezier(0.9, 0, 0.88, 1.01);
 }
 
-.youtube .youtube__content .youtube__last-videos .last-videos__video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  height: 0;
-}
-
-.youtube .youtube__content .youtube__last-videos .last-videos__video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.presets .presets__container .presets__pack .pack-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
-  height: 100%;
 }
 
-.youtube .reveal-visible .youtube__icon {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-}
-
-.youtube .reveal-visible h2:after {
-  width: 0px;
-}
-
-.youtube .youtube__last-videos.reveal-visible {
-  opacity: 1;
-}
-
-.youtube .youtube__text.reveal-visible h3 {
-  opacity: 1;
-  -webkit-transform: translate(0);
-          transform: translate(0);
-}
-
-.contact {
-  height: 100vh;
+.presets .presets__container .presets__pack .pack-1 .pack-1__img {
   width: 100%;
-  background-color: #204039;
+  -webkit-animation: pack 3s cubic-bezier(0.31, 0.43, 0.72, 0.57) infinite;
+          animation: pack 3s cubic-bezier(0.31, 0.43, 0.72, 0.57) infinite;
 }
 
-.contact .contact__instagram {
+.presets .presets__container .presets__pack .pack-1 .pack-1__img img {
+  width: 100%;
+}
+
+.presets .presets__container .presets__pack .pack-1 .pack-1__textContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 60px 0 0 0;
+  width: 100%;
+}
+
+.presets .presets__container .presets__pack .pack-1 .pack-1__textContent .pack-1__title {
+  color: #050505;
+  font-size: 20px;
+  letter-spacing: 5px;
+  font-family: 'lato', sans-serif;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.presets .presets__container .presets__pack .pack-1 .pack-1__textContent .pack-1__text {
+  padding: 0 10%;
+  font-family: 'lato', sans-serif;
+  letter-spacing: 1px;
+  line-height: 35px;
+  font-weight: 400;
+}
+
+.presets .presets__container .presets__pack .pack-1 .pack-1__textContent .pack-1__priceCat {
+  display: none;
+}
+
+.presets .presets__container .presets__pack .pack-1 .pack-1__textContent .btn {
+  margin-top: 50px;
+  text-decoration: none;
+  background-color: #050505;
+  border-radius: 50px;
+  height: 50px;
+  width: 200px;
+}
+
+.presets .presets__container .presets__pack .pack-1 .pack-1__textContent .btn p {
   position: relative;
   top: 50%;
   left: 50%;
+  color: #ffe6c2;
+  text-align: center;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 50%;
+  letter-spacing: 2px;
+  font-size: bold;
+  font-family: 'lato', sans-serif;
 }
 
-.contact .contact__instagram .contact__instagram-story {
-  border: solid 7px #ffe6c2;
-  border-radius: 100%;
-  padding: 10px;
+/*
+.youtube {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4em 0 4em 0;
+
+    .youtube__title {
+        display: flex;
+        align-items: center;
+
+        h2{
+            display: block;
+            position: relative;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: #050505;
+            font-weight: 900;
+            font-size: 60px;
+            font-family: 'Lato', sans-serif;
+        }
+    }
+
+    h3 {
+        color: #050505; 
+        margin-top: 15px;
+        margin-bottom: 15px;
+        letter-spacing: 3px;
+        opacity: 0;
+        transform: translateY(10px);
+        display: inline-block;
+        transition: all 1s cubic-bezier(.9,0,.88,1.01);
+    }
+
+    .youtube__container {
+        width: 90%;
+        background-color: #ffe6c2;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .youtube__content > * {
+        flex: 1 1;
+    }
+
+    .youtube__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        flex-direction: row;
+
+        .youtube__last-videos {
+            width: 100%;
+            margin: 2% 2%;
+            opacity: 0;
+            transition: all 1s cubic-bezier(.9,0,.88,1.01);
+            .last-videos__video-wrapper {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+
+              }
+              .last-videos__video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+            
+        }
+        
+    }
+    // reavel
+
+    .reveal-visible {
+        .youtube__icon {
+            transform: translateX(0px);
+        }
+
+        h2{
+            &:after{
+                width: 0px;
+            }
+        }
+    }
+    .youtube__last-videos.reveal-visible {
+        opacity: 1;
+    }
+
+    .youtube__text.reveal-visible {
+        h3 {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
 }
 
-.contact .contact__instagram .contact__instagram-story img {
-  width: 100%;
-}
+.contact {
+    height: 100vh;
+    width: 100%;
+    background-color: #204039;
 
+    .contact__instagram {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 50%;
+
+        .contact__instagram-story {
+
+            border: solid 7px #ffe6c2;
+            border-radius: 100%;
+            padding: 10px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+*/
 @media screen and (max-width: 700px) {
   .presets-button-wrapper {
     bottom: 15% !important;
   }
-  .youtube h2 {
-    font-size: 35px !important;
+  .presets .presets__container h1 {
+    font-size: 20px;
+    white-space: nowrap;
   }
-  .youtube .youtube__container {
-    padding: 10%;
-  }
-  .youtube .youtube__content {
+  .presets .presets__container .presets__pack .pack-1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .youtube .youtube__content .youtube__last-videos {
-    margin: 1em 0 1em 0 !important;
+  .presets .presets__container .presets__pack .pack-1 .pack-1__textContent {
+    margin-top: 0;
   }
-  .youtube .youtube__content .youtube__last-videos .last-videos__video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    height: 0;
+  .presets .presets__container .presets__pack .pack-1 .pack-1__textContent .pack-1__text {
+    line-height: 20px;
+    text-align: justify;
+    font-size: 13px;
+    padding: 0;
   }
-  .youtube .youtube__content .youtube__last-videos .last-videos__video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+  /*.youtube {
+
+        h2 {
+            font-size: 35px!important;
+        }
+
+        .youtube__container {
+            padding: 10%;
+        }
+
+        .youtube__content {
+            flex-direction: column;
+    
+            .youtube__last-videos {
+                margin: 1em 0 1em 0!important;
+                .last-videos__video-wrapper {
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+    
+                  }
+                  .last-videos__video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  }
+                
+            }
+        }
+    }*/
   .no-res {
     display: none;
   }
@@ -600,11 +773,31 @@ body::-webkit-scrollbar {
     font-size: 0.4em;
     letter-spacing: 5px !important;
   }
+  .copyright {
+    letter-spacing: 2px !important;
+    font-size: 9px !important;
+  }
 }
 
 @media screen and (min-width: 700px) {
   .youtube {
     background-color: #204039;
   }
+}
+
+.presets__area {
+  z-index: 99;
+  width: 90%;
+  position: absolute;
+}
+
+.copyright {
+  font-weight: 100;
+  font-family: 'lato', sans-serif;
+  text-align: center;
+  color: #ffe6c2;
+  font-size: 10px;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
 }
 /*# sourceMappingURL=style.css.map */
