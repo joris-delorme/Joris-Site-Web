@@ -126,6 +126,6 @@ window.onorientationchange = function() {
     console.log("portrait");
   } else {
     const bodye = document.querySelector('body')
-    bodye.style.overflowY = "scroll";
+    bodye.style.overflowY = "scroll!important";
   }
 }
