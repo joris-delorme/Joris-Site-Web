@@ -105,3 +105,15 @@ document.onmousemove = function() {
     document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(1, 1)";
   }, 50)
 };
+
+$(document).ready(function () {
+  $('#morePresets').click(function () {
+      $('#morePresets').toggleClass('active');
+      $('#presets').toggleClass('active');
+      if ($('#morePresets').hasClass('active')) {
+          document.body.style.overflowY = "hidden";
+    } else {
+          document.body.style.overflowY = "scroll";
+    }
+  })
+})
