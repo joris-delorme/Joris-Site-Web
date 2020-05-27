@@ -117,3 +117,15 @@ $(document).ready(function () {
     }
   })
 })
+
+// Orientation
+
+window.onorientationchange = function() {
+  let portraitOrientation = window.matchMedia("(orientation:portrait)");
+  if ( portraitOrientation.matches ) {
+    console.log("portrait");
+  } else {
+    const presetsContainer = document.getElementById('presets__container')
+    presetsContainer.scrollIntoView();
+  }
+}
