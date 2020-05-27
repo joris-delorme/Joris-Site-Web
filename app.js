@@ -125,7 +125,7 @@ window.onorientationchange = function() {
   if ( portraitOrientation.matches ) {
     console.log("portrait");
   } else {
-    const presetsContainer = document.getElementById('presets__container')
-    presetsContainer.scrollIntoView();
+    const bodye = document.querySelector('body')
+    bodye.style.overflowY = "scroll";
   }
 }
