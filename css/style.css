@@ -294,7 +294,7 @@ body::-webkit-scrollbar {
 
 .compteurContainer {
   overflow: hidden;
-  height: 22px;
+  height: 23px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -312,8 +312,8 @@ body::-webkit-scrollbar {
 }
 
 .compteurContainer #compteur.hidde {
-  -webkit-transform: translateY(17px);
-          transform: translateY(17px);
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
 }
 
 .home {

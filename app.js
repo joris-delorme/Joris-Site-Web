@@ -118,7 +118,7 @@ function animation() {
       opacity: '1',
       easing: "easeOutExpo",
       duration: 2000,
-      delay: 3500 + 3000
+      delay: 3500 + 2000
   });
 
   anime.timeline({loop: false})
@@ -127,7 +127,7 @@ function animation() {
       opacity: '1',
       easing: "easeOutExpo",
       duration: 1000,
-      delay: 3500 + 3500
+      delay: 3500 + 2500
   });
 
   // Scroll Down reveal
@@ -137,7 +137,7 @@ function animation() {
       height: '20vh',
       easing: "easeOutExpo",
       duration: 2000,
-      delay: 3500 + 2500
+      delay: 3500 + 1500
   });
 
   anime.timeline({loop: false})
