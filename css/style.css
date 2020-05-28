@@ -292,6 +292,30 @@ body::-webkit-scrollbar {
   transition-property: transform, -webkit-transform;
 }
 
+.compteurContainer {
+  overflow: hidden;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.compteurContainer #compteur {
+  opacity: 0;
+  font-size: 17px;
+  font-weight: 100;
+  color: #ffe6c2;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.compteurContainer #compteur.hidde {
+  -webkit-transform: translateY(17px);
+          transform: translateY(17px);
+}
+
 .home {
   z-index: 1;
   background-color: #204039;

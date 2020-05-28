@@ -38,6 +38,26 @@ body::-webkit-scrollbar { /* WebKit */
     transition-property: transform;
 }
 
+.compteurContainer {
+    overflow: hidden;
+    height: 20px;
+    position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+    #compteur {
+        opacity: 0;
+        font-size: 17px;
+        font-weight: 100;
+        color: #ffe6c2;
+        transition: all 1s ease-in-out;
+    }
+    
+    #compteur.hidde {
+        transform: translateY(17px);
+    }
+}
 
 .home {
     z-index: 1;

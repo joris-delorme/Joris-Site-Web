@@ -21,6 +21,10 @@
     <div id="cursor" class="cursor no-res"></div>
     <div class="rond"></div>
 
+    <div class="compteurContainer">
+        <div id="compteur" class="compteur">0</div>
+    </div>
+
     <div id="home" class="home">
 
         <div class="home__text-container">
@@ -136,28 +140,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
     <script src="app.js"></script>
-
-    <script>
-        (function () {
-
-            const link = document.querySelectorAll(".presets__area")
-            const cursor = document.querySelector('.cursor');
-      
-            const animateit = function (e) {
-                console.log("df")
-                  cursor.style.border = 'solid 2px black';
-                  if (e.type === 'mouseleave') cursor.style.border = 'solid 2px #fff';
-            };
-      
-            link.forEach(b => b.addEventListener('mousemove', animateit));
-            link.forEach(b => b.addEventListener('mouseleave', animateit));
-            window.addEventListener('mousemove', editCursor);
-
-            let hauteur=document.getElementById("presets__container").offsetHeight;
-            document.getElementById("presets__area").style.height= hauteur + "px";
-      
-      })();
-    </script>
 
 </body>
 

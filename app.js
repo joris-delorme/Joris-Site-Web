@@ -1,53 +1,3 @@
-// Name reveal
-let textWrapper = document.querySelector('.home__name .home__letters');
-        
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: false})
-.add({
-    targets: '.home__name .letter',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    duration: 750,
-    easing: "easeOutExpo",
-    delay: (el, i) => 50 * i
-});
-
-// Citation reveal
-let citationTextWrapper = document.querySelector('.home__citation .home__citation-letters');
-citationTextWrapper.innerHTML = citationTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: false})
-  .add({
-    targets: '.home__citation .letter',
-    scale: [0, 1],
-    duration: 1500,
-    elasticity: 600,
-    delay: (el, i) => 600 + 45 * (i+1)
-  });
-
-// Scroll Down reveal
-anime.timeline({loop: false})
-  .add({
-    targets: '.scroll-down, .presets-button-wrapper',
-    opacity: '1',
-    easing: "easeOutExpo",
-    duration: 1000,
-    delay: 2500
-});
-
-// Scroll Down reveal
-anime.timeline({loop: false})
-  .add({
-    targets: '.scroll__line',
-    height: '20vh',
-    easing: "easeOutExpo",
-    duration: 2000,
-    delay: 2500
-});
-
 // reavel on scroll
 
 const threshold = .2
@@ -106,6 +56,8 @@ document.onmousemove = function() {
   }, 50)
 };
 
+// presets
+
 $(document).ready(function () {
   $('#morePresets').click(function () {
       $('#morePresets').toggleClass('active');
@@ -118,14 +70,95 @@ $(document).ready(function () {
   })
 })
 
-// Orientation
+const body = document.querySelector('body')
 
-window.onorientationchange = function() {
-  let portraitOrientation = window.matchMedia("(orientation:portrait)");
-  if ( portraitOrientation.matches ) {
-    console.log("portrait");
-  } else {
-    const bodye = document.querySelector('body')
-    bodye.style.overflowY = "scroll!important";
+window.onload = function () {
+  body.className = 'load';
+  animation();
+}
+
+function animation() {
+  setTimeout(function () {
+    loading();
+  },1000)
+  // Name reveal
+  let textWrapper = document.querySelector('.home__name .home__letters');
+          
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({loop: false})
+  .add({
+      targets: '.home__name .letter',
+      translateY: ["1.1em", 0],
+      translateX: ["0.55em", 0],
+      translateZ: 0,
+      rotateZ: [180, 0],
+      duration: 750,
+      easing: "easeOutExpo",
+      delay: (el, i) => 3500 + 50 * i
+  });
+
+  // Citation reveal
+  let citationTextWrapper = document.querySelector('.home__citation .home__citation-letters');
+  citationTextWrapper.innerHTML = citationTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({loop: false})
+    .add({
+      targets: '.home__citation .letter',
+      scale: [0, 1],
+      duration: 1500,
+      elasticity: 600,
+      delay: (el, i) => 3500 + 600 + 45 * (i+1)
+    });
+
+ 
+  anime.timeline({loop: false})
+    .add({
+      targets: '.presets-button-wrapper',
+      opacity: '1',
+      easing: "easeOutExpo",
+      duration: 2000,
+      delay: 3500 + 3000
+  });
+
+  anime.timeline({loop: false})
+    .add({
+      targets: '.scroll-down',
+      opacity: '1',
+      easing: "easeOutExpo",
+      duration: 1000,
+      delay: 3500 + 3500
+  });
+
+  // Scroll Down reveal
+  anime.timeline({loop: false})
+    .add({
+      targets: '.scroll__line',
+      height: '20vh',
+      easing: "easeOutExpo",
+      duration: 2000,
+      delay: 3500 + 2500
+  });
+
+  anime.timeline({loop: false})
+  .add({
+      targets: '.compteur',
+      opacity: 1,
+      easing: "easeOutExpo",
+      duration: 100,
+  });
+}
+
+function loading() {
+  for (let i = 0; i < 101; i++) {
+    setTimeout ( function () {
+      const compteur = document.getElementById('compteur');
+      compteur.innerHTML = i;
+      if (i === 100) {
+        setTimeout(function () {
+          compteur.className = 'hidde';
+        },300)
+      }
+    }, i*15)
   }
 }
