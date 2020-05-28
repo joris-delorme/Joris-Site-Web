@@ -24,17 +24,6 @@ window.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-// Scoll indicator
-
-window.onscroll = function() {scrollIndicator()};
-
-function scrollIndicator() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("scroll__indicator").style.top = scrolled + "%";
-}
-
 // Cursor
 
 let mousex;
@@ -70,6 +59,8 @@ $(document).ready(function () {
   })
 })
 
+// Start
+
 const body = document.querySelector('body')
 
 window.onload = function () {
@@ -97,6 +88,17 @@ function animation() {
       easing: "easeOutExpo",
       delay: (el, i) => 3500 + 50 * i
   });
+
+  anime.timeline({loop: false})
+  .add({
+      targets: 'li',
+      translateX: ["2.1em", 0],
+      opacity: 1,
+      duration: 1500,
+      easing: "easeOutExpo",
+      delay: (el, i) => 3500 + 200 * i
+  });
+
 
   // Citation reveal
   let citationTextWrapper = document.querySelector('.home__citation .home__citation-letters');
@@ -161,4 +163,19 @@ function loading() {
       }
     }, i*15)
   }
+}
+
+
+
+
+// Scoll indicator
+
+window.onscroll = function() {scrollIndicator()};
+
+function scrollIndicator() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("scroll__indicator").style.top = scrolled + "%";
+  //document.getElementById("background").style.transform  = `translate3d(0px, ${scrolled * 1 + 200}px, 0)`;
 }

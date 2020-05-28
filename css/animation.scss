@@ -99,3 +99,28 @@
         display: none;
     }
 }
+
+/*------ Cool-Link ------*/
+
+.cool-link {
+    display: inline;
+    position: relative;
+}
+
+.cool-link::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    transform: translate(-5px,-5px) scaleY(0);
+    width: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffe6c2;
+    transform-origin: left top;
+    transition: transform 0.25s ease-out;
+}
+
+.cool-link:hover::before {
+    transform : translate(-5px,-5px) scaleY(1);
+    transform-origin: left bottom;
+}
