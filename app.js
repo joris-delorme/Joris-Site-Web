@@ -170,7 +170,11 @@ function loading() {
 
 // Scoll indicator
 
-window.onscroll = function() {scrollIndicator()};
+let isScrolling;
+
+window.onscroll = function() {
+  scrollIndicator()
+};
 
 function scrollIndicator() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -180,24 +184,27 @@ function scrollIndicator() {
   //document.getElementById("background").style.transform  = `translate3d(0px, ${scrolled * 1 + 200}px, 0)`;
 }
 
+
+
 const bodyScroll = document.body,
     scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
     height = scrollWrap.getBoundingClientRect().height - 1,
-    speed = 0.03;
+    speed = 0.04;
 let offset = 0;
 
 bodyScroll.style.height = Math.floor(height) + "px";
 
 function smoothScroll() {
-
   offset += (window.pageYOffset - offset) * speed;
-  var scroll = `translate3d(0px, -${offset}px, 0)`;
+  let scroll = `translate3d(0px, -${offset}px, 0)`;
   scrollWrap.style.transform = scroll;
-  callScroll = requestAnimationFrame(smoothScroll);
+  callScroll = requestAnimationFrame(smoothScroll)
 }
-smoothScroll();
 
-/*
-window.onscroll =function () {
-  smoothScroll();
-}*/
+const scrollWarrper = document.getElementById('smooth-scroll-wrapper')
+
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  scrollWarrper.style.position = 'relative';
+}else {
+  smoothScroll()
+}
