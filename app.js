@@ -179,3 +179,25 @@ function scrollIndicator() {
   document.getElementById("scroll__indicator").style.top = scrolled + "%";
   //document.getElementById("background").style.transform  = `translate3d(0px, ${scrolled * 1 + 200}px, 0)`;
 }
+
+const bodyScroll = document.body,
+    scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+    height = scrollWrap.getBoundingClientRect().height - 1,
+    speed = 0.03;
+let offset = 0;
+
+bodyScroll.style.height = Math.floor(height) + "px";
+
+function smoothScroll() {
+
+  offset += (window.pageYOffset - offset) * speed;
+  var scroll = `translate3d(0px, -${offset}px, 0)`;
+  scrollWrap.style.transform = scroll;
+  callScroll = requestAnimationFrame(smoothScroll);
+}
+smoothScroll();
+
+/*
+window.onscroll =function () {
+  smoothScroll();
+}*/

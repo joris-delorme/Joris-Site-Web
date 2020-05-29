@@ -44,9 +44,10 @@ body::-webkit-scrollbar { /* WebKit */
     overflow: hidden;
     height: 23px;
     position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
 
     #compteur {
         opacity: 0;
@@ -61,11 +62,33 @@ body::-webkit-scrollbar { /* WebKit */
     }
 }
 
+.scroll {
+    position: fixed;
+    left: 2.5%;
+    bottom: 3%;
+    z-index: 999;
+
+    .scroll__indicator {
+        height: 3vh;
+        width: 1px;
+        background-color: #204039;
+        position: absolute;
+        top: 0%;
+    }
+    
+    .scroll__line {
+        height: 0;
+        width: 1px;
+        background-color: #ffe6c2;
+    }
+}
+
 .home {
     z-index: 1;
     background-color: #204039;
     background-size: cover;
     height: 100vh;
+    position: relative;
     width: 100%;
 
     .home__text-container {
@@ -223,27 +246,6 @@ body::-webkit-scrollbar { /* WebKit */
             animation: scrollDown 1.5s ease-in-out infinite;
         }
     }
-
-    .scroll {
-        position: fixed;
-        left: 2.5%;
-        bottom: 3%;
-        z-index: 1;
-
-        .scroll__indicator {
-            height: 3vh;
-            width: 1px;
-            background-color: #204039;
-            position: absolute;
-            top: 0%;
-        }
-        
-        .scroll__line {
-            height: 0;
-            width: 1px;
-            background-color: #ffe6c2;
-        }
-    }
 }
 
 .presets {
@@ -264,7 +266,8 @@ body::-webkit-scrollbar { /* WebKit */
         width: 90%;
         background-color: #ffe6c2;
         transition: all 0.5s ease-in-out;
-        max-height: 100vh;
+        max-height: 100vh; 
+        transition: transform 3s;
 
         h1 {
             color: #050505;
@@ -326,7 +329,8 @@ body::-webkit-scrollbar { /* WebKit */
                         font-family: 'lato', sans-serif;
                         letter-spacing: 1px;
                         line-height: 35px;
-                        font-weight: 400;   
+                        font-weight: 400;
+                        font-size: calc(16px + 0*(100vw - 320px)/1120);
                         transition: all 0.5s ease-in-out;
                     }
                     .btn {
@@ -717,4 +721,13 @@ body::-webkit-scrollbar { /* WebKit */
             margin-bottom: 40px;
         }
     }
+}
+
+.smooth-scroll-wrapper {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    will-change: transform;
 }
