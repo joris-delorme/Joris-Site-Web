@@ -1,5 +1,119 @@
-// reavel on scroll
 
+window.onload = function () {
+  animation();
+}
+
+
+function animation() {
+  // Compteur animation
+  setTimeout(function () {
+    loading();
+  },1000)
+
+  // Name 
+  let textWrapper = document.querySelector('.home__name .home__name--letters');
+
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({loop: false})
+  .add({
+      targets: '.home__name .letter',
+      translateY: ["-1.1em", 0],
+      translateX: ["0", 0],
+      translateZ: 0,
+      duration: 1500,
+      easing: "easeOutExpo",
+      delay: (el, i) => 3500 + 50 * i
+  });
+
+  anime.timeline({loop: false})
+  .add({
+      targets: '.anime--content .anime',
+      translateY: ["-5.1em", 0],
+      translateX: ["0", 0],
+      translateZ: 0,
+      duration: 1500,
+      easing: "easeOutExpo",
+      delay: (el, i) => 3500 + 350 * i
+  });
+
+  anime.timeline({loop: false})
+  .add({
+      targets: '#compteur',
+      opacity: 1,
+      easing: "easeOutExpo",
+      duration: 100,
+  });
+}
+
+function loading() {
+  for (let i = 0; i < 101; i++) {
+    setTimeout ( function () {
+      const compteur = document.getElementById('compteur');
+      compteur.innerHTML = i;
+      if (i === 100) {
+        setTimeout(function () {
+          compteur.className = 'hidde';
+        },300)
+      }
+    }, i*15)
+  }
+}
+
+function presetsOpen() {
+  let elm = document.getElementById('pack__reaval'),
+      close = document.getElementById('close--presets'),
+      image = document.getElementById('pack__img')
+  
+  elm.classList.add('active');
+  image.classList.add('active');
+
+  setTimeout(function () {
+    elm.classList.add('reaval');
+    close.classList.add('reaval');
+  },1000)
+
+}
+
+function presetsClose() {
+  let elm = document.getElementById('pack__reaval'),
+      close = document.getElementById('close--presets'),
+      image = document.getElementById('pack__img')
+
+  elm.classList.add('close');
+  image.classList.add('close');
+  close.classList.add('close');
+  
+  setTimeout(function () {
+    elm.classList.remove('active');
+    image.classList.remove('active');
+    elm.classList.remove('close');
+    image.classList.remove('close');
+    close.classList.remove('close');
+    elm.classList.remove('reaval');
+    close.classList.remove('reaval');
+  },1000)
+}
+
+function loading() {
+  for (let i = 0; i < 101; i++) {
+    setTimeout ( function () {
+      const compteur = document.getElementById('compteur');
+      compteur.innerHTML = i;
+      if (i === 100) {
+        setTimeout(function () {
+          compteur.className = 'hidde';
+        },300)
+      }
+    }, i*15)
+  }
+}
+
+
+
+
+
+/* reavel on scroll
 const threshold = .2
 const options = {
   root: null,
@@ -25,7 +139,6 @@ window.addEventListener("DOMContentLoaded", function () {
 })
 
 // Cursor
-
 let mousex;
 let mousey;
 
@@ -35,7 +148,7 @@ $(document).mousemove(function(e) {
   mousex = e.clientX;
   mousey = e.clientY;
 });
-
+// Cursor Animation
 let timer;
 document.onmousemove = function() {
   document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(0.3, 0.3)";
@@ -45,8 +158,7 @@ document.onmousemove = function() {
   }, 50)
 };
 
-// presets
-
+// Presets Button
 $(document).ready(function () {
   $('#morePresets').click(function () {
       $('#morePresets').toggleClass('active');
@@ -59,8 +171,7 @@ $(document).ready(function () {
   })
 })
 
-// Start
-
+// Ce lance quand la page a finit de charger
 const body = document.querySelector('body')
 
 window.onload = function () {
@@ -68,6 +179,7 @@ window.onload = function () {
   animation();
 }
 
+// All Animation
 function animation() {
   setTimeout(function () {
     loading();
@@ -151,6 +263,7 @@ function animation() {
   });
 }
 
+// Compteur animation
 function loading() {
   for (let i = 0; i < 101; i++) {
     setTimeout ( function () {
@@ -165,46 +278,47 @@ function loading() {
   }
 }
 
-
-
-
 // Scoll indicator
-
-let isScrolling;
-
 window.onscroll = function() {
   scrollIndicator()
 };
+
+let isMobile = false;
 
 function scrollIndicator() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
   document.getElementById("scroll__indicator").style.top = scrolled + "%";
-  //document.getElementById("background").style.transform  = `translate3d(0px, ${scrolled * 1 + 200}px, 0)`;
+  if (isMobile = true) {
+    //document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
+  }
 }
 
-
-
+// Smooth Scroll Page
 const bodyScroll = document.body,
     scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
     height = scrollWrap.getBoundingClientRect().height - 1,
     speed = 0.04;
 let offset = 0;
-
 bodyScroll.style.height = Math.floor(height) + "px";
 
-function smoothScroll() {
+function desktopScroll() {
   offset += (window.pageYOffset - offset) * speed;
+  offset = +offset.toFixed(2);
   let scroll = `translate3d(0px, -${offset}px, 0)`;
+  //document.getElementById("presets").style.transform  = `translate3d(0px, ${offset * -0.5}px, 0)`;
   scrollWrap.style.transform = scroll;
-  callScroll = requestAnimationFrame(smoothScroll)
+  callScroll = requestAnimationFrame(desktopScroll, 40);
 }
 
-const scrollWarrper = document.getElementById('smooth-scroll-wrapper')
-
+// Mobile or Desktop ?
 if (/Mobi|Android/i.test(navigator.userAgent)) {
-  scrollWarrper.style.position = 'relative';
+  document.getElementById('smooth-scroll-wrapper').style.position = 'relative';
+  isMobile = true;
 }else {
-  smoothScroll()
+
+  desktopScroll()
 }
+
+*/

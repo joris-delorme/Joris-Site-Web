@@ -1,117 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joris Delorme</title>
+    <title>Mon journal</title>
 
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Fonts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/boi5ley.css">
+    <link rel="stylesheet" href="./assets/fonts/title.woff">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <div id="cursor" class="cursor no-res"></div>
     
-    <div class="compteurContainer">
-        <div id="compteur" class="compteur">0</div>
-    </div>
+</head>
+<body>
+    <div class="main">
 
-    <div class="scroll">
-        <div id="scroll__indicator" class="scroll__indicator"></div>
-        <div class="scroll__line"></div>
-    </div>
+        <div class="compteur--container">
+            <div id="compteur"></div>
+        </div>
 
-    <div class="smooth-scroll-wrapper" id="smooth-scroll-wrapper">
-        <div class="content-wrapper">
+        <div class="grid">
+            <div class="smooth--scrool">
 
-            <div id="home" class="home">
-
-                <div class="home__text-container" id="paralaxe">
-                    <h1 class="home__name">
-                        <span class="home__text-wrapper">
-                            <span class="home__letters">Joris Delorme</span>
-                        </span>
-                    </h1>
-
-                    <h1 class="home__citation">
-                        <span class="home__citation-text-wrapper">
-                            <span class="home__citation-letters">Je crée juste pour le plaisir</span>
-                        </span>
-                    </h1>
-                </div>
-
-                <nav class="no-res">
-                    <ul>
-                        <li><a class="cool-link" href="#presets">Presets</a></li>
-                        <li><a class="cool-link" href="#">Project</a></li>
-                        <li><a class="cool-link" href="#">Contact</a></li>
-                    </ul>
-                </nav>
-
-                <a href="#youtube" class="scroll-down">
-                    <div class="scroll-down__indicator"></div>
-                </a>
-
-                <a href="#presets" class="presets-button-wrapper">
-                    <div class="presets-button shine" data-text="PRESETS PACK">
-                        <span class="presets-button__text">PRESETS PACK</span>
-                        <span class="presets-button__line"></span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="space"></div>
-
-            <div class="presets" id="presets">
-                <div class="presets__container" id="presets__container">
-                    <div class="presets__area" id="presets__area"></div>
-                    <h1 class="presets__title">Mes presets pack</h1>
-                    <h1 class="packTitle res">Forest Pack</h1>
-                    <div class="presets__pack">
-                        <div class="pack-1">
-                            <div class="pack-1__img" id="smoothScrollImg">
-                                <img src="./img/Preset Pack.png" alt="">
+                <section>
+                    <div class="home">
+                        <header>
+                            <h1 class="home__name">
+                                <span class="home__name--letters">MON JOURNAL</span>
+                            </h1>
+                            <div class="row anime--content">
+                                <h3 class="anime">Diariste :</br>Joris Delorme </h3>
+                                <h3 class="center anime">Ecrit en langage de</br>programmation Web</h3>
+                                <h3 class="right anime">Traduit en français</br>par votre navigateur</h3>
                             </div>
-                            <div class="pack-1__textContent" id="smoothScrollText">
-                                <div class="pack-1__title">Forest Pack</div>
-                                <p class="pack-1__text">Tadin ! Voila enfin mon premier pack de presets pour Lightroom
-                                    mobile.
-                                    Il est composer de 5 presets, toutes avec des styles differentes pour pouvoir
-                                    retoucher simplement et effecacement vos plus belle photo de forêt !
-                                    Et en plus il est completement gratuit, alors vous n'avez aucun résons de ne pas
-                                    l'esseyer ;)<br />Click sur le boutton et... Bonne retouche !
-                                </p>
-                                <a class="btn buy" href="#">
-                                    <p>Obtenir</p>
-                                </a>
+                        </header>
+
+                        <div class="img">
+                            <div class="img--warpper"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="presets">
+                        <h1>Presets Pack</h1>
+                        <div class="pack first">
+                            <div class="pack__container row">
+                                <div class="pack__content column">
+                                    <h6>01</h6>
+                                    <div onclick="presetsOpen()" class="more" id="button--presets">
+                                        <div class="line vertical grey--line"></div>
+                                        <div class="line horizontal grey--line"></div>
+                                    </div>
+                                </div>
+                                <div class="pack__img" id="pack__img">
+                                    <div class="img--warpper"></div>
+                                </div>
+                            </div>
+                            <div class="pack__reaval" id="pack__reaval">
+                                <div class="pack__container row">
+                                <div class="pack__content column">
+                                    <h4>Forest Pack</h4>
+                                    <h5>Tintin ! Voila enfin mon premier pack de 
+                                        presets pour Lightroom mobile. Il est 
+                                        composer de 5 presets, toutes avec des 
+                                        styles différentes pour pouvoir retoucher 
+                                        simplement et efficacement vos plus belle 
+                                        photo de forêt ! Et en plus il est 
+                                        complétement gratuit, alors vous n'avez 
+                                        aucun raison de ne pas l'essayer ;) Click 
+                                        sur le bouton et... a retouche !
+                                    </h5>
+                                    <a href="#" class="button"><p>Obtenir</p></a>
+                                </div>
+                                <div class="img--space"></div>
+                            </div>
+                            <div onclick="presetsClose()" id="close--presets">
+                                <div class="close__line line horizontal"></div>
+                                <div class="close__line line vertical"></div>
+                            </div>
                             </div>
                         </div>
-                        <a class="btn more res" id="morePresets" href="#presets"></a>
                     </div>
-                </div>
-            </div>
+                </section>
 
-            <div class="page"></div>
+                <section>
+                    <div class="about--me">
+                        <div class="line longue"></div>
+                        <div class="line court"></div>
+                        <div class="line"></div>
+                    </div>
+                </section>
 
-            <!----- copyright ------>
+                <section>
+                    <div class="youtube">
 
-            <div class="copyright">
-                <p>Copyright © 2020 | Delorme Joris | Tous Droits Réservés</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="portfolio">
+
+                    </div>
+                </section>
+
+                <section>
+                    <div class="contact">
+
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="footer">
+
+                    </div>
+                </footer>
+
             </div>
         </div>
     </div>
 
+    <!-- Js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="app.js"></script>
 
 </body>
-
 </html>
