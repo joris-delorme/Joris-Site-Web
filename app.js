@@ -1,8 +1,18 @@
 
 window.onload = function () {
   animation();
+  seize();
 }
 
+function seize() {
+  const h = window.innerHeight;
+  const w = window.innerWidth;
+
+  if (w < h) {
+    const r  = document.getElementById('pack--isRes')
+    r.classList.add('res');7
+  }
+}
 
 function animation() {
   // Compteur animation
@@ -64,14 +74,16 @@ function presetsOpen() {
   let elm = document.getElementById('pack__reaval'),
       close = document.getElementById('close--presets'),
       image = document.getElementById('pack__img')
+      imageRes = document.getElementById('pack__img--res')
   
   elm.classList.add('active');
   image.classList.add('active');
+  imageRes.classList.add('active');
 
   setTimeout(function () {
     elm.classList.add('reaval');
     close.classList.add('reaval');
-  },1000)
+  },750)
 
 }
 
@@ -79,16 +91,20 @@ function presetsClose() {
   let elm = document.getElementById('pack__reaval'),
       close = document.getElementById('close--presets'),
       image = document.getElementById('pack__img')
+      imageRes = document.getElementById('pack__img--res')
 
   elm.classList.add('close');
   image.classList.add('close');
+  imageRes.classList.add('close');
   close.classList.add('close');
   
   setTimeout(function () {
     elm.classList.remove('active');
     image.classList.remove('active');
+    imageRes.classList.remove('active');
     elm.classList.remove('close');
     image.classList.remove('close');
+    imageRes.classList.remove('close');
     close.classList.remove('close');
     elm.classList.remove('reaval');
     close.classList.remove('reaval');
