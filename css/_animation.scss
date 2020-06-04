@@ -1,0 +1,22 @@
+@keyframes more {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes imgFlip {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotateY(90deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotateY(0deg) scale(1);
+    }
+}

@@ -1,0 +1,21 @@
+.compteur--container {
+    overflow: hidden;
+    height: 23px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+
+    #compteur {
+        opacity: 0;
+        font-size: 17px;
+        font-weight: 100;
+        color: #ffe6c2;
+        transition: all 1s ease-in-out;
+    }
+    
+    #compteur.hidde {
+        transform: translateY(23px);
+    }
+}
