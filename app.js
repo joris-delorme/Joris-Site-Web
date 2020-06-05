@@ -14,6 +14,19 @@ function seize() {
   }
 }
 
+function rev() {
+  let nbr = 0;
+  let revWrapper;
+
+  for (let i = 1; i < 4; i++){
+    nbr = nbr + 1;
+    revWrapper = document.querySelector('.textRev-'+nbr+' .text--letters');
+    revWrapper.innerHTML = revWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  } 
+}
+
+rev()
+
 function animation() {
   // Compteur animation
   setTimeout(function () {
@@ -125,11 +138,6 @@ function loading() {
   }
 }
 
-
-
-
-
-/* reavel on scroll
 const threshold = .2
 const options = {
   root: null,
@@ -153,6 +161,13 @@ window.addEventListener("DOMContentLoaded", function () {
     observer.observe(target)
   })
 })
+
+
+
+
+
+
+/* reavel on scroll
 
 // Cursor
 let mousex;

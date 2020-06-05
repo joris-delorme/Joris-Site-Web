@@ -30,23 +30,18 @@
     .img {
         position: relative;
         width: 100%;
-        perspective: 1000px;
         height: 145vw;
         margin-top: 5vw;
         .img--warpper {
             background-image: url(../assets/images/home.jpg);
-            opacity: 0;
             position: absolute;
             width: 100%;
             height: 100%;
-            top: 50%;
-            left: 50%;
+            top: 0;
+            left: 0;
             background-size: cover;
             background-position: 50%;
             background-repeat: no-repeat;
-            perspective: 1000px;
-            transform-style: preserve-3d;
-            animation: imgFlip 1.5s 3s ease-in-out forwards;
         }
     }
 }
@@ -54,7 +49,18 @@
 .presets {
     position: relative;
     h1 {
-        font-size: 15.5vw;
+        z-index: -99;
+        span {
+        font-size: 15.5vw!important;
+        z-index: -99;
+    }
+}
+
+    .line {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        position: absolute;
+        top: 50%;
     }
 
     .pack {
@@ -70,6 +76,7 @@
                     color: $troisieme;
                     font-size: 22vw;
                     line-height: 25vw;
+                    z-index: 1;
                 }
                 .more {
                     width: 100%;
@@ -194,7 +201,7 @@
             .pack__content {
                 justify-content: space-around;
                 height: 0vw;
-                margin-left: 3.5vw;
+                margin: 0 3.5vw;
                 h4 {
                     font-size: 0;
                     transition: 1s;
@@ -266,6 +273,115 @@
                 transform: translateY(0);
                 opacity: 0;
             }
+        }
+    }
+}
+
+.about--me {
+    height: 100vh;
+    width: 100%;
+    transition: all 1s 0.2s ease-in-out;
+
+    .line__container {
+        .line {
+            margin-top: 7vw;
+            &.longue {
+                width: 0;
+                &.reveal-visible {
+                    width: 80vw;
+                }
+            }
+            &.court {
+                width: 0;
+                &.reveal-visible {
+                    width: 30vw;
+                }
+            }
+            &.normal {
+                width: 0;
+                &.reveal-visible {
+                    width: 50vw;
+                }
+            }
+        }
+    }
+
+    .title__container {
+        .up{
+            .line {
+            width: 0vw;
+            &.reveal-visible {
+                width: 24vw;
+            }
+        }
+    }
+        .down{
+            line-height: 15vw;
+            .line {
+            width: 0;
+            &.reveal-visible {
+                width: 64vw;
+            }
+        }
+    }
+    }
+    .img {
+        position: relative;
+        z-index: -1;
+        margin-top: -25vw;
+        transform: translateX(-50%);
+        left: 50%;
+        height: 115vw;
+        width: 83vw;
+        .img--warpper {
+            background-image: url(../assets/images/aboutMe.jpg);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+        }
+    }
+    .based {
+        line-height: 20vw;
+        margin-top: -60vw;
+        h1 {
+            font-size: 24vw;
+        }
+    }
+    .about--me__text {
+        h4 {
+            width: 85vw;
+            height: 100%;
+            white-space: normal;
+            margin: 10vw 0;
+            font-size: 5vw;
+        }
+        h5 {
+            width: 100%;
+            font-size: 4vw;
+        }
+    }
+
+}
+
+*[class^="textRev-"] {
+    overflow: hidden;
+
+    .text--letters {
+        line-height: normal;
+        font-size: 25vw;
+
+            .letter {
+                transform-origin: 0 100%;
+                transform: translateY(1.1em);
+                display: inline-block;
+                font-family: 'title';
+                white-space: nowrap;
+                font-size: 25vw;
         }
     }
 }

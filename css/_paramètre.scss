@@ -65,6 +65,7 @@ body::-webkit-scrollbar {
 
 section {
     margin-top: 4vw;
+    position: relative;
 }
 
 .center {
@@ -77,10 +78,6 @@ section {
 
 .line {
     background-color: $primary;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    position: absolute;
-    top: 50%;
     transition: all 0.5s;
 }
 

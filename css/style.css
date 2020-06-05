@@ -22,30 +22,109 @@
   }
 }
 
-@-webkit-keyframes imgFlip {
-  from {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotateY(90deg) scale(0.5);
-            transform: translate(-50%, -50%) rotateY(90deg) scale(0.5);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotateY(0deg) scale(1);
-            transform: translate(-50%, -50%) rotateY(0deg) scale(1);
-  }
+*[class^="textRev-"] .text--letters span:nth-child(1n) {
+  -webkit-transition: all 1s 0.1s;
+  transition: all 1s 0.1s;
 }
 
-@keyframes imgFlip {
-  from {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotateY(90deg) scale(0.5);
-            transform: translate(-50%, -50%) rotateY(90deg) scale(0.5);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotateY(0deg) scale(1);
-            transform: translate(-50%, -50%) rotateY(0deg) scale(1);
-  }
+*[class^="textRev-"] .text--letters span:nth-child(2n) {
+  -webkit-transition: all 1s 0.2s;
+  transition: all 1s 0.2s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(3n) {
+  -webkit-transition: all 1s 0.3s;
+  transition: all 1s 0.3s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(4n) {
+  -webkit-transition: all 1s 0.4s;
+  transition: all 1s 0.4s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(5n) {
+  -webkit-transition: all 1s 0.5s;
+  transition: all 1s 0.5s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(6n) {
+  -webkit-transition: all 1s 0.6s;
+  transition: all 1s 0.6s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(7n) {
+  -webkit-transition: all 1s 0.7s;
+  transition: all 1s 0.7s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(8n) {
+  -webkit-transition: all 1s 0.8s;
+  transition: all 1s 0.8s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(9n) {
+  -webkit-transition: all 1s 0.9s;
+  transition: all 1s 0.9s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(10n) {
+  -webkit-transition: all 1s 1s;
+  transition: all 1s 1s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(11n) {
+  -webkit-transition: all 1s 1.1s;
+  transition: all 1s 1.1s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(12n) {
+  -webkit-transition: all 1s 1.2s;
+  transition: all 1s 1.2s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(13n) {
+  -webkit-transition: all 1s 1.3s;
+  transition: all 1s 1.3s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(14n) {
+  -webkit-transition: all 1s 1.4s;
+  transition: all 1s 1.4s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(15n) {
+  -webkit-transition: all 1s 1.5s;
+  transition: all 1s 1.5s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(16n) {
+  -webkit-transition: all 1s 1.6s;
+  transition: all 1s 1.6s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(17n) {
+  -webkit-transition: all 1s 1.7s;
+  transition: all 1s 1.7s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(18n) {
+  -webkit-transition: all 1s 1.8s;
+  transition: all 1s 1.8s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(19n) {
+  -webkit-transition: all 1s 1.9s;
+  transition: all 1s 1.9s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(20n) {
+  -webkit-transition: all 1s 2s;
+  transition: all 1s 2s;
+}
+
+*[class^="textRev-"].reveal-visible .text--letters span {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .compteur--container {
@@ -85,17 +164,109 @@
   }
 }
 
-@keyframes imgFlip {
-  from {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotateY(90deg) scale(0.5);
-            transform: translate(-50%, -50%) rotateY(90deg) scale(0.5);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%) rotateY(0deg) scale(1);
-            transform: translate(-50%, -50%) rotateY(0deg) scale(1);
-  }
+*[class^="textRev-"] .text--letters span:nth-child(1n) {
+  -webkit-transition: all 1s 0.1s;
+  transition: all 1s 0.1s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(2n) {
+  -webkit-transition: all 1s 0.2s;
+  transition: all 1s 0.2s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(3n) {
+  -webkit-transition: all 1s 0.3s;
+  transition: all 1s 0.3s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(4n) {
+  -webkit-transition: all 1s 0.4s;
+  transition: all 1s 0.4s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(5n) {
+  -webkit-transition: all 1s 0.5s;
+  transition: all 1s 0.5s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(6n) {
+  -webkit-transition: all 1s 0.6s;
+  transition: all 1s 0.6s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(7n) {
+  -webkit-transition: all 1s 0.7s;
+  transition: all 1s 0.7s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(8n) {
+  -webkit-transition: all 1s 0.8s;
+  transition: all 1s 0.8s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(9n) {
+  -webkit-transition: all 1s 0.9s;
+  transition: all 1s 0.9s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(10n) {
+  -webkit-transition: all 1s 1s;
+  transition: all 1s 1s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(11n) {
+  -webkit-transition: all 1s 1.1s;
+  transition: all 1s 1.1s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(12n) {
+  -webkit-transition: all 1s 1.2s;
+  transition: all 1s 1.2s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(13n) {
+  -webkit-transition: all 1s 1.3s;
+  transition: all 1s 1.3s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(14n) {
+  -webkit-transition: all 1s 1.4s;
+  transition: all 1s 1.4s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(15n) {
+  -webkit-transition: all 1s 1.5s;
+  transition: all 1s 1.5s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(16n) {
+  -webkit-transition: all 1s 1.6s;
+  transition: all 1s 1.6s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(17n) {
+  -webkit-transition: all 1s 1.7s;
+  transition: all 1s 1.7s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(18n) {
+  -webkit-transition: all 1s 1.8s;
+  transition: all 1s 1.8s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(19n) {
+  -webkit-transition: all 1s 1.9s;
+  transition: all 1s 1.9s;
+}
+
+*[class^="textRev-"] .text--letters span:nth-child(20n) {
+  -webkit-transition: all 1s 2s;
+  transition: all 1s 2s;
+}
+
+*[class^="textRev-"].reveal-visible .text--letters span {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 @font-face {
@@ -168,6 +339,7 @@ body::-webkit-scrollbar {
 
 section {
   margin-top: 4vw;
+  position: relative;
 }
 
 .center {
@@ -180,11 +352,6 @@ section {
 
 .line {
   background-color: #FFE6C2;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  left: 50%;
-  position: absolute;
-  top: 50%;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -296,29 +463,20 @@ section {
 .home .img {
   position: relative;
   width: 100%;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
   height: 145vw;
   margin-top: 5vw;
 }
 
 .home .img .img--warpper {
   background-image: url(../assets/images/home.jpg);
-  opacity: 0;
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-animation: imgFlip 1.5s 3s ease-in-out forwards;
-          animation: imgFlip 1.5s 3s ease-in-out forwards;
 }
 
 .presets {
@@ -326,7 +484,20 @@ section {
 }
 
 .presets h1 {
-  font-size: 15.5vw;
+  z-index: -99;
+}
+
+.presets h1 span {
+  font-size: 15.5vw !important;
+  z-index: -99;
+}
+
+.presets .line {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  position: absolute;
+  top: 50%;
 }
 
 .presets .pack {
@@ -344,6 +515,7 @@ section {
   color: #212121;
   font-size: 22vw;
   line-height: 25vw;
+  z-index: 1;
 }
 
 .presets .pack .pack__container .pack__content .more {
@@ -483,7 +655,7 @@ section {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 0vw;
-  margin-left: 3.5vw;
+  margin: 0 3.5vw;
 }
 
 .presets .pack__reaval .pack__container .pack__content h4 {
@@ -574,6 +746,126 @@ section {
   opacity: 0;
 }
 
+.about--me {
+  height: 100vh;
+  width: 100%;
+  -webkit-transition: all 1s 0.2s ease-in-out;
+  transition: all 1s 0.2s ease-in-out;
+}
+
+.about--me .line__container .line {
+  margin-top: 7vw;
+}
+
+.about--me .line__container .line.longue {
+  width: 0;
+}
+
+.about--me .line__container .line.longue.reveal-visible {
+  width: 80vw;
+}
+
+.about--me .line__container .line.court {
+  width: 0;
+}
+
+.about--me .line__container .line.court.reveal-visible {
+  width: 30vw;
+}
+
+.about--me .line__container .line.normal {
+  width: 0;
+}
+
+.about--me .line__container .line.normal.reveal-visible {
+  width: 50vw;
+}
+
+.about--me .title__container .up .line {
+  width: 0vw;
+}
+
+.about--me .title__container .up .line.reveal-visible {
+  width: 24vw;
+}
+
+.about--me .title__container .down {
+  line-height: 15vw;
+}
+
+.about--me .title__container .down .line {
+  width: 0;
+}
+
+.about--me .title__container .down .line.reveal-visible {
+  width: 64vw;
+}
+
+.about--me .img {
+  position: relative;
+  z-index: -1;
+  margin-top: -25vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  height: 115vw;
+  width: 83vw;
+}
+
+.about--me .img .img--warpper {
+  background-image: url(../assets/images/aboutMe.jpg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.about--me .based {
+  line-height: 20vw;
+  margin-top: -60vw;
+}
+
+.about--me .based h1 {
+  font-size: 24vw;
+}
+
+.about--me .about--me__text h4 {
+  width: 85vw;
+  height: 100%;
+  white-space: normal;
+  margin: 10vw 0;
+  font-size: 5vw;
+}
+
+.about--me .about--me__text h5 {
+  width: 100%;
+  font-size: 4vw;
+}
+
+*[class^="textRev-"] {
+  overflow: hidden;
+}
+
+*[class^="textRev-"] .text--letters {
+  line-height: normal;
+  font-size: 25vw;
+}
+
+*[class^="textRev-"] .text--letters .letter {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: translateY(1.1em);
+          transform: translateY(1.1em);
+  display: inline-block;
+  font-family: 'title';
+  white-space: nowrap;
+  font-size: 25vw;
+}
+
 @font-face {
   font-family: 'title';
   src: url("../assets/fonts/title.woff") format("woff");
@@ -644,6 +936,7 @@ body::-webkit-scrollbar {
 
 section {
   margin-top: 4vw;
+  position: relative;
 }
 
 .center {
@@ -656,11 +949,6 @@ section {
 
 .line {
   background-color: #FFE6C2;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  left: 50%;
-  position: absolute;
-  top: 50%;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }

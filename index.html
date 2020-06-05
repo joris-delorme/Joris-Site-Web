@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,9 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="./assets/fonts/title.woff">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
-    
+
 </head>
+
 <body>
     <div class="main">
 
@@ -44,7 +46,7 @@
 
                 <section>
                     <div class="presets">
-                        <h1>Presets Pack</h1>
+                        <h1 class="textRev-1 reveal"> <span class="text--letters">Presets Pack</span></h1>
                         <div class="pack first" id="pack--isRes">
                             <div class="pack__container row">
                                 <div class="pack__content column">
@@ -65,27 +67,29 @@
                             </div>
                             <div class="pack__reaval" id="pack__reaval">
                                 <div class="pack__container row">
-                                <div class="pack__content column">
-                                    <h4>Forest Pack</h4>
+                                    <div class="pack__content column">
+                                        <h4>Forest Pack</h4>
+                                        <div class="img--space"></div>
+                                        <h5>Tintin ! Voila enfin mon premier pack de
+                                            presets pour Lightroom mobile. Il est
+                                            composer de 5 presets, toutes avec des
+                                            styles différentes pour pouvoir retoucher
+                                            simplement et efficacement vos plus belle
+                                            photo de forêt ! Et en plus il est
+                                            complétement gratuit, alors vous n'avez
+                                            aucun raison de ne pas l'essayer ;) Click
+                                            sur le bouton et... a retouche !
+                                        </h5>
+                                        <a href="#" class="button">
+                                            <p>Obtenir</p>
+                                        </a>
+                                    </div>
                                     <div class="img--space"></div>
-                                    <h5>Tintin ! Voila enfin mon premier pack de 
-                                        presets pour Lightroom mobile. Il est 
-                                        composer de 5 presets, toutes avec des 
-                                        styles différentes pour pouvoir retoucher 
-                                        simplement et efficacement vos plus belle 
-                                        photo de forêt ! Et en plus il est 
-                                        complétement gratuit, alors vous n'avez 
-                                        aucun raison de ne pas l'essayer ;) Click 
-                                        sur le bouton et... a retouche !
-                                    </h5>
-                                    <a href="#" class="button"><p>Obtenir</p></a>
                                 </div>
-                                <div class="img--space"></div>
-                            </div>
-                            <div onclick="presetsClose()" id="close--presets">
-                                <div class="close__line line horizontal"></div>
-                                <div class="close__line line vertical"></div>
-                            </div>
+                                <div onclick="presetsClose()" id="close--presets">
+                                    <div class="close__line line horizontal"></div>
+                                    <div class="close__line line vertical"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,9 +97,37 @@
 
                 <section>
                     <div class="about--me">
-                        <div class="line longue"></div>
-                        <div class="line court"></div>
-                        <div class="line"></div>
+                        <div class="line__container">
+                            <div class="line longue horizontal reveal"></div>
+                            <div class="line horizontal court reveal"></div>
+                            <div class="line horizontal normal reveal"></div>
+                        </div>
+                        <div class="title__container">
+                            <div class="up row">
+                                <h1 class="textRev-2 reveal"><span class="text--letters">About</span></h1>
+                                <div class="line horizontal reveal"></div>
+                            </div>
+                            <div class="down row">
+                                <div class="line horizontal reveal"></div>
+                                <h1 class="textRev-3 reveal"><span class="text--letters">Me</span></h1>
+                            </div>
+                        </div>
+                        <div class="img">
+                            <div class="img--warpper"></div>
+                        </div>
+                        <div class="based">
+                            <h1>Basé</h1>
+                            <h1 class="center">à</h1>
+                            <h1 class="sup center">Paris/NY</h1>
+                            <h1 class="right">Aoste</h1>
+                        </div>
+                        <div class="about--me__text">
+                            <h4>Moi c'est Joris Delorme 15 ans et j'explore principalement la photographie et la
+                                programmation Web, deux mondes très vaste et sans fin, plus passionnant l'un que
+                                l'autre. Mais j'expérimente aussi à la 3D, aux VFX, motion design et au design (logo,
+                                banner Youtube...).</h4>
+                            <h5 class="right">Bref, je créé juste pour le plaisir.</h5>
+                        </div>
                     </div>
                 </section>
 
@@ -133,4 +165,5 @@
     <script src="app.js"></script>
 
 </body>
+
 </html>
