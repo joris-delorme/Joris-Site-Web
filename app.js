@@ -10,7 +10,7 @@ function seize() {
 
   if (w < h) {
     const r  = document.getElementById('pack--isRes')
-    r.classList.add('res');7
+    r.classList.add('res');
   }
 }
 
@@ -180,7 +180,6 @@ function paralax() {
     //document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
   }*/
 }
-
 
 
 /* reavel on scroll
