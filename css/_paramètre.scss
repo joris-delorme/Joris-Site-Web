@@ -34,6 +34,10 @@ h3, h5{
     letter-spacing: 3px;
 }
 
+h4, h5 {
+    color: $secondary;
+}
+
 body {
     color: $primary;
     background-color: $bg--primary;
@@ -93,6 +97,30 @@ section {
 .vertical {
     height: 22vw;
     width: 2px;
+}
+
+.line__container {
+    .line {
+        margin-top: 7vw;
+        &.longue {
+            width: 0;
+            &.reveal-visible {
+                width: 80vw;
+            }
+        }
+        &.court {
+            width: 0;
+            &.reveal-visible {
+                width: 30vw;
+            }
+        }
+        &.normal {
+            width: 0;
+            &.reveal-visible {
+                width: 50vw;
+            }
+        }
+    }
 }
 
 // responsive

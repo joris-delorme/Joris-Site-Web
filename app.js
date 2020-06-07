@@ -175,12 +175,34 @@ function paralax() {
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
   /*document.getElementById("scroll__indicator").style.top = scrolled + "%";*/
-  document.getElementById("paralax").style.transform  = `translateX(-50%) translate3d(0px, ${scrolled * 2 - 225}px, 0)`;
+  document.getElementById("paralax").style.transform  = `translateX(-50%) translate3d(0px, ${scrolled * 3 - 200}px, 0)`;
   /*if (isMobile = true) {
     //document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
   }*/
 }
 
+let carousel = document.querySelector('.carousel');
+let cellCount = 6;
+let selectedIndex = 0;
+
+function rotateCarousel() {
+  let angle = selectedIndex / cellCount * -360;
+  carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+}
+
+let prevButton = document.querySelector('.button--left');
+prevButton.addEventListener( 'click', function() {
+  selectedIndex--;
+  console.log(selectedIndex);
+  rotateCarousel();
+});
+
+let nextButton = document.querySelector('.button--right');
+nextButton.addEventListener( 'click', function() {
+  selectedIndex++;
+  console.log(selectedIndex);
+  rotateCarousel();
+});
 
 /* reavel on scroll
 
