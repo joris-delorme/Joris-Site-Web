@@ -920,6 +920,112 @@ section {
   margin-top: 5vw;
 }
 
+.contact {
+  width: 100%;
+}
+
+.contact h1 {
+  font-size: 22.5vw;
+  text-transform: uppercase;
+}
+
+.contact .instagram .story {
+  height: 50vw;
+  width: 50vw;
+  border: solid 10px #FFE6C2;
+  border-radius: 100%;
+}
+
+.contact .instagram .story .img {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.contact .instagram .story .img--warpper {
+  background-image: url(../assets/images/instagram.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.contact .instagram h2 {
+  font-size: 15vw;
+}
+
+.contact .instagram h5 {
+  font-size: 9vw;
+}
+
+.contact .instagram .id {
+  width: 60vw;
+}
+
+.contact .instagram .id .line {
+  width: 100%;
+  height: 2px;
+}
+
+.contact .separation {
+  width: 100%;
+  height: 2px;
+  margin: 11vw 0;
+}
+
+.contact .media h2 {
+  font-size: 6.5vw;
+}
+
+.contact .media a {
+  display: block;
+  color: #D8C4A7;
+  text-decoration: none;
+  font-family: 'Lato',sans-serif;
+  font-weight: 100;
+  font-size: 6vw;
+}
+
+.contact .mail h2 {
+  font-size: 5.5vw;
+}
+
+.contact .mail h5 {
+  font-size: 4.2vw;
+}
+
+.footer {
+  margin-top: 15vw;
+  width: 100%;
+}
+
+.footer .line {
+  height: 2px;
+  width: 50vw;
+}
+
+.footer h1 {
+  margin: 7vw 0;
+  font-size: 8vw;
+  white-space: normal;
+}
+
+.footer .copyright {
+  margin-top: 7vw;
+  font-family: 'Lato',sans-serif;
+  letter-spacing: 2px;
+  font-size: 2vw;
+  margin-bottom: 15px;
+}
+
 *[class^="textRev-"] {
   overflow: hidden;
 }
