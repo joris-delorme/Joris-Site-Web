@@ -1,7 +1,54 @@
-
-window.onload = function () {
-  animation();
+window.addEventListener('load', function () {
+  document.querySelector('body').classList.add('is-loaded')
+  document.querySelector('body').classList.remove('is-loading')
+  compteur();
   seize();
+})
+
+if (!window.requestAnimationFrame) {
+  window. requestAnimationFrame = function (fn) {
+      var timer = 16.66; // 60 fps
+      setTimeout(fn,timer);
+  }
+}
+
+// Animation
+
+function compteur() {
+  const compteur = document.getElementById('compteur');
+
+  function revCompteur() {
+    let opacity = 0;
+    function decrease () {
+        opacity += 0.01;
+        if (opacity >= 1){
+            // complete
+            compteur.style.opacity = 1;
+            acount()
+            return true;
+        }
+        compteur.style.opacity = opacity;
+        requestAnimationFrame(decrease);
+    }
+    decrease();
+  }
+
+  revCompteur()
+
+  function acount() {
+    for (let i = 0; i < 101; i++) {
+      setTimeout ( function () {
+        compteur.innerHTML = i;
+        if (i === 100) {
+          setTimeout(function () {
+            compteur.className = 'hidde';
+            animation()
+          },300)
+        }
+      }, i*15)
+    }
+  }
+
 }
 
 function seize() {
@@ -28,10 +75,6 @@ function rev() {
 rev()
 
 function animation() {
-  // Compteur animation
-  setTimeout(function () {
-    loading();
-  },1000)
 
   // Name 
   let textWrapper = document.querySelector('.home__name .home__name--letters');
@@ -46,7 +89,7 @@ function animation() {
       translateZ: 0,
       duration: 1500,
       easing: "easeOutExpo",
-      delay: (el, i) => 3500 + 50 * i
+      delay: (el, i) => 500 + 50 * i
   });
 
   anime.timeline({loop: false})
@@ -57,31 +100,20 @@ function animation() {
       translateZ: 0,
       duration: 1500,
       easing: "easeOutExpo",
-      delay: (el, i) => 3500 + 350 * i
+      delay: (el, i) => 500 + 350 * i
   });
+
 
   anime.timeline({loop: false})
   .add({
-      targets: '#compteur',
+      targets: '.home .img--warpper',
       opacity: 1,
       easing: "easeOutExpo",
-      duration: 100,
+      duration: 1000,
+      delay: 600,
   });
 }
 
-function loading() {
-  for (let i = 0; i < 101; i++) {
-    setTimeout ( function () {
-      const compteur = document.getElementById('compteur');
-      compteur.innerHTML = i;
-      if (i === 100) {
-        setTimeout(function () {
-          compteur.className = 'hidde';
-        },300)
-      }
-    }, i*15)
-  }
-}
 
 function presetsOpen() {
   let elm = document.getElementById('pack__reaval'),
@@ -124,20 +156,6 @@ function presetsClose() {
   },1000)
 }
 
-function loading() {
-  for (let i = 0; i < 101; i++) {
-    setTimeout ( function () {
-      const compteur = document.getElementById('compteur');
-      compteur.innerHTML = i;
-      if (i === 100) {
-        setTimeout(function () {
-          compteur.className = 'hidde';
-        },300)
-      }
-    }, i*15)
-  }
-}
-
 const threshold = .2
 const options = {
   root: null,
@@ -175,11 +193,14 @@ function paralax() {
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
   /*document.getElementById("scroll__indicator").style.top = scrolled + "%";*/
-  document.getElementById("paralax").style.transform  = `translateX(-50%) translate3d(0px, ${scrolled * 3 - 200}px, 0)`;
+  document.getElementById("paralax").style.transform  = `translateX(-50%) translate3d(0px, ${scrolled * 5 - 200}px, 0)`;
   /*if (isMobile = true) {
     //document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
   }*/
 }
+
+// Caroucel
+{
 
 let carousel = document.querySelector('.carousel');
 let cellCount = 6;
@@ -203,190 +224,128 @@ nextButton.addEventListener( 'click', function() {
   console.log(selectedIndex);
   rotateCarousel();
 });
-
-/* reavel on scroll
-
-// Cursor
-let mousex;
-let mousey;
-
-$(document).mousemove(function(e) {
-  $('.cursor').eq(0).css({left: e.clientX, top: e.clientY});
-  $('.rond').eq(0).css({left: e.clientX, top: e.clientY});
-  mousex = e.clientX;
-  mousey = e.clientY;
-});
-// Cursor Animation
-let timer;
-document.onmousemove = function() {
-  document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(0.3, 0.3)";
-  clearTimeout(timer);
-  timer = setTimeout(function() {
-    document.getElementById('cursor').style.transform = "translate(-50%,-50%) scale(1, 1)";
-  }, 50)
-};
-
-// Presets Button
-$(document).ready(function () {
-  $('#morePresets').click(function () {
-      $('#morePresets').toggleClass('active');
-      $('#presets').toggleClass('active');
-      if ($('#morePresets').hasClass('active')) {
-          document.body.style.overflowY = "hidden";
-    } else {
-          document.body.style.overflowY = "scroll";
-    }
-  })
-})
-
-// Ce lance quand la page a finit de charger
-const body = document.querySelector('body')
-
-window.onload = function () {
-  body.className = 'load';
-  animation();
 }
 
-// All Animation
-function animation() {
-  setTimeout(function () {
-    loading();
-  },1000)
-  // Name reveal
-  let textWrapper = document.querySelector('.home__name .home__letters');
-          
-  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// Smooth Scroll ( TUTORIEL/ARTICLE : https://tympanus.net/codrops/2019/07/10/how-to-add-smooth-scrolling-with-inner-image-animations-to-a-web-page/)
+{
+  // helper functions
+  const MathUtils = {
+      // map number x from range [a, b] to [c, d]
+      map: (x, a, b, c, d) => (x - a) * (d - c) / (b - a) + c,
+      // linear interpolation
+      lerp: (a, b, n) => (1 - n) * a + n * b
+  };
 
-  anime.timeline({loop: false})
-  .add({
-      targets: '.home__name .letter',
-      translateY: ["1.1em", 0],
-      translateX: ["0.55em", 0],
-      translateZ: 0,
-      rotateZ: [180, 0],
-      duration: 750,
-      easing: "easeOutExpo",
-      delay: (el, i) => 3500 + 50 * i
-  });
+  // body element
+  const body = document.body;
+  
+  // calculate the viewport size
+  let winsize;
+  const calcWinsize = () => winsize = {width: window.innerWidth, height: window.innerHeight};
+  calcWinsize();
+  // and recalculate on resize
+  window.addEventListener('resize', calcWinsize);
 
-  anime.timeline({loop: false})
-  .add({
-      targets: 'li',
-      translateX: ["2.1em", 0],
-      opacity: 1,
-      duration: 1500,
-      easing: "easeOutExpo",
-      delay: (el, i) => 3500 + 200 * i
-  });
+  // scroll position and update function
+  let docScroll;
+  const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
+  window.addEventListener('scroll', getPageYScroll);
 
 
-  // Citation reveal
-  let citationTextWrapper = document.querySelector('.home__citation .home__citation-letters');
-  citationTextWrapper.innerHTML = citationTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-  anime.timeline({loop: false})
-    .add({
-      targets: '.home__citation .letter',
-      scale: [0, 1],
-      duration: 1500,
-      elasticity: 600,
-      delay: (el, i) => 3500 + 600 + 45 * (i+1)
-    });
-
- 
-  anime.timeline({loop: false})
-    .add({
-      targets: '.presets-button-wrapper',
-      opacity: '1',
-      easing: "easeOutExpo",
-      duration: 2000,
-      delay: 3500 + 2000
-  });
-
-  anime.timeline({loop: false})
-    .add({
-      targets: '.scroll-down',
-      opacity: '1',
-      easing: "easeOutExpo",
-      duration: 1000,
-      delay: 3500 + 2500
-  });
-
-  // Scroll Down reveal
-  anime.timeline({loop: false})
-    .add({
-      targets: '.scroll__line',
-      height: '20vh',
-      easing: "easeOutExpo",
-      duration: 2000,
-      delay: 3500 + 1500
-  });
-
-  anime.timeline({loop: false})
-  .add({
-      targets: '.compteur',
-      opacity: 1,
-      easing: "easeOutExpo",
-      duration: 100,
-  });
-}
-
-// Compteur animation
-function loading() {
-  for (let i = 0; i < 101; i++) {
-    setTimeout ( function () {
-      const compteur = document.getElementById('compteur');
-      compteur.innerHTML = i;
-      if (i === 100) {
-        setTimeout(function () {
-          compteur.className = 'hidde';
-        },300)
+  // SmoothScroll
+  class SmoothScroll {
+      constructor() {
+          // the <main> element
+          this.DOM = {main: document.querySelector('main')};
+          // the scrollable element
+          // we translate this element when scrolling (y-axis)
+          this.DOM.scrollable = this.DOM.main.querySelector('div[data-scroll]');
+          // the items on the page
+          this.items = [];
+          [...this.DOM.main.querySelectorAll('.content > .item')].forEach(item => this.items.push(new Item(item)));
+          // here we define which property will change as we scroll the page
+          // in this case we will be translating on the y-axis
+          // we interpolate between the previous and current value to achieve the smooth scrolling effect
+          this.renderedStyles = {
+              translationY: {
+                  // interpolated value
+                  previous: 0, 
+                  // current value
+                  current: 0, 
+                  // amount to interpolate
+                  ease: 0.1,
+                  // current value setter
+                  // in this case the value of the translation will be the same like the document scroll
+                  setValue: () => docScroll
+              }
+          };
+          // set the body's height
+          this.setSize();
+          // set the initial values
+          this.update();
+          // the <main> element's style needs to be modified
+          this.style();
+          // init/bind events
+          this.initEvents();
+          // start the render loop
+          requestAnimationFrame(() => this.render());
       }
-    }, i*15)
+      update() {
+          // sets the initial value (no interpolation) - translate the scroll value
+          for (const key in this.renderedStyles ) {
+              this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key].setValue();
+          }   
+          // translate the scrollable element
+          this.layout();
+      }
+      layout() {
+          // translates the scrollable element
+          this.DOM.scrollable.style.transform = `translate3d(0,${-1*this.renderedStyles.translationY.previous}px,0)`;
+      }
+      setSize() {
+          // set the heigh of the body in order to keep the scrollbar on the page
+          body.style.height = `${this.DOM.scrollable.scrollHeight}px`;
+      }
+      style() {
+          // the <main> needs to "stick" to the screen and not scroll
+          // for that we set it to position fixed and overflow hidden 
+          this.DOM.main.style.position = 'fixed';
+          this.DOM.main.style.width = this.DOM.main.style.height = '100%';
+          this.DOM.main.style.top = this.DOM.main.style.left = 0;
+          this.DOM.main.style.overflow = 'hidden';
+      }
+      initEvents() {
+          // on resize reset the body's height
+          window.addEventListener('resize', () => this.setSize());
+      }
+      render() {
+          // update the current and interpolated values
+          for (const key in this.renderedStyles ) {
+              this.renderedStyles[key].current = this.renderedStyles[key].setValue();
+              this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].ease);
+          }
+          // and translate the scrollable element
+          this.layout();
+          
+          // for every item
+          for (const item of this.items) {
+              // if the item is inside the viewport call it's render function
+              // this will update the item's inner image translation, based on the document scroll value and the item's position on the viewport
+              if ( item.isVisible ) {
+                  item.render();
+              }
+          }
+          
+          // loop..
+          requestAnimationFrame(() => this.render());
+      }
   }
+
+  /***********************************/
+  /********** Preload stuff **********/
+
+  getPageYScroll();
+  // Initialize the Smooth Scrolling
+  new SmoothScroll();
+  
 }
-
-// Scoll indicator
-window.onscroll = function() {
-  scrollIndicator()
-};
-
-let isMobile = false;
-
-function scrollIndicator() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("scroll__indicator").style.top = scrolled + "%";
-  if (isMobile = true) {
-    //document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
-  }
-}
-
-// Smooth Scroll Page
-const bodyScroll = document.body,
-    scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
-    height = scrollWrap.getBoundingClientRect().height - 1,
-    speed = 0.04;
-let offset = 0;
-bodyScroll.style.height = Math.floor(height) + "px";
-
-function desktopScroll() {
-  offset += (window.pageYOffset - offset) * speed;
-  offset = +offset.toFixed(2);
-  let scroll = `translate3d(0px, -${offset}px, 0)`;
-  //document.getElementById("presets").style.transform  = `translate3d(0px, ${offset * -0.5}px, 0)`;
-  scrollWrap.style.transform = scroll;
-  callScroll = requestAnimationFrame(desktopScroll, 40);
-}
-
-// Mobile or Desktop ?
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-  document.getElementById('smooth-scroll-wrapper').style.position = 'relative';
-  isMobile = true;
-}else {
-
-  desktopScroll()
-}
-
-*/

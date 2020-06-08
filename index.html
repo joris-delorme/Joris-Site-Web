@@ -15,15 +15,15 @@
 
 </head>
 
-<body>
-    <div class="main">
+<body class="is-loading">
 
+    <main>
         <div class="compteur--container">
-            <div id="compteur"></div>
+            <div id="compteur">0</div>
         </div>
 
         <div class="grid">
-            <div class="smooth--scrool">
+            <div class="smooth-scroll" data-scroll>
 
                 <section>
                     <div class="home">
@@ -32,9 +32,9 @@
                                 <span class="home__name--letters">MON JOURNAL</span>
                             </h1>
                             <div class="row anime--content">
-                                <h3 class="anime">Diariste :</br>Joris Delorme </h3>
-                                <h3 class="center anime">Ecrit en langage de</br>programmation Web</h3>
-                                <h3 class="right anime">Traduit en français</br>par votre navigateur</h3>
+                                <h3 class="anime">Diariste :<br />Joris Delorme </h3>
+                                <h3 class="center anime">Ecrit en langage de<br />programmation Web</h3>
+                                <h3 class="right anime">Traduit en français<br />par votre navigateur</h3>
                             </div>
                         </header>
 
@@ -235,8 +235,7 @@
 
             </div>
         </div>
-    </div>
-
+    </main>
     <!-- Js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="app.js"></script>

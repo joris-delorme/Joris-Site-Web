@@ -10,7 +10,6 @@
 }
 
 .compteur--container #compteur {
-  opacity: 0;
   font-size: 17px;
   font-weight: 100;
   color: #ffe6c2;
@@ -190,8 +189,25 @@ body {
   color: #FFE6C2;
   background-color: #204039;
   overflow-y: scroll;
-  scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.smooth--scroll {
+  will-change: transform;
+}
+
+.is-loading {
+  opacity: 0;
+}
+
+.is-loaded {
+  opacity: 1;
 }
 
 body::-webkit-scrollbar {
@@ -368,11 +384,18 @@ section {
   white-space: nowrap;
   font-size: 17vw;
   line-height: 20vw;
+  -webkit-transform: translateY(-1.1em);
+          transform: translateY(-1.1em);
 }
 
 .home .anime--content {
   overflow: hidden;
   height: 150%;
+}
+
+.home .anime--content .anime {
+  -webkit-transform: translateY(-5.1em);
+          transform: translateY(-5.1em);
 }
 
 .home .img {
@@ -383,6 +406,7 @@ section {
 }
 
 .home .img .img--warpper {
+  opacity: 0;
   background-image: url(../assets/images/home.jpg);
   position: absolute;
   width: 100%;
