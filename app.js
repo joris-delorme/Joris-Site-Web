@@ -225,7 +225,7 @@ nextButton.addEventListener( 'click', function() {
   rotateCarousel();
 });
 }
-
+/*
 // Smooth Scroll ( TUTORIEL/ARTICLE : https://tympanus.net/codrops/2019/07/10/how-to-add-smooth-scrolling-with-inner-image-animations-to-a-web-page/)
 {
   // helper functions
@@ -343,9 +343,9 @@ nextButton.addEventListener( 'click', function() {
 
   /***********************************/
   /********** Preload stuff **********/
-
+/*
   getPageYScroll();
   // Initialize the Smooth Scrolling
   new SmoothScroll();
   
-}
+}*/
