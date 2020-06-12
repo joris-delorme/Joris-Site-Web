@@ -1106,8 +1106,9 @@ h1, h2 {
 
 .is-m {
   font-size: 4vw;
-  font-family: 'Bigilla';
+  font-family: 'BigillaBold';
   letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .is-xs {
