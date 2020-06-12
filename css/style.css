@@ -161,6 +161,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;*/
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-rendering: geometricPrecision;
 }
 
 body {
@@ -341,8 +342,8 @@ section .line {
 }
 
 .home .home__name .home__name--letters {
-  line-height: 22.7vw;
-  font-size: 19.7vw;
+  line-height: 24.7vw;
+  font-size: 24.7vw;
 }
 
 .home .home__name .home__name--letters .letter {

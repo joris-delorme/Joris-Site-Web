@@ -42,7 +42,7 @@ function compteur() {
 
 function animation () {
   gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 2, delay: 1, ease:"expo.out"})
-  gsap.to('.letter', { duration: 1, y: 0, delay: 1.5, stagger: 0.04 })
+  gsap.to('.letter', { duration: 1.5, y: 0, delay: 1, stagger: 0.04,  ease:"slow (0.3, 0.7, false)"})
   gsap.to('nav span', {y: 0, duration: 1, ease:"slow (0.3, 0.7, false)", delay: 1.3, stagger: 0.2})
 }
 
