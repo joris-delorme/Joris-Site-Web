@@ -384,10 +384,10 @@ section .line {
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-  -webkit-transition: opacity .2s ease, -webkit-filter 1.6s ease .1s;
-  transition: opacity .2s ease, -webkit-filter 1.6s ease .1s;
-  transition: opacity .2s ease, filter 1.6s ease .1s;
-  transition: opacity .2s ease, filter 1.6s ease .1s, -webkit-filter 1.6s ease .1s;
+  -webkit-transition: opacity .2s ease, -webkit-filter 1.6s ease .4s;
+  transition: opacity .2s ease, -webkit-filter 1.6s ease .4s;
+  transition: opacity .2s ease, filter 1.6s ease .4s;
+  transition: opacity .2s ease, filter 1.6s ease .4s, -webkit-filter 1.6s ease .4s;
 }
 
 .presets {
@@ -410,7 +410,7 @@ section .line {
 .presets .pack {
   width: 100%;
   background-color: #FFE6C2;
-  margin-top: -6vw;
+  margin-top: -10vw;
 }
 
 .presets .pack .pack__container {
