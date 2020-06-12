@@ -397,7 +397,6 @@ section .line {
 .presets h2 {
   font-size: 17.1vw !important;
   z-index: -99;
-  line-height: 22.5vw;
 }
 
 .presets .line {
@@ -411,7 +410,7 @@ section .line {
 .presets .pack {
   width: 100%;
   background-color: #FFE6C2;
-  margin-top: -6vw;
+  margin-top: -8vw;
 }
 
 .presets .pack .pack__container {
