@@ -1,0 +1,119 @@
+// Import 
+
+@font-face {
+    font-family: "BigillaBold";
+
+    src: url("../assets/fonts/Bigilla-Bold.woff") format("woff"); /* Modern Browsers */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bigilla";
+
+    src: url("../assets/fonts/Bigilla.woff") format("woff"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+// alignement
+.al-l {
+    text-align: left;
+}
+.al-c {
+    text-align: center;
+}
+.al-r {
+    text-align: right;
+}
+
+// Taille / Type
+
+h1 span, nav span {
+    display: inline-block;
+}
+
+h2 .bl {
+    display: block;
+}
+
+h1, h2 {
+    font-family: BigillaBold;
+    white-space: nowrap;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.f-s {
+    font-family: 'lato',sans-serif!important;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.is-m {
+    font-size: 4vw;
+    font-family: 'Bigilla';
+    letter-spacing: 2px;
+}
+.is-xs {
+    font-size: 3vw;
+}
+
+.gray {
+    color: $troisieme;
+}
+
+h4, h5 {
+    color: $secondary;
+}
+
+.m-t {
+    margin-top: 7vw;
+}
+
+.sup {
+    position: relative;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 3px solid;
+    }
+}
+
+// Parametre
+
+html {
+    font: 18px/1.3 'lato',sans-serif;
+}
+
+@media screen and (max-width: 1440px) {
+    html {
+        font: 18px/1.3 'lato',sans-serif;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    html {
+        font: 12px/1.3 'lato',sans-serif;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font: 9px/1.3 'lato',sans-serif;
+    }
+
+    .is-xs {
+        font-size: 4vw;
+    }
+
+    .is-m {
+        font-size: 5.5vw;
+    }
+}

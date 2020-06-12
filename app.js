@@ -31,8 +31,9 @@ function compteur() {
         if (i === 100) {
           gsap.to('#compteur', {y: 23, duration: 1})
           setTimeout(function () {
+            document.querySelector('.home').classList.add('animeIn');
             animation()
-          },1500)
+          },500)
         }
       }, i*15)
     }
@@ -40,9 +41,9 @@ function compteur() {
 }
 
 function animation () {
-  gsap.to('.home .img--warpper', {opacity:1, scale: 1, rotation: 0, y:0, duration: 2, ease:"expo.out"})
-  gsap.to('.letter', { duration:1, y: 0, delay: 0.5, stagger: 0.04 })
-  gsap.to('.s-t', {y: 0, duration: 1, ease:"slow (0.3, 0.7, false)", delay: 0.8, stagger: 0.2})
+  gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 2, delay: 1, ease:"expo.out"})
+  gsap.to('.letter', { duration: 1, y: 0, delay: 1.5, stagger: 0.04 })
+  gsap.to('nav span', {y: 0, duration: 1, ease:"slow (0.3, 0.7, false)", delay: 1.3, stagger: 0.2})
 }
 
 function seize() {
