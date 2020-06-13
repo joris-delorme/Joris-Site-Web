@@ -41,7 +41,7 @@ function compteur() {
 }
 
 function animation () {
-  gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 2, delay: 1, ease:"expo.out"})
+  gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 1.5, delay: 1, ease:"expo.out"})
   gsap.to('.letter', { duration: 1.5, y: 0, delay: 1, stagger: 0.04,  ease:"slow (0.3, 0.7, false)"})
   gsap.to('nav span', {y: 0, duration: 1, ease:"slow (0.3, 0.7, false)", delay: 1.3, stagger: 0.2})
 }
@@ -56,18 +56,6 @@ function seize() {
   }
 }
 
-function rev() {
-  let nbr = 0;
-  let revWrapper;
-
-  for (let i = 1; i < 4; i++){
-    nbr = nbr + 1;
-    revWrapper = document.querySelector('.textRev-'+nbr+' .text--letters');
-    revWrapper.innerHTML = revWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-  } 
-}
-
-rev()
 // Name 
 let textWrapper = document.querySelector('.home__name .home__name--letters');
 
@@ -133,39 +121,27 @@ const handleIntersect = function (entries, observer) {
 }
 */
 
-const lineReveal = element => {
-  gsap.to(element, 1,{
-    opacity: 1,
-  })
-}
 
-const images = document.querySelectorAll('.reveal');
-
-observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
-      if (entry.target.classList.contains('line')) {
-        entry.target.classList.add('revael-line')
-        lineReveal(".line")
-        observer.unobserve(entry.target);
-      }
+let observer = new IntersectionObserver(function (observables) {
+  observables.forEach(function (observable) {
+    // L'élément devient visible
+    if (observable.intersectionRatio > 0.5) {
+      observable.target.classList.add('reveal--visible')
+      observer.unobserve(observable.target)
     }
-  });
-});
-
-
-
-images.forEach(image => {
-  observer.observe(image);
-});
-/*
-window.addEventListener("DOMContentLoaded", function () {
-  const observer = new IntersectionObserver(handleIntersect, options)
-  const targets = document.querySelectorAll('.reveal')
-  targets.forEach(function (target) {
-    observer.observe(target)
   })
-})*/
+}, {
+  threshold: [0.5]
+});
+
+// On observe nos éléments
+let items = document.querySelectorAll('.reveal')
+items.forEach(function (item) {
+  observer.observe(item)
+})
+
+
+
 
 /*
 // Scoll indicator
