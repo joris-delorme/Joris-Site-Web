@@ -70,8 +70,6 @@
 
 .line--anim .up .line.reveal--visible {
   width: 24vw;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
 }
 
 .line--anim .down .line.reveal--visible {

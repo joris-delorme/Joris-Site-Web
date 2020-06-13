@@ -141,7 +141,27 @@ items.forEach(function (item) {
 })
 
 
+// Paralax 
 
+{
+// Scoll indicator
+window.onscroll = function() {
+  paralax()
+};
+
+let isMobile = false;
+
+function paralax() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("paralax").style.transform  = `translateX(-50%) translate3d(0px, ${scrolled * 7 - 300}px, 0)`;
+  /*if (isMobile = true) {
+    document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
+  }*/
+}
+
+}
 
 /*
 // Scoll indicator
