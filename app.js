@@ -53,6 +53,11 @@ function seize() {
   if (w < h) {
     const r  = document.getElementById('pack--isRes')
     r.classList.add('res');
+    const e = document.querySelector('.instagram')
+    e.classList.remove('row')
+    e.classList.add('column')
+    const b = document.querySelector('body')
+    b.classList.add('res')
   }
 }
 

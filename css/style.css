@@ -730,7 +730,7 @@ body::-webkit-scrollbar {
 }
 
 .youtube {
-  margin-top: 10vw;
+  margin-top: 9vw;
 }
 
 .youtube .title h2 {
@@ -778,7 +778,7 @@ body::-webkit-scrollbar {
 }
 
 .portfolio {
-  margin-top: 10vw;
+  margin-top: 5vw;
 }
 
 .portfolio h1 {
@@ -932,7 +932,6 @@ body::-webkit-scrollbar {
   height: 60vw;
   width: 60vw;
   position: relative;
-  margin: 5vw 0;
 }
 
 .contact .instagram .story .img {
