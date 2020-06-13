@@ -76,6 +76,10 @@
   width: 58vw;
 }
 
+.line--anim.separation.reveal--visible {
+  width: 100%;
+}
+
 @font-face {
   font-family: 'title';
   src: url("../assets/fonts/title.woff") format("woff");
@@ -151,12 +155,6 @@ body::-webkit-scrollbar {
 .section {
   margin-top: 4vw;
   position: relative;
-}
-
-section .line {
-  -webkit-transform-origin: 0%;
-          transform-origin: 0%;
-  opacity: 0;
 }
 
 .line {
@@ -904,9 +902,15 @@ section .line {
 }
 
 .contact .separation {
-  width: 100%;
+  width: 0;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   height: 2px;
-  margin: 11vw 0;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  margin: 9vw 0;
 }
 
 .contact .media h2 {
@@ -960,25 +964,6 @@ section .line {
   margin-bottom: 15px;
 }
 
-/*
-
-*[class^="textRev-"] {
-    overflow: hidden;
-
-    .text--letters {
-        line-height: normal;
-        font-size: 25vw;
-
-            .letter {
-                transform-origin: 0 100%;
-                transform: translateY(1.1em);
-                display: inline-block;
-                font-family: 'title';
-                white-space: nowrap;
-                font-size: 25vw;
-        }
-    }
-}*/
 @font-face {
   font-family: "BigillaBold";
   src: url("../assets/fonts/Bigilla-Bold.woff") format("woff");
