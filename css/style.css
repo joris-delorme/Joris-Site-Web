@@ -40,6 +40,62 @@
   }
 }
 
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 0,200;
+  }
+  100% {
+    stroke-dasharray: 130,200;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 0,200;
+  }
+  100% {
+    stroke-dasharray: 130,200;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 90%;
+    height: 90%;
+  }
+  75% {
+    width: 60%;
+    height: 60%;
+  }
+  100% {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 90%;
+    height: 90%;
+  }
+  75% {
+    width: 60%;
+    height: 60%;
+  }
+  100% {
+    width: 70%;
+    height: 70%;
+  }
+}
+
 .text--anim .reveal--visible span {
   -webkit-transform: translateY(0) !important;
           transform: translateY(0) !important;
@@ -78,6 +134,26 @@
 
 .line--anim.separation.reveal--visible {
   width: 100%;
+}
+
+.story.reveal--visible .img {
+  -webkit-animation: bounce 1s ease-in-out forwards;
+          animation: bounce 1s ease-in-out forwards;
+}
+
+.story.reveal--visible .circle {
+  stroke-dasharray: 0,200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 1s 1s cubic-bezier(0.76, -0.01, 0.28, 0.98) forwards;
+          animation: dash 1s 1s cubic-bezier(0.76, -0.01, 0.28, 0.98) forwards;
+}
+
+.circle {
+  stroke-dasharray: 0,200;
+  stroke-dashoffset: 0;
+  -webkit-transform: translateY(-70%) rotate(90deg);
+          transform: translateY(-70%) rotate(90deg);
+  position: absolute;
 }
 
 @font-face {
@@ -853,21 +929,22 @@ body::-webkit-scrollbar {
 }
 
 .contact .instagram .story {
-  height: 50vw;
-  width: 50vw;
-  border: solid 10px #FFE6C2;
-  border-radius: 100%;
+  height: 60vw;
+  width: 60vw;
+  position: relative;
   margin: 5vw 0;
 }
 
 .contact .instagram .story .img {
-  width: 90%;
-  height: 90%;
+  width: 0;
+  height: 0;
   position: relative;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: all 1s cubic-bezier(0, 1, 0.85, 1.4);
+  transition: all 1s cubic-bezier(0, 1, 0.85, 1.4);
 }
 
 .contact .instagram .story .img--warpper {
