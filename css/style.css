@@ -363,7 +363,7 @@ body::-webkit-scrollbar {
 
 .home .home__name .home__name--letters {
   line-height: 24.7vw;
-  font-size: 24.7vw;
+  font-size: 22.7vw;
 }
 
 .home .home__name .home__name--letters .letter {
@@ -632,7 +632,6 @@ body::-webkit-scrollbar {
   top: 50%;
   letter-spacing: 2px;
   font-size: 5vw;
-  font-family: Bigilla;
   text-transform: uppercase;
   color: #212121;
 }
@@ -1052,7 +1051,8 @@ body::-webkit-scrollbar {
   font-family: 'Lato',sans-serif;
   letter-spacing: 2px;
   font-size: 2vw;
-  height: 5vh;
+  height: 5vw;
+  margin-bottom: 5vw;
 }
 
 @font-face {
@@ -1170,5 +1170,10 @@ html {
   .is-m {
     font-size: 5.5vw;
   }
+}
+
+.button {
+  font-family: BigillaBold;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
