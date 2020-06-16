@@ -5,14 +5,16 @@ window.addEventListener('load', function () {
   seize();
 })
 
-if (!window.requestAnimationFrame) {
-  window. requestAnimationFrame = function (fn) {
-      var timer = 16.66; // 60 fps
-      setTimeout(fn,timer);
+let isMobile = false; //initiate as false
+// device detection
+
+function _isMobile() {
+  if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+  || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+  isMobile = true;
   }
 }
-
-
+_isMobile()
 
 // Animation
 
@@ -29,10 +31,12 @@ function compteur() {
       setTimeout ( function () {
         compteur.innerHTML = i;
         if (i === 100) {
-          gsap.to('#compteur', {y: 23, duration: 1})
           setTimeout(function () {
-            document.querySelector('.home').classList.add('animeIn');
+            gsap.to('#compteur', {y: 23, duration: 1})
+            setTimeout(() => {
+              document.querySelector('.home').classList.add('animeIn');
             animation()
+            }, 700);
           },500)
         }
       }, i*15)
@@ -41,9 +45,9 @@ function compteur() {
 }
 
 function animation () {
-  gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 1.5, delay: 1, ease:"expo.out"})
-  gsap.to('.letter', { duration: 1.5, y: 0, delay: 1, stagger: 0.04,  ease:"slow (0.3, 0.7, false)"})
-  gsap.to('nav span', {y: 0, duration: 1, ease:"slow (0.3, 0.7, false)", delay: 1.3, stagger: 0.2})
+  gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 1.5, delay: 1, ease:"power4.inOut"})
+  gsap.to('.letter', { duration: 2.5, y: 0, delay: 1, stagger: 0.05,  ease: "power4.inOut"})
+  gsap.to('nav span', {y: 0, duration: 0.5, ease:"slow (0.3, 0.7, false)", delay: 1.8, stagger: 0.1})
 }
 
 function seize() {
@@ -109,24 +113,6 @@ function presetsClose() {
   },1000)
 }
 
-/*
-const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold = .2
-}
-
-const handleIntersect = function (entries, observer) {
-  entries.forEach(function (entry) {
-    if (entry.intersectionRatio > threshold) {
-      entry.target.classList.add('reveal-visible')
-      observer.unobserve(entry.target)
-    }
-  })
-}
-*/
-
-
 let observer = new IntersectionObserver(function (observables) {
   observables.forEach(function (observable) {
     // L'élément devient visible
@@ -146,48 +132,8 @@ items.forEach(function (item) {
 })
 
 
-// Paralax 
-
-{
-// Scoll indicator
-window.onscroll = function() {
-  paralax()
-};
-
-let isMobile = false;
-
-function paralax() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("paralax").style.transform  = `translateX(-50%) translate3d(0px, ${scrolled * 7 - 300}px, 0)`;
-  /*if (isMobile = true) {
-    document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
-  }*/
-}
-
-}
-
-/*
-// Scoll indicator
-window.onscroll = function() {
-  paralax()
-};
-
-let isMobile = false;
-
-function paralax() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  /*document.getElementById("scroll__indicator").style.top = scrolled + "%";*/
-  //document.getElementById("paralax").style.transform  = `translateX(-50%) translate3d(0px, ${scrolled * 5 - 200}px, 0)`;
-  /*if (isMobile = true) {
-    //document.getElementById("presets").style.transform  = `translate3d(0px, ${scrolled * -4}px, 0)`;
-  }*/
-//}
-
 // Caroucel
+
 {
 
 let carousel = document.querySelector('.carousel');
@@ -214,4 +160,78 @@ nextButton.addEventListener( 'click', function() {
 });
 }
 
-// Smooth Scroll ( TUTORIEL/ARTICLE : https://tympanus.net/codrops/2019/07/10/how-to-add-smooth-scrolling-with-inner-image-animations-to-a-web-page/)
+// Smooth scroll
+if (!isMobile) {
+  {
+  let html = document.documentElement;
+  let body = document.body;
+
+  body.classList.add('scroll-y')
+
+  let scroller = {
+      target: document.querySelector(".smooth-scroll"),
+      ease: 0.07, // <= scroll speed
+      endY: 0,
+      y: 0,
+      resizeRequest: 1,
+      scrollRequest: 0,
+  };
+
+  let requestId = null;
+
+  TweenLite.set(scroller.target, {
+      force3D: true
+  });
+
+  window.addEventListener("load", onLoad);
+
+  function onLoad() {    
+      updateScroller();  
+      window.focus();
+      window.addEventListener("resize", onResize);
+      document.addEventListener("wheel", onScroll); 
+  }
+
+  function updateScroller() {
+
+  let resized = scroller.resizeRequest > 0;
+      
+  if (resized) {    
+      let height = scroller.target.clientHeight;
+      body.style.height = height + "px";
+      scroller.resizeRequest = 0;
+  }
+          
+  let scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
+
+  scroller.endY = scrollY;
+  scroller.y += (scrollY - scroller.y) * scroller.ease;
+
+  if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+      scroller.y = scrollY;
+      scroller.scrollRequest = 0;
+  }
+      
+  TweenLite.set(scroller.target, { 
+      y: -scroller.y
+  });
+      
+  requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
+  }
+
+  function onScroll() {
+  scroller.scrollRequest++;
+    if (!requestId) {
+        requestId = requestAnimationFrame(updateScroller);
+    }
+  }
+
+  function onResize() {
+  scroller.resizeRequest++;
+    if (!requestId) {
+        requestId = requestAnimationFrame(updateScroller);
+    }
+  }
+  }
+
+}
