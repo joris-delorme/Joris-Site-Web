@@ -5,6 +5,18 @@ window.addEventListener('load', function () {
   seize();
 })
 
+// shim layer with setTimeout fallback
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          window.oRequestAnimationFrame      ||
+          window.msRequestAnimationFrame     ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
 let isMobile = false; //initiate as false
 // device detection
 
@@ -170,12 +182,17 @@ if (!isMobile) {
 
   let scroller = {
       target: document.querySelector(".smooth-scroll"),
+      parallax: document.querySelectorAll('.parallax'),
+      parallaxInvert: document.querySelectorAll('.parallaxInvert'),
       ease: 0.07, // <= scroll speed
       endY: 0,
       y: 0,
       resizeRequest: 1,
       scrollRequest: 0,
   };
+
+  console.log(scroller.target);
+  
 
   let requestId = null;
 
@@ -194,29 +211,37 @@ if (!isMobile) {
 
   function updateScroller() {
 
-  let resized = scroller.resizeRequest > 0;
-      
-  if (resized) {    
-      let height = scroller.target.clientHeight;
-      body.style.height = height + "px";
-      scroller.resizeRequest = 0;
-  }
-          
-  let scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
+    let resized = scroller.resizeRequest > 0;
+        
+    if (resized) {    
+        let height = scroller.target.clientHeight;
+        body.style.height = height + "px";
+        scroller.resizeRequest = 0;
+    }
+            
+    let scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
 
-  scroller.endY = scrollY;
-  scroller.y += (scrollY - scroller.y) * scroller.ease;
+    scroller.endY = scrollY;
+    scroller.y += (scrollY - scroller.y) * scroller.ease;
 
-  if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
-      scroller.y = scrollY;
-      scroller.scrollRequest = 0;
-  }
-      
-  TweenLite.set(scroller.target, { 
-      y: -scroller.y
+    if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+        scroller.y = scrollY;
+        scroller.scrollRequest = 0;
+    }
+        
+    TweenLite.set(scroller.target, { 
+        y: -scroller.y
+    });
+
+    TweenLite.set(scroller.parallax, { 
+      y: -scroller.y / 10
   });
-      
-  requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
+
+    TweenLite.set(scroller.parallaxInvert, { 
+      y: scroller.y / 4 - 1000
+  });
+        
+    requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
   }
 
   function onScroll() {
@@ -233,5 +258,21 @@ if (!isMobile) {
     }
   }
   }
+}
 
+window.onscroll = function() {
+  scrollIndicator()
+};
+
+function scrollIndicator() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  console.log(winScroll);
+  
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  console.log(height);
+  
+  let scrolled = (winScroll / height) * 100;
+  console.log(scrolled);
+  
+  
 }

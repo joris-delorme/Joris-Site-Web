@@ -336,24 +336,24 @@ body::-webkit-scrollbar {
   }
 }
 
-@media screen and (max-width: 660px) {
-  h3, h5 {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  h3, h5 {
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
-}
-
-.home.animeIn .img .img--warpper {
+.home.animeIn .home__hero .img .img--warpper {
   -webkit-filter: invert(0);
           filter: invert(0);
   opacity: 1;
+}
+
+.home.animeIn .home__hero .hero__text h2 span {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.home.animeIn .home__hero .hero__text h2 .h-letter {
+  height: 25vw;
+}
+
+.home.animeIn .home__hero .hero__text h2 .h-letter span {
+  -webkit-transform: translate3D(0, 0, 0);
+          transform: translate3D(0, 0, 0);
 }
 
 .home .home__name {
@@ -383,14 +383,18 @@ body::-webkit-scrollbar {
           transform: translateY(-5.1em);
 }
 
-.home .img {
+.home .home__hero {
+  position: relative;
+}
+
+.home .home__hero .img {
   position: relative;
   width: 100%;
   height: 145vw;
   margin-top: 5vw;
 }
 
-.home .img .img--warpper {
+.home .home__hero .img .img--warpper {
   -webkit-filter: invert(1);
           filter: invert(1);
   opacity: 0;
@@ -409,6 +413,53 @@ body::-webkit-scrollbar {
   transition: opacity 0.5s ease, -webkit-filter 1.6s ease 0.5s;
   transition: opacity 0.5s ease, filter 1.6s ease 0.5s;
   transition: opacity 0.5s ease, filter 1.6s ease 0.5s, -webkit-filter 1.6s ease 0.5s;
+}
+
+.home .home__hero .hero__text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 145vw;
+}
+
+.home .home__hero .hero__text .mr-2 {
+  margin-top: 20vw;
+}
+
+.home .home__hero .hero__text .mr-1 {
+  margin: 0 3vw;
+}
+
+.home .home__hero .hero__text .mr-3 {
+  margin-top: 10vw;
+}
+
+.home .home__hero .hero__text h2 {
+  font-size: 24vw;
+  white-space: normal;
+}
+
+.home .home__hero .hero__text h2 span {
+  line-height: 21vw;
+  -webkit-transform: translate3D(0, -20vw, 0);
+          transform: translate3D(0, -20vw, 0);
+  -webkit-transition: -webkit-transform 1s 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1s 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s 1.8s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1s 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.home .home__hero .hero__text h2 .h-letter {
+  height: 25vw;
+}
+
+.home .home__hero .hero__text h2 .h-letter span {
+  -webkit-transform: translate3D(0, -25vw, 0);
+          transform: translate3D(0, -25vw, 0);
+}
+
+.home .home__hero .hero__text .content {
+  overflow: hidden;
 }
 
 .presets {
@@ -1169,6 +1220,20 @@ html {
   }
   .is-m {
     font-size: 5.5vw;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  h3, h5 {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  h3, h5 {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 }
 
