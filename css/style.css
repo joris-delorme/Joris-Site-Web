@@ -151,8 +151,8 @@
 .circle {
   stroke-dasharray: 0,200;
   stroke-dashoffset: 0;
-  -webkit-transform: translateY(-70%) rotate(90deg);
-          transform: translateY(-70%) rotate(90deg);
+  -webkit-transform: translate(-4%, -81%) rotate(90deg);
+          transform: translate(-4%, -81%) rotate(90deg);
   position: absolute;
 }
 
@@ -275,64 +275,6 @@ body::-webkit-scrollbar {
 @media screen and (min-width: 1440px) {
   h3, h5 {
     font-size: 1.5vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  h3, h5 {
-    font-size: 18px;
-    letter-spacing: 2px;
-  }
-  .about--me .about--me__text h4 {
-    font-size: 5vw !important;
-  }
-  .about--me .about--me__text h5 {
-    font-size: 4vw !important;
-  }
-  #pack--isRes.res .pack__reaval.active {
-    height: 89.1%;
-  }
-  #pack--isRes.res .pack__reaval.close {
-    height: 0%;
-  }
-  #pack--isRes.res .pack__img--container {
-    height: 65vw;
-  }
-  #pack--isRes.res .pack__reaval .pack__container {
-    height: 100%;
-    padding: 2vw 0;
-  }
-  #pack--isRes.res .pack__reaval .pack__container .column {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  #pack--isRes.res .pack__reaval .pack__container > * {
-    -webkit-box-flex: 1;
-        -ms-flex: auto;
-            flex: auto;
-  }
-  #pack--isRes.res .pack__reaval .pack__container .pack__content {
-    height: 100%;
-  }
-  #pack--isRes.res .pack__reaval .pack__container .pack__content .img--space {
-    height: 45vw;
-  }
-  #pack--isRes.res .pack__reaval .pack__container .pack__content p {
-    font-size: 3vw;
-  }
-  #pack--isRes.res .pack__reaval .pack__container .pack__content .button {
-    width: 37vw;
-    height: 10vw;
-  }
-  #pack--isRes.res .pack__reaval .pack__container .pack__content .button p {
-    font-size: 6vw;
-  }
-  #pack--isRes.res #pack__img {
-    display: none;
-  }
-  #pack--isRes.res #pack__img--res {
-    display: block;
-    margin: 10vw 0;
   }
 }
 
@@ -851,7 +793,7 @@ body::-webkit-scrollbar {
 }
 
 .portfolio .portfolio__content {
-  margin: 7vw 0;
+  margin: 5vw 0;
   width: 100%;
 }
 
@@ -887,11 +829,11 @@ body::-webkit-scrollbar {
 }
 
 .portfolio .portfolio__content .carousel [class^="cell img-"] {
-  width: 50vw;
-  height: 50vw;
+  width: 35vw;
+  height: 35vw;
   position: absolute;
-  left: 5vw;
-  top: 5vw;
+  left: 12.5vw;
+  top: 12.5vw;
 }
 
 .portfolio .portfolio__content .carousel .img-1 .img--warpper {
@@ -918,37 +860,37 @@ body::-webkit-scrollbar {
 }
 
 .portfolio .portfolio__content .cell:nth-child(2) {
-  -webkit-transform: rotateY(60deg) translateZ(-51.961vw);
-          transform: rotateY(60deg) translateZ(-51.961vw);
+  -webkit-transform: rotateY(60deg) translateZ(-60vw);
+          transform: rotateY(60deg) translateZ(-60vw);
 }
 
 .portfolio .portfolio__content .cell:nth-child(3) {
-  -webkit-transform: rotateY(120deg) translateZ(-51.961vw);
-          transform: rotateY(120deg) translateZ(-51.961vw);
+  -webkit-transform: rotateY(120deg) translateZ(-60vw);
+          transform: rotateY(120deg) translateZ(-60vw);
 }
 
 .portfolio .portfolio__content .cell:nth-child(4) {
-  -webkit-transform: rotateY(180deg) translateZ(-51.961vw);
-          transform: rotateY(180deg) translateZ(-51.961vw);
+  -webkit-transform: rotateY(180deg) translateZ(-60vw);
+          transform: rotateY(180deg) translateZ(-60vw);
 }
 
 .portfolio .portfolio__content .cell:nth-child(5) {
-  -webkit-transform: rotateY(240deg) translateZ(-51.961vw);
-          transform: rotateY(240deg) translateZ(-51.961vw);
+  -webkit-transform: rotateY(240deg) translateZ(-60vw);
+          transform: rotateY(240deg) translateZ(-60vw);
 }
 
 .portfolio .portfolio__content .cell:nth-child(6) {
-  -webkit-transform: rotateY(300deg) translateZ(-51.961vw);
-          transform: rotateY(300deg) translateZ(-51.961vw);
+  -webkit-transform: rotateY(300deg) translateZ(-60vw);
+          transform: rotateY(300deg) translateZ(-60vw);
 }
 
 .portfolio .portfolio__content .cell:nth-child(1) {
-  -webkit-transform: rotateY(0deg) translateZ(-51.961vw);
-          transform: rotateY(0deg) translateZ(-51.961vw);
+  -webkit-transform: rotateY(0deg) translateZ(-60vw);
+          transform: rotateY(0deg) translateZ(-60vw);
 }
 
 .portfolio .portfolio__content .buttons {
-  margin: 2vw 0;
+  margin: -5vw 0 0 0;
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -963,25 +905,28 @@ body::-webkit-scrollbar {
   cursor: pointer;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  height: 5vw;
-  width: 5vw;
+  height: 3vw;
+  width: 3vw;
   border-top: solid 1px #FFE6C2;
   border-right: solid 1px #FFE6C2;
 }
 
 .portfolio .portfolio__content .buttons .button--left {
   cursor: pointer;
+  height: 3vw;
+  width: 3vw;
+  margin-right: 20vw;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  margin-right: 20vw;
-  height: 5vw;
-  width: 5vw;
   border-top: solid 1px #FFE6C2;
   border-left: solid 1px #FFE6C2;
 }
 
 .portfolio .portfolio__content h5 {
+  font-size: 2vw;
+  font-weight: 300;
   margin-top: 5vw;
+  letter-spacing: 5px;
 }
 
 .contact {
@@ -994,14 +939,15 @@ body::-webkit-scrollbar {
 }
 
 .contact .instagram .story {
-  height: 60vw;
-  width: 60vw;
+  height: 50vw;
+  width: 50vw;
   position: relative;
 }
 
 .contact .instagram .story .img {
   width: 0;
   height: 0;
+  padding: 19vw;
   position: relative;
   left: 50%;
   top: 50%;
@@ -1014,8 +960,8 @@ body::-webkit-scrollbar {
 .contact .instagram .story .img--warpper {
   background-image: url(../assets/images/instagram.png);
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   top: 0;
   left: 0;
   background-size: cover;
@@ -1024,21 +970,26 @@ body::-webkit-scrollbar {
 }
 
 .contact .instagram h2 {
-  font-size: 15vw;
+  font-size: 11vw;
   text-transform: uppercase;
 }
 
 .contact .instagram h5 {
-  font-size: 9vw;
+  font-size: 6vw;
   font-weight: 300;
 }
 
 .contact .instagram .id {
-  width: 60vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  width: 100%;
 }
 
 .contact .instagram .id .line {
-  width: 100%;
+  width: 90%;
+  margin: 4vw 0;
   height: 2px;
 }
 
@@ -1051,7 +1002,7 @@ body::-webkit-scrollbar {
   height: 2px;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  margin: 9vw 0;
+  margin: 5vw 0;
 }
 
 .contact .media h2 {
@@ -1104,6 +1055,110 @@ body::-webkit-scrollbar {
   font-size: 2vw;
   height: 5vw;
   margin-bottom: 5vw;
+}
+
+@media screen and (max-width: 768px) {
+  h3, h5 {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .about--me .about--me__text h4 {
+    font-size: 5vw !important;
+  }
+  .about--me .about--me__text h5 {
+    font-size: 4vw !important;
+  }
+  #pack--isRes.res .pack__reaval.active {
+    height: 89.1%;
+  }
+  #pack--isRes.res .pack__reaval.close {
+    height: 0%;
+  }
+  #pack--isRes.res .pack__img--container {
+    height: 65vw;
+  }
+  #pack--isRes.res .pack__reaval .pack__container {
+    height: 100%;
+    padding: 2vw 0;
+  }
+  #pack--isRes.res .pack__reaval .pack__container .column {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #pack--isRes.res .pack__reaval .pack__container > * {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+  #pack--isRes.res .pack__reaval .pack__container .pack__content {
+    height: 100%;
+  }
+  #pack--isRes.res .pack__reaval .pack__container .pack__content .img--space {
+    height: 45vw;
+  }
+  #pack--isRes.res .pack__reaval .pack__container .pack__content p {
+    font-size: 3vw;
+  }
+  #pack--isRes.res .pack__reaval .pack__container .pack__content .button {
+    width: 37vw;
+    height: 10vw;
+  }
+  #pack--isRes.res .pack__reaval .pack__container .pack__content .button p {
+    font-size: 6vw;
+  }
+  #pack--isRes.res #pack__img {
+    display: none;
+  }
+  #pack--isRes.res #pack__img--res {
+    display: block;
+    margin: 10vw 0;
+  }
+  .portfolio .portfolio__content .caroucel--container {
+    height: 60vw;
+    width: 60vw;
+  }
+  .portfolio .portfolio__content .carousel {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(-51.961vw);
+            transform: translateZ(-51.961vw);
+  }
+  .portfolio .portfolio__content .carousel [class^="cell img-"] {
+    width: 50vw;
+    height: 50vw;
+    left: 5vw;
+    top: 5vw;
+  }
+  .portfolio .portfolio__content .cell:nth-child(2) {
+    -webkit-transform: rotateY(60deg) translateZ(-51.961vw);
+            transform: rotateY(60deg) translateZ(-51.961vw);
+  }
+  .portfolio .portfolio__content .cell:nth-child(3) {
+    -webkit-transform: rotateY(120deg) translateZ(-51.961vw);
+            transform: rotateY(120deg) translateZ(-51.961vw);
+  }
+  .portfolio .portfolio__content .cell:nth-child(4) {
+    -webkit-transform: rotateY(180deg) translateZ(-51.961vw);
+            transform: rotateY(180deg) translateZ(-51.961vw);
+  }
+  .portfolio .portfolio__content .cell:nth-child(5) {
+    -webkit-transform: rotateY(240deg) translateZ(-51.961vw);
+            transform: rotateY(240deg) translateZ(-51.961vw);
+  }
+  .portfolio .portfolio__content .cell:nth-child(6) {
+    -webkit-transform: rotateY(300deg) translateZ(-51.961vw);
+            transform: rotateY(300deg) translateZ(-51.961vw);
+  }
+  .portfolio .portfolio__content .cell:nth-child(1) {
+    -webkit-transform: rotateY(0deg) translateZ(-51.961vw);
+            transform: rotateY(0deg) translateZ(-51.961vw);
+  }
+  .portfolio .portfolio__content .buttons {
+    margin: 2vw 0;
+  }
+  .contact .separation {
+    margin: 9vw 0 !important;
+  }
 }
 
 @font-face {
@@ -1220,6 +1275,10 @@ html {
   }
   .is-m {
     font-size: 5.5vw;
+  }
+  .portfolio h5 {
+    font-size: 3vw !important;
+    letter-spacing: 1px !important;
   }
 }
 

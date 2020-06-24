@@ -154,20 +154,23 @@ let selectedIndex = 0;
 
 function rotateCarousel() {
   let angle = selectedIndex / cellCount * -360;
-  carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+
+  if (!isMobile) {
+    carousel.style.transform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
+  }else {
+    carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+  }
 }
 
 let prevButton = document.querySelector('.button--left');
 prevButton.addEventListener( 'click', function() {
   selectedIndex--;
-  console.log(selectedIndex);
   rotateCarousel();
 });
 
 let nextButton = document.querySelector('.button--right');
 nextButton.addEventListener( 'click', function() {
   selectedIndex++;
-  console.log(selectedIndex);
   rotateCarousel();
 });
 }
@@ -189,10 +192,7 @@ if (!isMobile) {
       y: 0,
       resizeRequest: 1,
       scrollRequest: 0,
-  };
-
-  console.log(scroller.target);
-  
+  }; 
 
   let requestId = null;
 
@@ -258,21 +258,38 @@ if (!isMobile) {
     }
   }
   }
+}else {
+
+  let d = document.getElementById("parallax");
+
+  function FindPos(AObject)
+  {
+      let posX = 0, posY = 0;
+      
+      do
+      {
+          posY += AObject.offsetTop;
+          AObject = AObject.offsetParent;
+      }
+      while( AObject != null );
+
+      let pos = [];
+      pos['Y'] = posY;
+      return pos;
 }
 
-window.onscroll = function() {
-  scrollIndicator()
-};
+let t = FindPos(d)
 
-function scrollIndicator() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  console.log(winScroll);
+  window.onscroll = function() {
+    scrollIndicator(t)
+  };
   
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  console.log(height);
-  
-  let scrolled = (winScroll / height) * 100;
-  console.log(scrolled);
-  
-  
+  function scrollIndicator(t) {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let _height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / _height) * 100;
+    
+    document.getElementById('parallax2').style.transform = `translate3D(0, ${scrolled * -6}px, 0)`
+    document.getElementById('parallax').style.transform = `translate3D(0, ${scrolled * 6 - 250}px, 0)`
+  }
 }
