@@ -162,13 +162,13 @@ function rotateCarousel() {
   }
 }
 
-let prevButton = document.querySelector('.button--left');
+let prevButton = document.querySelector('.buttons--left');
 prevButton.addEventListener( 'click', function() {
   selectedIndex--;
   rotateCarousel();
 });
 
-let nextButton = document.querySelector('.button--right');
+let nextButton = document.querySelector('.buttons--right');
 nextButton.addEventListener( 'click', function() {
   selectedIndex++;
   rotateCarousel();
@@ -260,6 +260,8 @@ if (!isMobile) {
   }
 }else {
 
+  /*
+
   let d = document.getElementById("parallax");
 
   function FindPos(AObject)
@@ -291,5 +293,16 @@ let t = FindPos(d)
     
     document.getElementById('parallax2').style.transform = `translate3D(0, ${scrolled * -6}px, 0)`
     document.getElementById('parallax').style.transform = `translate3D(0, ${scrolled * 6 - 250}px, 0)`
-  }
+  }*/
+
+  /*
+  let el1 = document.getElementsByClassName('parallax1');
+  let speed1 = el1.getAttribute('data-speed');
+  let el2 = document.getElementsByClassName('parallax2');
+  let speed2 = el2.getAttribute('data-speed');*/
+
+  window.addEventListener('scroll', function () {
+      document.getElementById('parallax1').style.transform = `translate3D(0, ${ window.scrollY * -0.1}px, 0)`;
+      document.getElementById('parallax2').style.transform = `translate3D(0, ${ window.scrollY * 0.3}px, 0)`;
+  });
 }

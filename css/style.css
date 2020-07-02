@@ -156,13 +156,6 @@
   position: absolute;
 }
 
-@font-face {
-  font-family: 'title';
-  src: url("../assets/fonts/title.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -890,15 +883,18 @@ body::-webkit-scrollbar {
 }
 
 .portfolio .portfolio__content .buttons {
-  margin: -5vw 0 0 0;
+  margin: -6.5vw 0 0 0;
   position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.portfolio .portfolio__content .buttons .buttons--right, .portfolio .portfolio__content .buttons .buttons--left {
+  padding: 3vw;
 }
 
 .portfolio .portfolio__content .buttons .button--right {
@@ -915,7 +911,6 @@ body::-webkit-scrollbar {
   cursor: pointer;
   height: 3vw;
   width: 3vw;
-  margin-right: 20vw;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   border-top: solid 1px #FFE6C2;
