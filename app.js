@@ -157,8 +157,12 @@ function rotateCarousel() {
 
   if (!isMobile) {
     carousel.style.transform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
+    carousel.style.webkitTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
+    carousel.style.MozTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
   }else {
     carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+    carousel.style.webkitTransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+    carousel.style.Moztransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
   }
 }
 
