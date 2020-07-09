@@ -189,7 +189,7 @@ if (!isMobile) {
 
   let scroller = {
       target: document.querySelector(".smooth-scroll"),
-      parallax: document.querySelectorAll('.parallax'),
+      parallax: document.querySelectorAll('.parallax1'),
       parallaxInvert: document.querySelectorAll('.parallaxInvert'),
       ease: 0.07, // <= scroll speed
       endY: 0,
@@ -263,50 +263,8 @@ if (!isMobile) {
   }
   }
 }else {
-
-  /*
-
-  let d = document.getElementById("parallax");
-
-  function FindPos(AObject)
-  {
-      let posX = 0, posY = 0;
-      
-      do
-      {
-          posY += AObject.offsetTop;
-          AObject = AObject.offsetParent;
-      }
-      while( AObject != null );
-
-      let pos = [];
-      pos['Y'] = posY;
-      return pos;
-}
-
-let t = FindPos(d)
-
-  window.onscroll = function() {
-    scrollIndicator(t)
-  };
-  
-  function scrollIndicator(t) {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let _height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / _height) * 100;
-    
-    document.getElementById('parallax2').style.transform = `translate3D(0, ${scrolled * -6}px, 0)`
-    document.getElementById('parallax').style.transform = `translate3D(0, ${scrolled * 6 - 250}px, 0)`
-  }*/
-
-  /*
-  let el1 = document.getElementsByClassName('parallax1');
-  let speed1 = el1.getAttribute('data-speed');
-  let el2 = document.getElementsByClassName('parallax2');
-  let speed2 = el2.getAttribute('data-speed');*/
-
   window.addEventListener('scroll', function () {
-      document.getElementById('parallax1').style.transform = `translate3D(0, ${ window.scrollY * -0.1}px, 0)`;
-      document.getElementById('parallax2').style.transform = `translate3D(0, ${ window.scrollY * 0.3}px, 0)`;
+      document.getElementById('parallax1').style.transform = `translate3D(0, ${ window.scrollY * -0.25}px, 0)`;
+      document.getElementById('parallax2').style.transform = `translate3D(0, ${ window.scrollY * 0.25 - 250}px, 0)`;
   });
 }
