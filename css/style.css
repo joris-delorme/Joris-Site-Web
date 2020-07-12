@@ -1178,7 +1178,8 @@ body::-webkit-scrollbar {
     margin: 2vw 0;
   }
   .portfolio .portfolio__content .buttons button {
-    background-color: transparent;
+    background: transparent;
+    border: none;
   }
   .contact .separation {
     margin: 9vw 0 !important;
