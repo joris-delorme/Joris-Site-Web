@@ -941,6 +941,12 @@ body::-webkit-scrollbar {
   border-left: solid 1px #FFE6C2;
 }
 
+.portfolio .portfolio__content .buttons button {
+  background: transparent;
+  border: none !important;
+  outline: none;
+}
+
 .portfolio .portfolio__content h5 {
   font-size: 2vw;
   font-weight: 300;
@@ -1176,10 +1182,6 @@ body::-webkit-scrollbar {
   }
   .portfolio .portfolio__content .buttons {
     margin: 2vw 0;
-  }
-  .portfolio .portfolio__content .buttons button {
-    background: transparent;
-    border: none;
   }
   .contact .separation {
     margin: 9vw 0 !important;
