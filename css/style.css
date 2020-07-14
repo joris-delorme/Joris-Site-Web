@@ -798,7 +798,7 @@ body::-webkit-scrollbar {
           transform: rotateY(180deg);
 }
 
-.portfolio .portfolio__content .caroucel--container {
+.portfolio .carousel--container {
   position: relative;
   height: 60vw;
   width: 60vw;
@@ -806,7 +806,7 @@ body::-webkit-scrollbar {
           perspective: 1000px;
 }
 
-.portfolio .portfolio__content .carousel {
+.portfolio .carousel {
   will-change: transform;
   width: 100%;
   height: 100%;
@@ -819,9 +819,11 @@ body::-webkit-scrollbar {
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
+  -webkit-animation: carousel 5s infinite;
+          animation: carousel 5s infinite;
 }
 
-.portfolio .portfolio__content .carousel [class^="cell img-"] {
+.portfolio .carousel [class^="cell img-"] {
   width: 35vw;
   height: 35vw;
   position: absolute;
@@ -829,43 +831,43 @@ body::-webkit-scrollbar {
   top: 12.5vw;
 }
 
-.portfolio .portfolio__content .carousel .img-1 .img--warpper {
+.portfolio .carousel .img-1 .img--warpper {
   background-image: url(../assets/images/Portfolio1.jpg);
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.portfolio .portfolio__content .carousel .img-2 .img--warpper {
+.portfolio .carousel .img-2 .img--warpper {
   background-image: url(../assets/images/Portfolio2.jpg);
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.portfolio .portfolio__content .carousel .img-3 .img--warpper {
+.portfolio .carousel .img-3 .img--warpper {
   background-image: url(../assets/images/Portfolio3.jpg);
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.portfolio .portfolio__content .carousel .img-4 .img--warpper {
+.portfolio .carousel .img-4 .img--warpper {
   background-image: url(../assets/images/Portfolio4.jpg);
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.portfolio .portfolio__content .carousel .img-5 .img--warpper {
+.portfolio .carousel .img-5 .img--warpper {
   background-image: url(../assets/images/Portfolio5.jpg);
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.portfolio .portfolio__content .carousel .img-6 .img--warpper {
+.portfolio .carousel .img-6 .img--warpper {
   background-image: url(../assets/images/Portfolio6.jpg);
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.portfolio .portfolio__content .carousel .img--warpper {
+.portfolio .carousel .img--warpper {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -876,37 +878,37 @@ body::-webkit-scrollbar {
   background-repeat: no-repeat;
 }
 
-.portfolio .portfolio__content .cell:nth-child(2) {
+.portfolio .cell:nth-child(2) {
   -webkit-transform: rotateY(60deg) translateZ(-60vw);
           transform: rotateY(60deg) translateZ(-60vw);
 }
 
-.portfolio .portfolio__content .cell:nth-child(3) {
+.portfolio .cell:nth-child(3) {
   -webkit-transform: rotateY(120deg) translateZ(-60vw);
           transform: rotateY(120deg) translateZ(-60vw);
 }
 
-.portfolio .portfolio__content .cell:nth-child(4) {
+.portfolio .cell:nth-child(4) {
   -webkit-transform: rotateY(180deg) translateZ(-60vw);
           transform: rotateY(180deg) translateZ(-60vw);
 }
 
-.portfolio .portfolio__content .cell:nth-child(5) {
+.portfolio .cell:nth-child(5) {
   -webkit-transform: rotateY(240deg) translateZ(-60vw);
           transform: rotateY(240deg) translateZ(-60vw);
 }
 
-.portfolio .portfolio__content .cell:nth-child(6) {
+.portfolio .cell:nth-child(6) {
   -webkit-transform: rotateY(300deg) translateZ(-60vw);
           transform: rotateY(300deg) translateZ(-60vw);
 }
 
-.portfolio .portfolio__content .cell:nth-child(1) {
+.portfolio .cell:nth-child(1) {
   -webkit-transform: rotateY(0deg) translateZ(-60vw);
           transform: rotateY(0deg) translateZ(-60vw);
 }
 
-.portfolio .portfolio__content .buttons {
+.portfolio .buttons {
   margin: -6.5vw 0 0 0;
   position: relative;
   width: 100%;
@@ -917,11 +919,11 @@ body::-webkit-scrollbar {
       justify-content: space-around;
 }
 
-.portfolio .portfolio__content .buttons .buttons--right, .portfolio .portfolio__content .buttons .buttons--left {
+.portfolio .buttons .buttons--right, .portfolio .buttons .buttons--left {
   padding: 3vw;
 }
 
-.portfolio .portfolio__content .buttons .button--right {
+.portfolio .buttons .button--right {
   cursor: pointer;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -931,7 +933,7 @@ body::-webkit-scrollbar {
   border-right: solid 1px #FFE6C2;
 }
 
-.portfolio .portfolio__content .buttons .button--left {
+.portfolio .buttons .button--left {
   cursor: pointer;
   height: 3vw;
   width: 3vw;
@@ -941,13 +943,13 @@ body::-webkit-scrollbar {
   border-left: solid 1px #FFE6C2;
 }
 
-.portfolio .portfolio__content .buttons button {
+.portfolio .buttons button {
   background: transparent;
   border: none !important;
   outline: none;
 }
 
-.portfolio .portfolio__content h5 {
+.portfolio h5 {
   font-size: 2vw;
   font-weight: 300;
   margin-top: 5vw;
@@ -1149,6 +1151,8 @@ body::-webkit-scrollbar {
     height: 100%;
     -webkit-transform: translateZ(-51.961vw);
             transform: translateZ(-51.961vw);
+    -webkit-animation: carouselRes 5s infinite;
+            animation: carouselRes 5s infinite;
   }
   .portfolio .portfolio__content .carousel [class^="cell img-"] {
     width: 50vw;
@@ -1185,6 +1189,50 @@ body::-webkit-scrollbar {
   }
   .contact .separation {
     margin: 9vw 0 !important;
+  }
+}
+
+@-webkit-keyframes carousel {
+  form {
+    -webkit-transform: translateZ(-51.961vw) rotateY(0deg);
+            transform: translateZ(-51.961vw) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: translateZ(-51.961vw) rotateY(360deg);
+            transform: translateZ(-51.961vw) rotateY(360deg);
+  }
+}
+
+@keyframes carousel {
+  form {
+    -webkit-transform: translateZ(-51.961vw) rotateY(0deg);
+            transform: translateZ(-51.961vw) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: translateZ(-51.961vw) rotateY(360deg);
+            transform: translateZ(-51.961vw) rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes carouselRes {
+  form {
+    -webkit-transform: translateZ(-60vw) rotateY(0deg);
+            transform: translateZ(-60vw) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: translateZ(-60vw) rotateY(360deg);
+            transform: translateZ(-60vw) rotateY(360deg);
+  }
+}
+
+@keyframes carouselRes {
+  form {
+    -webkit-transform: translateZ(-60vw) rotateY(0deg);
+            transform: translateZ(-60vw) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: translateZ(-60vw) rotateY(360deg);
+            transform: translateZ(-60vw) rotateY(360deg);
   }
 }
 
