@@ -148,7 +148,7 @@ items.forEach(function (item) {
 
 {
 
-  let carousel = document.querySelector('.carousel');
+  let carousel = document.querySelector('.carousel__cell');
   let cellCount = 6;
   let selectedIndex = 0;
   
@@ -156,14 +156,10 @@ items.forEach(function (item) {
     let angle = selectedIndex / cellCount * -360;
   
     if (!isMobile) {
-      carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+      //carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
       carousel.style.transform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
-      carousel.style.webkitTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
-      carousel.style.MozTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
     }else {
       carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
-      carousel.style.webkitTransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
-      carousel.style.Moztransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
     }
   }
   /*
