@@ -148,45 +148,46 @@ items.forEach(function (item) {
 
 {
 
-let carousel = document.querySelector('.carousel');
-let cellCount = 6;
-let selectedIndex = 0;
-
-function rotateCarousel() {
-  let angle = selectedIndex / cellCount * -360;
-
-  if (!isMobile) {
-    carousel.style.transform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
-    carousel.style.webkitTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
-    carousel.style.MozTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
-  }else {
-    carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
-    carousel.style.webkitTransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
-    carousel.style.Moztransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+  let carousel = document.querySelector('.carousel');
+  let cellCount = 6;
+  let selectedIndex = 0;
+  
+  function rotateCarousel() {
+    let angle = selectedIndex / cellCount * -360;
+  
+    if (!isMobile) {
+      carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+      carousel.style.transform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
+      carousel.style.webkitTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
+      carousel.style.MozTransform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
+    }else {
+      carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+      carousel.style.webkitTransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+      carousel.style.Moztransform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+    }
   }
-}
-/*
-let prevButton = document.querySelector('.buttons--left');
-prevButton.addEventListener( 'click', function() {
-  selectedIndex--;
-  rotateCarousel();
-});
-*/
-function prevButton() {
-  selectedIndex--;
-  rotateCarousel();
-}
-/*
-let nextButton = document.querySelector('.buttons--right');
-nextButton.addEventListener( 'click', function() {
-  selectedIndex++;
-  rotateCarousel();
-});
-*/
-function nextButton() {
-  selectedIndex++;
-  rotateCarousel();
-}
+  /*
+  let prevButton = document.querySelector('.buttons--left');
+  prevButton.addEventListener( 'click', function() {
+    selectedIndex--;
+    rotateCarousel();
+  });
+  */
+  function prevButton() {
+    selectedIndex--;
+    rotateCarousel();
+  }
+  /*
+  let nextButton = document.querySelector('.buttons--right');
+  nextButton.addEventListener( 'click', function() {
+    selectedIndex++;
+    rotateCarousel();
+  });
+  */
+  function nextButton() {
+    selectedIndex++;
+    rotateCarousel();
+  }
 
 }
 
