@@ -820,7 +820,7 @@ body::-webkit-scrollbar {
   transition: transform 1s linear, -webkit-transform 1s linear;
 }
 
-.portfolio .carousel [class^="cell img-"] {
+.portfolio .carousel .cell {
   width: 35vw;
   height: 35vw;
   position: absolute;
@@ -828,81 +828,34 @@ body::-webkit-scrollbar {
   top: 12.5vw;
 }
 
-.portfolio .carousel .img-1 .img--warpper {
-  background-image: url(../assets/images/Portfolio1.jpg);
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+.portfolio .carousel:nth-child(2) {
+  -webkit-transform: scaleX(-1) rotateY(60deg) translateZ(-60vw);
+          transform: scaleX(-1) rotateY(60deg) translateZ(-60vw);
 }
 
-.portfolio .carousel .img-2 .img--warpper {
-  background-image: url(../assets/images/Portfolio2.jpg);
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+.portfolio .carousel:nth-child(3) {
+  -webkit-transform: scaleX(-1) rotateY(120deg) translateZ(-60vw);
+          transform: scaleX(-1) rotateY(120deg) translateZ(-60vw);
 }
 
-.portfolio .carousel .img-3 .img--warpper {
-  background-image: url(../assets/images/Portfolio3.jpg);
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+.portfolio .carousel:nth-child(4) {
+  -webkit-transform: scaleX(-1) rotateY(180deg) translateZ(-60vw);
+          transform: scaleX(-1) rotateY(180deg) translateZ(-60vw);
 }
 
-.portfolio .carousel .img-4 .img--warpper {
-  background-image: url(../assets/images/Portfolio4.jpg);
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+.portfolio .carousel:nth-child(5) {
+  -webkit-transform: scaleX(-1) rotateY(240deg) translateZ(-60vw);
+          transform: scaleX(-1) rotateY(240deg) translateZ(-60vw);
 }
 
-.portfolio .carousel .img-5 .img--warpper {
-  background-image: url(../assets/images/Portfolio5.jpg);
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+.portfolio .carousel:nth-child(6) {
+  -webkit-transform: scaleX(-1) rotateY(300deg) translateZ(-60vw);
+          transform: scaleX(-1) rotateY(300deg) translateZ(-60vw);
 }
 
-.portfolio .carousel .img-6 .img--warpper {
-  background-image: url(../assets/images/Portfolio6.jpg);
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-.portfolio .carousel .img--warpper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-.portfolio .cell:nth-child(2) {
-  -webkit-transform: rotateY(60deg) translateZ(-60vw);
-          transform: rotateY(60deg) translateZ(-60vw);
-}
-
-.portfolio .cell:nth-child(3) {
-  -webkit-transform: rotateY(120deg) translateZ(-60vw);
-          transform: rotateY(120deg) translateZ(-60vw);
-}
-
-.portfolio .cell:nth-child(4) {
-  -webkit-transform: rotateY(180deg) translateZ(-60vw);
-          transform: rotateY(180deg) translateZ(-60vw);
-}
-
-.portfolio .cell:nth-child(5) {
-  -webkit-transform: rotateY(240deg) translateZ(-60vw);
-          transform: rotateY(240deg) translateZ(-60vw);
-}
-
-.portfolio .cell:nth-child(6) {
-  -webkit-transform: rotateY(300deg) translateZ(-60vw);
-          transform: rotateY(300deg) translateZ(-60vw);
-}
-
-.portfolio .cell:nth-child(1) {
-  -webkit-transform: rotateY(0deg) translateZ(-60vw);
-          transform: rotateY(0deg) translateZ(-60vw);
+.portfolio .carousel:nth-child(1) {
+  -webkit-transform: scaleX(-1) rotateY(0deg) translateZ(-60vw);
+          transform: scaleX(-1) rotateY(0deg) translateZ(-60vw);
 }
 
 .portfolio .buttons {
