@@ -815,12 +815,10 @@ body::-webkit-scrollbar {
   position: absolute;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
-  -webkit-animation: carousel 5s infinite;
-          animation: carousel 5s infinite;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
 .portfolio .carousel [class^="cell img-"] {
@@ -1151,8 +1149,6 @@ body::-webkit-scrollbar {
     height: 100%;
     -webkit-transform: translateZ(-51.961vw);
             transform: translateZ(-51.961vw);
-    -webkit-animation: carouselRes 5s infinite;
-            animation: carouselRes 5s infinite;
   }
   .portfolio .portfolio__content .carousel [class^="cell img-"] {
     width: 50vw;
@@ -1189,50 +1185,6 @@ body::-webkit-scrollbar {
   }
   .contact .separation {
     margin: 9vw 0 !important;
-  }
-}
-
-@-webkit-keyframes carousel {
-  form {
-    -webkit-transform: translateZ(-51.961vw) rotateY(0deg);
-            transform: translateZ(-51.961vw) rotateY(0deg);
-  }
-  to {
-    -webkit-transform: translateZ(-51.961vw) rotateY(360deg);
-            transform: translateZ(-51.961vw) rotateY(360deg);
-  }
-}
-
-@keyframes carousel {
-  form {
-    -webkit-transform: translateZ(-51.961vw) rotateY(0deg);
-            transform: translateZ(-51.961vw) rotateY(0deg);
-  }
-  to {
-    -webkit-transform: translateZ(-51.961vw) rotateY(360deg);
-            transform: translateZ(-51.961vw) rotateY(360deg);
-  }
-}
-
-@-webkit-keyframes carouselRes {
-  form {
-    -webkit-transform: translateZ(-60vw) rotateY(0deg);
-            transform: translateZ(-60vw) rotateY(0deg);
-  }
-  to {
-    -webkit-transform: translateZ(-60vw) rotateY(360deg);
-            transform: translateZ(-60vw) rotateY(360deg);
-  }
-}
-
-@keyframes carouselRes {
-  form {
-    -webkit-transform: translateZ(-60vw) rotateY(0deg);
-            transform: translateZ(-60vw) rotateY(0deg);
-  }
-  to {
-    -webkit-transform: translateZ(-60vw) rotateY(360deg);
-            transform: translateZ(-60vw) rotateY(360deg);
   }
 }
 
