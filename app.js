@@ -1,8 +1,9 @@
+
 window.addEventListener('load', function () {
   document.querySelector('body').classList.add('is-loaded')
   document.querySelector('body').classList.remove('is-loading')
-  compteur();
-  seize();
+  //compteur();
+  //seize();
 })
 
 // shim layer with setTimeout fallback
@@ -27,7 +28,7 @@ function _isMobile() {
   }
 }
 _isMobile()
-
+/*
 // Animation
 
 function compteur() {
@@ -142,7 +143,7 @@ let items = document.querySelectorAll('.reveal')
 items.forEach(function (item) {
   observer.observe(item)
 })
-
+*/
 
 // Caroucel
 
@@ -188,6 +189,7 @@ items.forEach(function (item) {
 }
 
 // Smooth scroll
+/*
 if (!isMobile) {
   {
   let html = document.documentElement;
@@ -275,4 +277,4 @@ if (!isMobile) {
       document.getElementById('parallax1').style.transform = `translate3D(0, ${ window.scrollY * -0.25}px, 0)`;
       document.getElementById('parallax2').style.transform = `translate3D(0, ${ window.scrollY * 0.25 - 250}px, 0)`;
   });
-}
+}*/
