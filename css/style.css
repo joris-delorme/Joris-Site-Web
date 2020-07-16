@@ -804,14 +804,15 @@ body::-webkit-scrollbar {
   width: 60vw;
   -webkit-perspective: 1000px;
           perspective: 1000px;
+  margin: auto;
 }
 
 .portfolio .carousel__cell {
   will-change: transform;
   width: 100%;
   height: 100%;
-  -webkit-transform: translateZ(-51.961vw);
-          transform: translateZ(-51.961vw);
+  -webkit-transform: translateZ(-52vw);
+          transform: translateZ(-52vw);
   position: absolute;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -1110,8 +1111,8 @@ body::-webkit-scrollbar {
   .portfolio .portfolio__content .carousel__cell {
     width: 100%;
     height: 100%;
-    -webkit-transform: translateZ(-51.961vw);
-            transform: translateZ(-51.961vw);
+    -webkit-transform: translateZ(-52vw);
+            transform: translateZ(-52vw);
   }
   .portfolio .portfolio__content .carousel__cell .cell {
     width: 50vw;
@@ -1120,24 +1121,24 @@ body::-webkit-scrollbar {
     top: 5vw;
   }
   .portfolio .portfolio__content .cell:nth-child(2) {
-    -webkit-transform: rotateY(60deg) translateZ(-51.961vw);
-            transform: rotateY(60deg) translateZ(-51.961vw);
+    -webkit-transform: rotateY(60deg) translateZ(-52vw);
+            transform: rotateY(60deg) translateZ(-52vw);
   }
   .portfolio .portfolio__content .cell:nth-child(3) {
-    -webkit-transform: rotateY(120deg) translateZ(-51.961vw);
-            transform: rotateY(120deg) translateZ(-51.961vw);
+    -webkit-transform: rotateY(120deg) translateZ(-52vw);
+            transform: rotateY(120deg) translateZ(-52vw);
   }
   .portfolio .portfolio__content .cell:nth-child(4) {
-    -webkit-transform: rotateY(180deg) translateZ(-51.961vw);
-            transform: rotateY(180deg) translateZ(-51.961vw);
+    -webkit-transform: rotateY(180deg) translateZ(-52vw);
+            transform: rotateY(180deg) translateZ(-52vw);
   }
   .portfolio .portfolio__content .cell:nth-child(5) {
-    -webkit-transform: rotateY(240deg) translateZ(-51.961vw);
-            transform: rotateY(240deg) translateZ(-51.961vw);
+    -webkit-transform: rotateY(240deg) translateZ(-52vw);
+            transform: rotateY(240deg) translateZ(-52vw);
   }
   .portfolio .portfolio__content .cell:nth-child(6) {
-    -webkit-transform: rotateY(300deg) translateZ(-51.961vw);
-            transform: rotateY(300deg) translateZ(-51.961vw);
+    -webkit-transform: rotateY(300deg) translateZ(-52vw);
+            transform: rotateY(300deg) translateZ(-52vw);
   }
   .portfolio .portfolio__content .cell:nth-child(1) {
     -webkit-transform: rotateY(0deg) translateZ(-51.961vw);

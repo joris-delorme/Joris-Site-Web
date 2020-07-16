@@ -159,7 +159,7 @@ items.forEach(function (item) {
       //carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
       carousel.style.transform = 'translateZ(-60vw) rotateY(' + angle + 'deg)';
     }else {
-      carousel.style.transform = 'translateZ(-51.961vw) rotateY(' + angle + 'deg)';
+      carousel.style.transform = 'translateZ(-52vw) rotateY(' + angle + 'deg)';
     }
   }
   /*
