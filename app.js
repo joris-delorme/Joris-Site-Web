@@ -202,30 +202,37 @@ styleCarousel()
       carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
     }
   }
-  /*
-  let prevButton = document.querySelector('.buttons--left');
-  prevButton.addEventListener( 'click', function() {
-    selectedIndex--;
-    rotateCarousel();
-  });
-  */
-  function prevButton() {
+
+  if (isMobile) {
+    let prevButton = document.querySelector('.buttons--left');
+  prevButton.addEventListener( 'touchstart', function() {
     selectedIndex--;
     rotateCarousel();
     alert('TKT Marion on va y arriver')
-  }
-  /*
+  });
+  
+  let nextButton = document.querySelector('.buttons--right');
+  nextButton.addEventListener( 'touchstart', function() {
+    selectedIndex++;
+    rotateCarousel();
+    alert('TKT Marion on va y arriver')
+  });
+  } else {
+    let prevButton = document.querySelector('.buttons--left');
+  prevButton.addEventListener( 'click', function() {
+    selectedIndex--;
+    rotateCarousel();
+    alert('TKT Marion on va y arriver')
+  });
+  
   let nextButton = document.querySelector('.buttons--right');
   nextButton.addEventListener( 'click', function() {
     selectedIndex++;
     rotateCarousel();
-  });
-  */
-  function nextButton() {
-    selectedIndex++;
-    rotateCarousel();
     alert('TKT Marion on va y arriver')
+  });
   }
+  
 
 }
 
