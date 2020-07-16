@@ -751,16 +751,15 @@ body::-webkit-scrollbar {
 }
 
 .portfolio .container {
-  width: 100%;
-  height: 250px;
+  width: 100vw;
   padding: 0 3vw;
   margin: auto 0;
 }
 
 .portfolio .container .carousel {
   position: relative;
-  height: 60px;
-  width: 60%;
+  height: 60vw;
+  width: 60vw;
   margin: 80px auto;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -773,20 +772,18 @@ body::-webkit-scrollbar {
           transform-style: preserve-3d;
   width: 100%;
   height: 100%;
-  -webkit-transform: translateZ(-227px);
-          transform: translateZ(-227px);
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-  -webkit-animation: ann 5s infinite;
-          animation: ann 5s infinite;
 }
 
 .portfolio .container .carousel .carousel__cell .cell {
-  width: 200px;
-  height: 200px;
+  width: 35vw;
+  height: 35vw;
   position: absolute;
+  left: 12.5vw;
+  top: 12.5vw;
   -webkit-transition: -webkit-transform 1s linear;
   transition: -webkit-transform 1s linear;
   transition: transform 1s linear;
@@ -796,36 +793,6 @@ body::-webkit-scrollbar {
 .portfolio .container .carousel .carousel__cell .cell img {
   width: 100%;
   height: auto;
-}
-
-.portfolio .cell:nth-child(2) {
-  -webkit-transform: scaleX(-1) rotateY(60deg) translateZ(-227px);
-          transform: scaleX(-1) rotateY(60deg) translateZ(-227px);
-}
-
-.portfolio .cell:nth-child(3) {
-  -webkit-transform: scaleX(-1) rotateY(120deg) translateZ(-227px);
-          transform: scaleX(-1) rotateY(120deg) translateZ(-227px);
-}
-
-.portfolio .cell:nth-child(4) {
-  -webkit-transform: scaleX(-1) rotateY(180deg) translateZ(-227px);
-          transform: scaleX(-1) rotateY(180deg) translateZ(-227px);
-}
-
-.portfolio .cell:nth-child(5) {
-  -webkit-transform: scaleX(-1) rotateY(240deg) translateZ(-227px);
-          transform: scaleX(-1) rotateY(240deg) translateZ(-227px);
-}
-
-.portfolio .cell:nth-child(6) {
-  -webkit-transform: scaleX(-1) rotateY(300deg) translateZ(-227px);
-          transform: scaleX(-1) rotateY(300deg) translateZ(-227px);
-}
-
-.portfolio .cell:nth-child(1) {
-  -webkit-transform: scaleX(-1) rotateY(0deg) translateZ(-227px);
-          transform: scaleX(-1) rotateY(0deg) translateZ(-227px);
 }
 
 .portfolio .buttons {
@@ -1063,69 +1030,8 @@ body::-webkit-scrollbar {
     display: block;
     margin: 10vw 0;
   }
-  .portfolio .portfolio__content .carousel__cell {
-    width: 100%;
-    height: 100%;
-    -webkit-transform: translateZ(-227px);
-            transform: translateZ(-227px);
-  }
-  .portfolio .portfolio__content .carousel__cell .cell {
-    width: 50vw;
-    height: 50vw;
-    left: 5vw;
-    top: 5vw;
-  }
-  .portfolio .portfolio__content .cell:nth-child(2) {
-    -webkit-transform: rotateY(60deg) translateZ(-227px);
-            transform: rotateY(60deg) translateZ(-227px);
-  }
-  .portfolio .portfolio__content .cell:nth-child(3) {
-    -webkit-transform: rotateY(120deg) translateZ(-227px);
-            transform: rotateY(120deg) translateZ(-227px);
-  }
-  .portfolio .portfolio__content .cell:nth-child(4) {
-    -webkit-transform: rotateY(180deg) translateZ(-227px);
-            transform: rotateY(180deg) translateZ(-227px);
-  }
-  .portfolio .portfolio__content .cell:nth-child(5) {
-    -webkit-transform: rotateY(240deg) translateZ(-227px);
-            transform: rotateY(240deg) translateZ(-227px);
-  }
-  .portfolio .portfolio__content .cell:nth-child(6) {
-    -webkit-transform: rotateY(300deg) translateZ(-227px);
-            transform: rotateY(300deg) translateZ(-227px);
-  }
-  .portfolio .portfolio__content .cell:nth-child(1) {
-    -webkit-transform: rotateY(0deg) translateZ(-227px);
-            transform: rotateY(0deg) translateZ(-227px);
-  }
-  .portfolio .portfolio__content .buttons {
-    margin: 2vw 0;
-  }
   .contact .separation {
     margin: 9vw 0 !important;
-  }
-}
-
-@-webkit-keyframes ann {
-  from {
-    -webkit-transform: rotateY(0) translateZ(-227px);
-            transform: rotateY(0) translateZ(-227px);
-  }
-  to {
-    -webkit-transform: rotateY(360deg) translateZ(-227px);
-            transform: rotateY(360deg) translateZ(-227px);
-  }
-}
-
-@keyframes ann {
-  from {
-    -webkit-transform: rotateY(0) translateZ(-227px);
-            transform: rotateY(0) translateZ(-227px);
-  }
-  to {
-    -webkit-transform: rotateY(360deg) translateZ(-227px);
-            transform: rotateY(360deg) translateZ(-227px);
   }
 }
 

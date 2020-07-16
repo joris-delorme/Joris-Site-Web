@@ -149,18 +149,57 @@ items.forEach(function (item) {
 
 {
 
+  function styleCarousel() {
+    console.log('start');
+
+    let carousel = document.querySelector('.carousel__cell');
+    let cells = document.querySelectorAll('.cell');
+
+    let w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      value = 52,
+      valueImg = 60,
+      result = (x*value)/100;
+      resultImg = (x*valueImg)/100;
+
+    console.log(resultImg);
+    console.log(cells);
+
+    carousel.style.transform = 'translateZ(' + -result + 'px)';
+
+    for (let i = 0; i < cells.length; i++) {
+      let cell = cells[i];
+      deg = i*60;
+      console.log(deg);
+      console.log(cell);
+      cell.style.transform = 'scaleX(-1) translateZ(' + -resultImg + 'px) rotateY(' + deg + 'deg)';
+    }
+  }
+
+styleCarousel()
+
   let carousel = document.querySelector('.carousel__cell');
   let cellCount = 6;
   let selectedIndex = 0;
+
+  let w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      result = (x*52)/100;
   
   function rotateCarousel() {
     let angle = selectedIndex / cellCount * -360;
   
     if (!isMobile) {
       //carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
-      carousel.style.transform = 'translateZ(-227px) rotateY(' + angle + 'deg)';
+      carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
     }else {
-      carousel.style.transform = 'translateZ(-227px) rotateY(' + angle + 'deg)';
+      carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
     }
   }
   /*
