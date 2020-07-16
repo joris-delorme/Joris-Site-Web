@@ -175,7 +175,7 @@ items.forEach(function (item) {
       deg = i*60;
       console.log(deg);
       console.log(cell);
-      cell.style.transform = 'scaleX(-1) translateZ(' + -resultImg + 'px) rotateY(' + deg + 'deg)';
+      cell.style.transform = 'scaleX(-1) rotateY(' + deg + 'deg) translateZ(' + -resultImg + 'px)';
     }
   }
 

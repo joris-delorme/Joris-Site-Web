@@ -776,6 +776,8 @@ body::-webkit-scrollbar {
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
+  -webkit-animation: ann 5s infinite;
+          animation: ann 5s infinite;
 }
 
 .portfolio .container .carousel .carousel__cell .cell {
@@ -1032,6 +1034,28 @@ body::-webkit-scrollbar {
   }
   .contact .separation {
     margin: 9vw 0 !important;
+  }
+}
+
+@-webkit-keyframes ann {
+  from {
+    -webkit-transform: translateZ(-218px) rotateY(0);
+            transform: translateZ(-218px) rotateY(0);
+  }
+  to {
+    -webkit-transform: translateZ(-218px) rotateY(360deg);
+            transform: translateZ(-218px) rotateY(360deg);
+  }
+}
+
+@keyframes ann {
+  from {
+    -webkit-transform: translateZ(-218px) rotateY(0);
+            transform: translateZ(-218px) rotateY(0);
+  }
+  to {
+    -webkit-transform: translateZ(-218px) rotateY(360deg);
+            transform: translateZ(-218px) rotateY(360deg);
   }
 }
 
