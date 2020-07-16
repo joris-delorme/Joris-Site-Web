@@ -729,54 +729,6 @@ body::-webkit-scrollbar {
   font-size: 3vw;
 }
 
-.youtube {
-  margin-top: 9vw;
-}
-
-.youtube .title h2 {
-  font-size: 21vw;
-  z-index: -1;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.youtube .title h3 {
-  z-index: 2;
-  margin-top: -6vw;
-  margin-bottom: 4vw;
-  font-size: 8vw;
-  position: relative;
-  font-weight: 300;
-}
-
-.youtube .title__hide {
-  background-color: #212121;
-  height: 7vw;
-  width: 100%;
-  margin-top: -10vw;
-  position: relative;
-}
-
-.youtube .youtube__last--video {
-  margin: 2vw 2vw;
-  -webkit-transition: all 1s cubic-bezier(0.9, 0, 0.88, 1.01);
-  transition: all 1s cubic-bezier(0.9, 0, 0.88, 1.01);
-}
-
-.youtube .youtube__last--video .video--container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-.youtube .youtube__last--video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .portfolio {
   margin-top: 5vw;
 }
@@ -798,75 +750,82 @@ body::-webkit-scrollbar {
           transform: rotateY(180deg);
 }
 
-.portfolio .carousel {
-  position: relative;
-  height: 60vw;
-  width: 60vw;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  margin: auto;
+.portfolio .container {
+  width: 100%;
+  height: 250px;
+  padding: 0 3vw;
+  margin: auto 0;
 }
 
-.portfolio .carousel__cell {
+.portfolio .container .carousel {
+  position: relative;
+  height: 60px;
+  width: 60%;
+  margin: 80px auto;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.portfolio .container .carousel .carousel__cell {
   will-change: transform;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: translateZ(-52vw);
-          transform: translateZ(-52vw);
   position: absolute;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s linear;
-  transition: -webkit-transform 1s linear;
-  transition: transform 1s linear;
-  transition: transform 1s linear, -webkit-transform 1s linear;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(-227px);
+          transform: translateZ(-227px);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-animation: ann 5s infinite;
+          animation: ann 5s infinite;
 }
 
-.portfolio .carousel__cell .cell {
-  width: 35vw;
-  height: 35vw;
+.portfolio .container .carousel .carousel__cell .cell {
+  width: 200px;
+  height: 200px;
   position: absolute;
-  left: 12.5vw;
-  top: 12.5vw;
   -webkit-transition: -webkit-transform 1s linear;
   transition: -webkit-transform 1s linear;
   transition: transform 1s linear;
   transition: transform 1s linear, -webkit-transform 1s linear;
 }
 
-.portfolio .carousel__cell .cell img {
+.portfolio .container .carousel .carousel__cell .cell img {
   width: 100%;
   height: auto;
 }
 
 .portfolio .cell:nth-child(2) {
-  -webkit-transform: scaleX(-1) rotateY(60deg) translateZ(-60vw);
-          transform: scaleX(-1) rotateY(60deg) translateZ(-60vw);
+  -webkit-transform: scaleX(-1) rotateY(60deg) translateZ(-227px);
+          transform: scaleX(-1) rotateY(60deg) translateZ(-227px);
 }
 
 .portfolio .cell:nth-child(3) {
-  -webkit-transform: scaleX(-1) rotateY(120deg) translateZ(-60vw);
-          transform: scaleX(-1) rotateY(120deg) translateZ(-60vw);
+  -webkit-transform: scaleX(-1) rotateY(120deg) translateZ(-227px);
+          transform: scaleX(-1) rotateY(120deg) translateZ(-227px);
 }
 
 .portfolio .cell:nth-child(4) {
-  -webkit-transform: scaleX(-1) rotateY(180deg) translateZ(-60vw);
-          transform: scaleX(-1) rotateY(180deg) translateZ(-60vw);
+  -webkit-transform: scaleX(-1) rotateY(180deg) translateZ(-227px);
+          transform: scaleX(-1) rotateY(180deg) translateZ(-227px);
 }
 
 .portfolio .cell:nth-child(5) {
-  -webkit-transform: scaleX(-1) rotateY(240deg) translateZ(-60vw);
-          transform: scaleX(-1) rotateY(240deg) translateZ(-60vw);
+  -webkit-transform: scaleX(-1) rotateY(240deg) translateZ(-227px);
+          transform: scaleX(-1) rotateY(240deg) translateZ(-227px);
 }
 
 .portfolio .cell:nth-child(6) {
-  -webkit-transform: scaleX(-1) rotateY(300deg) translateZ(-60vw);
-          transform: scaleX(-1) rotateY(300deg) translateZ(-60vw);
+  -webkit-transform: scaleX(-1) rotateY(300deg) translateZ(-227px);
+          transform: scaleX(-1) rotateY(300deg) translateZ(-227px);
 }
 
 .portfolio .cell:nth-child(1) {
-  -webkit-transform: scaleX(-1) rotateY(0deg) translateZ(-60vw);
-          transform: scaleX(-1) rotateY(0deg) translateZ(-60vw);
+  -webkit-transform: scaleX(-1) rotateY(0deg) translateZ(-227px);
+          transform: scaleX(-1) rotateY(0deg) translateZ(-227px);
 }
 
 .portfolio .buttons {
@@ -1104,15 +1063,11 @@ body::-webkit-scrollbar {
     display: block;
     margin: 10vw 0;
   }
-  .portfolio .portfolio__content .caroucel {
-    height: 60vw;
-    width: 60vw;
-  }
   .portfolio .portfolio__content .carousel__cell {
     width: 100%;
     height: 100%;
-    -webkit-transform: translateZ(-52vw);
-            transform: translateZ(-52vw);
+    -webkit-transform: translateZ(-227px);
+            transform: translateZ(-227px);
   }
   .portfolio .portfolio__content .carousel__cell .cell {
     width: 50vw;
@@ -1121,34 +1076,56 @@ body::-webkit-scrollbar {
     top: 5vw;
   }
   .portfolio .portfolio__content .cell:nth-child(2) {
-    -webkit-transform: rotateY(60deg) translateZ(-52vw);
-            transform: rotateY(60deg) translateZ(-52vw);
+    -webkit-transform: rotateY(60deg) translateZ(-227px);
+            transform: rotateY(60deg) translateZ(-227px);
   }
   .portfolio .portfolio__content .cell:nth-child(3) {
-    -webkit-transform: rotateY(120deg) translateZ(-52vw);
-            transform: rotateY(120deg) translateZ(-52vw);
+    -webkit-transform: rotateY(120deg) translateZ(-227px);
+            transform: rotateY(120deg) translateZ(-227px);
   }
   .portfolio .portfolio__content .cell:nth-child(4) {
-    -webkit-transform: rotateY(180deg) translateZ(-52vw);
-            transform: rotateY(180deg) translateZ(-52vw);
+    -webkit-transform: rotateY(180deg) translateZ(-227px);
+            transform: rotateY(180deg) translateZ(-227px);
   }
   .portfolio .portfolio__content .cell:nth-child(5) {
-    -webkit-transform: rotateY(240deg) translateZ(-52vw);
-            transform: rotateY(240deg) translateZ(-52vw);
+    -webkit-transform: rotateY(240deg) translateZ(-227px);
+            transform: rotateY(240deg) translateZ(-227px);
   }
   .portfolio .portfolio__content .cell:nth-child(6) {
-    -webkit-transform: rotateY(300deg) translateZ(-52vw);
-            transform: rotateY(300deg) translateZ(-52vw);
+    -webkit-transform: rotateY(300deg) translateZ(-227px);
+            transform: rotateY(300deg) translateZ(-227px);
   }
   .portfolio .portfolio__content .cell:nth-child(1) {
-    -webkit-transform: rotateY(0deg) translateZ(-51.961vw);
-            transform: rotateY(0deg) translateZ(-51.961vw);
+    -webkit-transform: rotateY(0deg) translateZ(-227px);
+            transform: rotateY(0deg) translateZ(-227px);
   }
   .portfolio .portfolio__content .buttons {
     margin: 2vw 0;
   }
   .contact .separation {
     margin: 9vw 0 !important;
+  }
+}
+
+@-webkit-keyframes ann {
+  from {
+    -webkit-transform: rotateY(0) translateZ(-227px);
+            transform: rotateY(0) translateZ(-227px);
+  }
+  to {
+    -webkit-transform: rotateY(360deg) translateZ(-227px);
+            transform: rotateY(360deg) translateZ(-227px);
+  }
+}
+
+@keyframes ann {
+  from {
+    -webkit-transform: rotateY(0) translateZ(-227px);
+            transform: rotateY(0) translateZ(-227px);
+  }
+  to {
+    -webkit-transform: rotateY(360deg) translateZ(-227px);
+            transform: rotateY(360deg) translateZ(-227px);
   }
 }
 
