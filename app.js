@@ -212,6 +212,7 @@ styleCarousel()
   function prevButton() {
     selectedIndex--;
     rotateCarousel();
+    alert('TKT Marion on va y arriver')
   }
   /*
   let nextButton = document.querySelector('.buttons--right');
@@ -223,6 +224,7 @@ styleCarousel()
   function nextButton() {
     selectedIndex++;
     rotateCarousel();
+    alert('TKT Marion on va y arriver')
   }
 
 }
