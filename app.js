@@ -216,43 +216,6 @@ styleCarousel()
     selectedIndex = selectedIndex + 1;
     rotateCarousel(selectedIndex);
   }
-
-  (function () {
-  
-    // Create variable for setTimeout
-    var delay;
-    
-    // Set number of milliseconds for longpress
-    var longpress = 1300;
-    
-    var listItems = document.getElementsByClassName('loader__circle');
-    var listItem;
-    
-    for (var i = 0, j = listItems.length; i < j; i++) {
-      listItem = listItems[i];
-      
-      listItem.addEventListener('mousedown', function (e) {
-        var _this = this;
-        delay = setTimeout(check, longpress);
-        
-        function check() {
-            _this.classList.add('is-selected');
-        }
-        
-      }, true);
-      
-      listItem.addEventListener('mouseup', function (e) {
-        // On mouse up, we know it is no longer a longpress
-        clearTimeout(delay);
-      });
-      
-      listItem.addEventListener('mouseout', function (e) {
-        clearTimeout(delay);
-      });
-      
-    }
-    
-  }());
 /*
   if (isMobile) {
     let prevButton = document.querySelector('.buttons--left');
