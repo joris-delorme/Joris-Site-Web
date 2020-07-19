@@ -207,12 +207,12 @@ styleCarousel()
 
   function left() {
     //alert('TKT Marion on va y arriver')
-    selectedIndex =- 1;
+    selectedIndex = selectedIndex - 1;
     rotateCarousel(selectedIndex);
   }
   function right() {
     //alert('TKT Marion on va y arriver')
-    selectedIndex =+ 1;
+    selectedIndex = selectedIndex + 1;
     rotateCarousel(selectedIndex);
   }
 
