@@ -207,13 +207,15 @@ styleCarousel()
   }
 
   function left() {
-    //alert('TKT Marion on va y arriver')
+    alert('TKT Marion on va y arriver')
     selectedIndex = selectedIndex - 1;
+    alert(selectedIndex)
     rotateCarousel(selectedIndex);
   }
   function right() {
-    //alert('TKT Marion on va y arriver')
+    alert('TKT Marion on va y arriver')
     selectedIndex = selectedIndex + 1;
+    alert(selectedIndex)
     rotateCarousel(selectedIndex);
   }
 /*
