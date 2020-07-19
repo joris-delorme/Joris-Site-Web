@@ -192,8 +192,6 @@ styleCarousel()
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       result = (x*52)/100;
 
-  alert(result)
-  
   function rotateCarousel(In) {
     alert('hello')
     alert(In)
@@ -209,15 +207,13 @@ styleCarousel()
   }
 
   function left() {
-    alert('TKT Marion on va y arriver')
-    selectedIndex = selectedIndex - 1;
     alert(selectedIndex)
+    selectedIndex--;
     rotateCarousel(selectedIndex);
   }
   function right() {
-    alert('TKT Marion on va y arriver')
-    selectedIndex = selectedIndex + 1;
     alert(selectedIndex)
+    selectedIndex++;
     rotateCarousel(selectedIndex);
   }
 /*
