@@ -206,12 +206,12 @@ styleCarousel()
     }
   }
 
-  function left() {
+  function left(selectedIndex) {
     alert(selectedIndex)
     selectedIndex--;
     rotateCarousel(selectedIndex);
   }
-  function right() {
+  function right(selectedIndex) {
     alert(selectedIndex)
     selectedIndex++;
     rotateCarousel(selectedIndex);
