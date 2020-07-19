@@ -205,9 +205,13 @@ styleCarousel()
 
   function left() {
     alert('TKT Marion on va y arriver')
+    selectedIndex--;
+    rotateCarousel();
   }
   function right() {
     alert('TKT Marion on va y arriver')
+    selectedIndex++;
+    rotateCarousel();
   }
 /*
   if (isMobile) {
