@@ -193,6 +193,7 @@ styleCarousel()
       result = (x*52)/100;
   
   function rotateCarousel(In) {
+    alert('hello')
     alert(In)
     let angle = In / cellCount * -360;
     //alert(angle)
