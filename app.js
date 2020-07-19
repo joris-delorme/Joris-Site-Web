@@ -193,9 +193,9 @@ styleCarousel()
       result = (x*52)/100;
   
   function rotateCarousel(In) {
-    alert(result)
+    alert(In)
     let angle = In / cellCount * -360;
-    alert(angle)
+    //alert(angle)
     //alert(result)
     if (!isMobile) {
       //carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
