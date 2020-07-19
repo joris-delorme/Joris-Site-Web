@@ -200,9 +200,9 @@ styleCarousel()
     alert(result)
     if (!isMobile) {
       //carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
-      carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
+      carousel.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + -result + 'px)';
     }else {
-      carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
+      carousel.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + -result + 'px)';
     }
   }
 
