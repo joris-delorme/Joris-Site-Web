@@ -192,10 +192,10 @@ styleCarousel()
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       result = (x*52)/100;
 
-  function rotateCarousel(In) {
+  function rotateCarousel() {
     //alert('hello')
     //alert(In)
-    let angle = In / cellCount * -360;
+    let angle = selectedIndex / cellCount * -360;
     alert(angle)
     alert(result)
     if (!isMobile) {
@@ -207,18 +207,18 @@ styleCarousel()
   }
 
   function left() {
-    let r = -1;
+    //let r = -1;
     //alert(selectedIndex)
-    //selectedIndex--;
-    alert(r)
-    rotateCarousel(r);
+    selectedIndex--;
+    //alert(r)
+    rotateCarousel();
   }
   function right() {
     //alert(selectedIndex)
-    let r = 1;
-    //selectedIndex++;
-    alert(r)
-    rotateCarousel(r);
+    //let r = 1;
+    selectedIndex++;
+    //alert(r)
+    rotateCarousel();
   }
 /*
   if (isMobile) {
