@@ -205,7 +205,7 @@ styleCarousel()
       carousel.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + -result + 'px)';
     }
   }
-
+/*
   function left() {
     //let r = -1;
     //alert(selectedIndex)
@@ -219,8 +219,8 @@ styleCarousel()
     selectedIndex++;
     //alert(r)
     rotateCarousel();
-  }
-/*
+  }*/
+
   if (isMobile) {
     let prevButton = document.querySelector('.buttons--left');
   prevButton.addEventListener( 'touchstart', function() {
@@ -250,7 +250,7 @@ styleCarousel()
     rotateCarousel();
   });
   }
-  */
+  
 
 }
 
