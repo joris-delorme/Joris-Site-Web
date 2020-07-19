@@ -184,6 +184,7 @@ styleCarousel()
   let carousel = document.querySelector('.carousel__cell');
   let cellCount = 6;
   let selectedIndex = 0;
+  alert(selectedIndex)
 
   let w = window,
       d = document,
