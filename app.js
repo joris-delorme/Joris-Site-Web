@@ -184,7 +184,6 @@ styleCarousel()
   let carousel = document.querySelector('.carousel__cell');
   let cellCount = 6;
   let selectedIndex = 0;
-  alert(selectedIndex)
 
   let w = window,
       d = document,
@@ -192,6 +191,8 @@ styleCarousel()
       g = d.getElementsByTagName('body')[0],
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       result = (x*52)/100;
+
+  alert(result)
   
   function rotateCarousel(In) {
     alert('hello')
