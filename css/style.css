@@ -27,13 +27,17 @@
 }
 
 .loader .circles {
-  position: absolute;
+  position: relative;
   left: 50%;
-  right: 50%;
+  top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   height: 20vw;
   width: 20vw;
+}
+
+.loader .circles .circle {
+  position: absolute;
 }
 
 .loader h5 {

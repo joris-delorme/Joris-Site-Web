@@ -193,7 +193,7 @@ styleCarousel()
       result = (x*52)/100;
   
   function rotateCarousel() {
-    alert('TKT Marion on va y arriver')
+    alert(selectedIndex)
     let angle = selectedIndex / cellCount * -360;
   
     if (!isMobile) {
