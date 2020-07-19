@@ -16,6 +16,21 @@
 </head>
 
 <body class="is-loading">
+    <div class="loader">
+
+        <svg class="loader__circle--bg" viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20" stroke="#FFE6C2" stroke-width="1" fill="transparent" />
+        </svg>
+        <svg class="loader__circle" viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20" stroke="#FFE6C2" stroke-width="1" fill="transparent" />
+        </svg>
+
+        <div class="loader__compteur">
+            <div id="compteur__nubers">0</div>
+        </div>
+
+        <h5><span>Appuie pour ouvrire le journal</span></h5>
+    </div>
     <section>
         <div class="portfolio">
             <h1>PORTFOLIO</h1>
@@ -33,10 +48,10 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <button class="buttons--left">
+                    <button class="buttons--left" onclick="left()">
                         <div class="button--left"></div>
                     </button>
-                    <button class="buttons--right">
+                    <button class="buttons--right" onclick="right()">
                         <div class="button--right"></div>
                     </button>
                 </div>
