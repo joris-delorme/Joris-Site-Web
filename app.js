@@ -182,10 +182,10 @@ items.forEach(function (item) {
 styleCarousel()
 
   let carousel = document.querySelector('.carousel__cell');
-  let cellCount = 6;
-  let selectedIndex = 0;
+  var cellCount = 6;
+  var selectedIndex = 0;
 
-  let w = window,
+  var w = window,
       d = document,
       e = d.documentElement,
       g = d.getElementsByTagName('body')[0],
@@ -195,7 +195,7 @@ styleCarousel()
   function rotateCarousel() {
     //alert('hello')
     //alert(In)
-    let angle = selectedIndex / cellCount * -360;
+    var angle = selectedIndex / cellCount * -360;
     alert(angle)
     alert(result)
     if (!isMobile) {
@@ -222,14 +222,14 @@ styleCarousel()
   }*/
 
   if (isMobile) {
-    let prevButton = document.querySelector('.buttons--left');
+    const prevButton = document.querySelector('.buttons--left');
   prevButton.addEventListener( 'touchstart', function() {
     alert('TKT Marion on va y arriver')
     selectedIndex--;
     rotateCarousel();
   });
   
-  let nextButton = document.querySelector('.buttons--right');
+  const nextButton = document.querySelector('.buttons--right');
   nextButton.addEventListener( 'touchstart', function() {
     alert('TKT Marion on va y arriver')
     selectedIndex++;
