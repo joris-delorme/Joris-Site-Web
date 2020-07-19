@@ -194,7 +194,7 @@ styleCarousel()
 
   function rotateCarousel(In) {
     alert('hello')
-    alert(In)
+    //alert(In)
     let angle = In / cellCount * -360;
     //alert(angle)
     //alert(result)
@@ -206,15 +206,19 @@ styleCarousel()
     }
   }
 
-  function left(selectedIndex) {
-    alert(selectedIndex)
-    selectedIndex--;
-    rotateCarousel(selectedIndex);
+  function left() {
+    let r = -1;
+    //alert(selectedIndex)
+    //selectedIndex--;
+    alert(r)
+    rotateCarousel(r);
   }
-  function right(selectedIndex) {
-    alert(selectedIndex)
-    selectedIndex++;
-    rotateCarousel(selectedIndex);
+  function right() {
+    //alert(selectedIndex)
+    let r = 1;
+    //selectedIndex++;
+    alert(r)
+    rotateCarousel(r);
   }
 /*
   if (isMobile) {
