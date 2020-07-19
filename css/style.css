@@ -49,6 +49,15 @@
   position: absolute;
 }
 
+.loader .circles .loader__circle {
+  stroke-dasharray: 0,200;
+  stroke-dashoffset: 0;
+}
+
+.loader .circles .loader__circle--bg {
+  opacity: 0.2;
+}
+
 .loader h5 {
   position: absolute;
   bottom: 8%;

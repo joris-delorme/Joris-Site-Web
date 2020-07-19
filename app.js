@@ -192,9 +192,9 @@ styleCarousel()
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       result = (x*52)/100;
   
-  function rotateCarousel() {
+  function rotateCarousel(In) {
     alert(result)
-    let angle = selectedIndex / cellCount * -360;
+    let angle = In / cellCount * -360;
     alert(angle)
     //alert(result)
     if (!isMobile) {
@@ -208,13 +208,50 @@ styleCarousel()
   function left() {
     //alert('TKT Marion on va y arriver')
     selectedIndex =- 1;
-    rotateCarousel();
+    rotateCarousel(selectedIndex);
   }
   function right() {
     //alert('TKT Marion on va y arriver')
     selectedIndex =+ 1;
-    rotateCarousel();
+    rotateCarousel(selectedIndex);
   }
+
+  (function () {
+  
+    // Create variable for setTimeout
+    var delay;
+    
+    // Set number of milliseconds for longpress
+    var longpress = 1300;
+    
+    var listItems = document.getElementsByClassName('loader__circle');
+    var listItem;
+    
+    for (var i = 0, j = listItems.length; i < j; i++) {
+      listItem = listItems[i];
+      
+      listItem.addEventListener('mousedown', function (e) {
+        var _this = this;
+        delay = setTimeout(check, longpress);
+        
+        function check() {
+            _this.classList.add('is-selected');
+        }
+        
+      }, true);
+      
+      listItem.addEventListener('mouseup', function (e) {
+        // On mouse up, we know it is no longer a longpress
+        clearTimeout(delay);
+      });
+      
+      listItem.addEventListener('mouseout', function (e) {
+        clearTimeout(delay);
+      });
+      
+    }
+    
+  }());
 /*
   if (isMobile) {
     let prevButton = document.querySelector('.buttons--left');
