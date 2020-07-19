@@ -26,22 +26,36 @@
   background-color: #212121;
 }
 
-.loader .circles {
-  position: relative;
+.loader .loader__compteur {
+  position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 20vw;
-  width: 20vw;
+  font-size: 2em;
 }
 
-.loader .circles .circle {
+.loader .circles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 40vw;
+  width: 40vw;
+}
+
+.loader .circles .circle--loader {
   position: absolute;
 }
 
 .loader h5 {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
   text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @-webkit-keyframes more {
