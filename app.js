@@ -45,7 +45,7 @@ function toggleActive() {
   timeout = setTimeout(() => {
     loader.classList.add('active');
     home.classList.add('animeIn');
-    setTimeout(animation(),500)
+    animation()
     document.querySelector('body').classList.add('scroll')
     document.querySelector('main').classList.add('show')
     timeout = null;
@@ -70,9 +70,9 @@ loader.addEventListener('touchend', () => removeActive());
 
 function animation () {
   gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 1.5, delay: 1, ease:"power4.inOut"})
-  gsap.to('.loader', {display: "none"})
   gsap.to('.letter', { duration: 2.5, y: 0, delay: 0.5, stagger: 0.05,  ease: "power4.inOut"})
   gsap.to('nav span', {y: 0, duration: 0.5, ease:"slow (0.3, 0.7, false)", delay: 1.8, stagger: 0.1})
+  gsap.to('.loader', {display: "none", delay: 1})
 }
 
 function seize() {

@@ -107,6 +107,8 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 200;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 .loader.active .fille-effect-fill {
@@ -120,6 +122,10 @@
 }
 
 .loader.active .fille-effect-fill-bg {
+  opacity: 0;
+}
+
+.loader.active h5 {
   opacity: 0;
 }
 
@@ -308,8 +314,8 @@ body {
 
 main .presets {
   opacity: 0;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 1s 1s;
+  transition: opacity 1s 1s;
 }
 
 .is-loading {
