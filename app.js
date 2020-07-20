@@ -34,7 +34,7 @@ _isMobile()
 const loader = document.querySelector('.loader');
 const text = document.querySelector('.fille-effect-fill-bg');
 const home = document.querySelector('.home')
-const delay = 1000;
+const delay = 1200;
 let timeout;
 
 // function removing or adding (after a delay) a class of active
