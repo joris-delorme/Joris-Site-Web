@@ -28,37 +28,49 @@ function _isMobile() {
   }
 }
 _isMobile()
-/*
+
 // Animation
 
-function compteur() {
-  const compteur = document.getElementById('compteur');
+const loader = document.querySelector('.loader');
+const text = document.querySelector('.fille-effect-fill-bg');
+const home = document.querySelector('.home')
+const delay = 1000;
+let timeout;
 
-  gsap.to('#compteur', {opacity: 1, duration: 1})
-  setTimeout(function () {
-    acount()
-  },1000)
+// function removing or adding (after a delay) a class of active
 
-  function acount() {
-    for (let i = 0; i < 101; i++) {
-      setTimeout ( function () {
-        compteur.innerHTML = i;
-        if (i === 100) {
-          setTimeout(function () {
-            gsap.to('#compteur', {y: 23, duration: 1})
-            setTimeout(() => {
-              document.querySelector('.home').classList.add('animeIn');
-            animation()
-            }, 700);
-          },500)
-        }
-      }, i*15)
-    }
+function toggleActive() {
+  text.classList.add('active');
+
+  timeout = setTimeout(() => {
+    loader.classList.add('active');
+    home.classList.add('animeIn');
+    setTimeout(animation(),500)
+    document.querySelector('body').classList.add('scroll')
+    document.querySelector('main').classList.add('show')
+    timeout = null;
+  }, delay);
+}
+
+// function removing the existing, if any, timeout
+// this is made necessary in a situation where the press is removed before the timeout has run out
+function removeActive() {
+  if (timeout) {
+    text.classList.remove('active');
+    clearTimeout(timeout);
   }
 }
 
+// handle presses through the mouse cursor
+// ! to replicate the spacebar, a few more lines of JS are necessary
+loader.addEventListener('mousedown', () => toggleActive());
+loader.addEventListener('mouseup', () => removeActive());
+loader.addEventListener('touchstart', () => toggleActive());
+loader.addEventListener('touchend', () => removeActive());
+
 function animation () {
   gsap.to('.home .img--warpper', {scale: 1, rotation: 0, y:0, duration: 1.5, delay: 1, ease:"power4.inOut"})
+  gsap.to('.loader', {display: "none"})
   gsap.to('.letter', { duration: 2.5, y: 0, delay: 0.5, stagger: 0.05,  ease: "power4.inOut"})
   gsap.to('nav span', {y: 0, duration: 0.5, ease:"slow (0.3, 0.7, false)", delay: 1.8, stagger: 0.1})
 }
@@ -143,7 +155,7 @@ let items = document.querySelectorAll('.reveal')
 items.forEach(function (item) {
   observer.observe(item)
 })
-*/
+
 
 // Caroucel
 
@@ -199,12 +211,12 @@ styleCarousel()
     alert(angle)
     alert(result)
     if (!isMobile) {
-      //carousel.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
-      carousel.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + -result + 'px)';
+      carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
     }else {
-      carousel.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + -result + 'px)';
+      carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
     }
   }
+
 /*
   function left() {
     //let r = -1;
@@ -255,7 +267,7 @@ styleCarousel()
 }
 
 // Smooth scroll
-/*
+
 if (!isMobile) {
   {
   let html = document.documentElement;
@@ -343,4 +355,4 @@ if (!isMobile) {
       document.getElementById('parallax1').style.transform = `translate3D(0, ${ window.scrollY * -0.25}px, 0)`;
       document.getElementById('parallax2').style.transform = `translate3D(0, ${ window.scrollY * 0.25 - 250}px, 0)`;
   });
-}*/
+}

@@ -23,7 +23,8 @@
   width: 100vw;
   top: 0;
   left: 0;
-  background-color: #212121;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
 }
 
 .loader .loader__compteur {
@@ -35,36 +36,91 @@
   font-size: 2em;
 }
 
-.loader .circles {
+.loader .fille-effect {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 40vw;
-  width: 40vw;
 }
 
-.loader .circles .circle--loader {
+.loader .fille-effect h3 {
+  text-align: center;
+  letter-spacing: 5px;
+  white-space: nowrap;
+  font-size: 8vw;
+  line-height: 12vw;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #ffe6c2;
+  font-weight: 900;
   position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.loader .circles .loader__circle {
-  stroke-dasharray: 0,200;
-  stroke-dashoffset: 0;
+.loader .fille-effect .content {
+  overflow: hidden;
 }
 
-.loader .circles .loader__circle--bg {
-  opacity: 0.2;
+.loader .fille-effect span {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.loader .fille-effect .fille-effect-fill {
+  z-index: 10;
+  color: transparent;
+  overflow: hidden;
+}
+
+.loader .fille-effect .fille-effect-fill-bg {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-color: #ffe6c2;
+  -webkit-clip-path: inset(100% 0 0 0);
+          clip-path: inset(100% 0 0 0);
+  -webkit-transition: opacity 0.5s,-webkit-clip-path 2000ms;
+  transition: opacity 0.5s,-webkit-clip-path 2000ms;
+  transition: clip-path 2000ms,opacity 0.5s;
+  transition: clip-path 2000ms,opacity 0.5s,-webkit-clip-path 2000ms;
+}
+
+.loader .fille-effect .fille-effect-fill-bg.active {
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 
 .loader h5 {
   position: absolute;
-  bottom: 8%;
+  bottom: 5%;
   left: 50%;
   text-align: center;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  font-size: 2vw;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+
+.loader.active .fille-effect-fill {
+  z-index: 10;
+  color: #ffe6c2;
+}
+
+.loader.active span {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.loader.active .fille-effect-fill-bg {
+  opacity: 0;
 }
 
 @-webkit-keyframes more {
@@ -228,6 +284,7 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  overflow-y: hidden;
 }
 
 .scroll-y main {
@@ -249,11 +306,25 @@ body {
   will-change: transform;
 }
 
+main .presets {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
 .is-loading {
   opacity: 0;
 }
 
 .is-loaded {
+  opacity: 1;
+}
+
+.scroll {
+  overflow-y: initial;
+}
+
+.show .presets {
   opacity: 1;
 }
 
