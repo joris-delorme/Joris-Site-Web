@@ -2,8 +2,9 @@
 window.addEventListener('load', function () {
   document.querySelector('body').classList.add('is-loaded')
   document.querySelector('body').classList.remove('is-loading')
-  gsap.to('.fille-effect-fill', { opacity: 1, duration: 2,})
-  gsap.to('.shine', { opacity: 1, duration: 1,})
+  //gsap.to('.fille-effect-fill', { opacity: 1, duration: 1,})
+  gsap.to('.fade', { opacity: 1, x:0, y:0, duration: 1, ease:"power3.out"})
+  gsap.to('.shine', { opacity: 1, delay:2, duration: 1,})
   //compteur();
   //seize();
 })
@@ -340,6 +341,11 @@ if (!isMobile) {
   });
 }
 
-function presets() {
-  document.querySelector(".alert").classList.add("rev")
+function alert() {
+  if (isMobile) {
+    document.querySelector(".alert").classList.add("rev")
+  }
+}
+function alertClose() {
+  document.querySelector(".alert").classList.remove("rev")
 }
