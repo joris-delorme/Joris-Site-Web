@@ -191,7 +191,7 @@ items.forEach(function (item) {
 
 styleCarousel()
 
-  let carousel = document.querySelector('.carousel__cell');
+  var carousel = document.querySelector('.carousel__cell');
   var cellCount = 6;
   var selectedIndex = 0;
 
@@ -206,8 +206,8 @@ styleCarousel()
     var angle = selectedIndex / cellCount * -360;
     //alert(angle)
     //alert(result)
-    carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
     alert("le css ne marche pas")
+    carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
     /*
     if (!isMobile) {
       carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
