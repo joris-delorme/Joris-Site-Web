@@ -203,64 +203,47 @@ styleCarousel()
       result = (x*52)/100;
 
   function rotateCarousel() {
-    //alert('hello')
-    //alert(In)
     var angle = selectedIndex / cellCount * -360;
-    alert(angle)
-    alert(result)
+    //alert(angle)
+    //alert(result)
     if (!isMobile) {
       carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
+      alert("le css ne marche pas")
     }else {
       carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
+      alert("le css ne marche pas (mobile)")
     }
   }
-
-/*
-  function left() {
-    //let r = -1;
-    //alert(selectedIndex)
-    selectedIndex--;
-    //alert(r)
-    rotateCarousel();
-  }
-  function right() {
-    //alert(selectedIndex)
-    //let r = 1;
-    selectedIndex++;
-    //alert(r)
-    rotateCarousel();
-  }*/
 
   if (isMobile) {
     const prevButton = document.querySelector('.buttons--left');
   prevButton.addEventListener( 'touchstart', function() {
-    alert('TKT Marion on va y arriver')
+    //alert('TKT Marion on va y arriver')
     selectedIndex--;
     rotateCarousel();
   });
   
   const nextButton = document.querySelector('.buttons--right');
   nextButton.addEventListener( 'touchstart', function() {
-    alert('TKT Marion on va y arriver')
+    //alert('TKT Marion on va y arriver')
     selectedIndex++;
     rotateCarousel();
   });
   } else {
     let prevButton = document.querySelector('.buttons--left');
   prevButton.addEventListener( 'click', function() {
-    alert('TKT Marion on va y arriver')
+    //alert('TKT Marion on va y arriver')
     selectedIndex--;
     rotateCarousel();
   });
   
   let nextButton = document.querySelector('.buttons--right');
   nextButton.addEventListener( 'click', function() {
-    alert('TKT Marion on va y arriver')
+    //alert('TKT Marion on va y arriver')
     selectedIndex++;
     rotateCarousel();
   });
   }
-  
 
 }
 
