@@ -206,13 +206,17 @@ styleCarousel()
     var angle = selectedIndex / cellCount * -360;
     //alert(angle)
     //alert(result)
+    carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
+    alert("le css ne marche pas")
+    /*
     if (!isMobile) {
       carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
       alert("le css ne marche pas")
     }else {
+      alert("le css ne marche pas (mobile)")
       carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
       alert("le css ne marche pas (mobile)")
-    }
+    }*/
   }
 
   if (isMobile) {
