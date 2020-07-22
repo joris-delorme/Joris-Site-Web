@@ -31,6 +31,10 @@ function _isMobile() {
 }
 _isMobile()
 
+if (isMobile) {
+  document.querySelector("#pack--isRes").classList.add("res")
+}
+
 // Animation
 
 const loader = document.querySelector('.loader');
@@ -334,4 +338,8 @@ if (!isMobile) {
       document.getElementById('parallax1').style.transform = `translate3D(0, ${ window.scrollY * -0.25}px, 0)`;
       document.getElementById('parallax2').style.transform = `translate3D(0, ${ window.scrollY * 0.25 - 250}px, 0)`;
   });
+}
+
+function presets() {
+  document.querySelector(".alert").classList.add("rev")
 }

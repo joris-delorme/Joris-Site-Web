@@ -1256,15 +1256,31 @@ body::-webkit-scrollbar {
   }
 }
 
-/*
-@keyframes ann {
-    from {
-        transform: translateZ(-218px) rotateY(0);
-    }
-    to {
-        transform: translateZ(-218px) rotateY(360deg);
-    }
-}*/
+.alert {
+  z-index: 9999999;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  width: 100vw;
+  top: 0;
+}
+
+.alert .msg {
+  height: 15vw;
+  width: 70vw;
+  background-color: #FFE6C2;
+}
+
+.alert .msg p {
+  text-align: center;
+}
+
+.alert.rev {
+  display: block;
+}
+
 @font-face {
   font-family: "BigillaBold";
   src: url("../assets/fonts/Bigilla-Bold.woff") format("woff");
