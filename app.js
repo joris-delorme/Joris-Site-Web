@@ -162,7 +162,6 @@ items.forEach(function (item) {
 {
 
   function styleCarousel() {
-    console.log('start');
 
     let carousel = document.querySelector('.carousel__cell');
     let cells = document.querySelectorAll('.cell');
@@ -177,16 +176,13 @@ items.forEach(function (item) {
       result = (x*value)/100;
       resultImg = (x*valueImg)/100;
 
-    console.log(resultImg);
-    console.log(cells);
 
     carousel.style.transform = 'translateZ(' + -result + 'px)';
 
     for (let i = 0; i < cells.length; i++) {
       let cell = cells[i];
       deg = i*60;
-      console.log(deg);
-      console.log(cell);
+
       cell.style.transform = 'scaleX(-1) rotateY(' + deg + 'deg) translateZ(' + -resultImg + 'px)';
     }
   }

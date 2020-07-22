@@ -324,6 +324,28 @@
   position: absolute;
 }
 
+.fade-up {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+}
+
+.fade-up.reveal--visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+footer .line.reveal--visible {
+  width: 50vw;
+}
+
+.contact .line.reveal--visible {
+  width: 90%;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -345,6 +367,7 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   overflow-y: hidden;
+  position: fixed;
 }
 
 .scroll-y main {
@@ -381,6 +404,7 @@ main .presets {
 }
 
 .scroll {
+  position: static;
   overflow-y: initial;
 }
 
@@ -1087,7 +1111,7 @@ body::-webkit-scrollbar {
 }
 
 .contact .instagram .id .line {
-  width: 90%;
+  width: 0;
   margin: 4vw 0;
   height: 2px;
 }
@@ -1133,7 +1157,7 @@ body::-webkit-scrollbar {
 
 .footer .line {
   height: 2px;
-  width: 50vw;
+  width: 0;
 }
 
 .footer .reveal-visible {
