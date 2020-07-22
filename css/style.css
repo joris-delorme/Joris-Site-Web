@@ -44,6 +44,12 @@
           transform: translate(-50%, -50%);
 }
 
+.loader .fille-effect .row, .loader .fille-effect .column {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 .loader .fille-effect .fade-down-right {
   -webkit-transform: translate(-50vw, 50vh);
           transform: translate(-50vw, 50vh);
