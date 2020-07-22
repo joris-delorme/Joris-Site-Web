@@ -2,6 +2,8 @@
 window.addEventListener('load', function () {
   document.querySelector('body').classList.add('is-loaded')
   document.querySelector('body').classList.remove('is-loading')
+  gsap.to('.fille-effect-fill', { opacity: 1, duration: 2,})
+  gsap.to('.shine', { opacity: 1, duration: 1,})
   //compteur();
   //seize();
 })
