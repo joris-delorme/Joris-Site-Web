@@ -174,12 +174,17 @@ items.forEach(function (item) {
       g = d.getElementsByTagName('body')[0],
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       value = 52,
+      valueMobile = 120,
       valueImg = 60,
       result = (x*value)/100;
+      resultMobile = (x*valueMobile)/100;
       resultImg = (x*valueImg)/100;
 
-
-    carousel.style.transform = 'translateZ(' + -result + 'px)';
+    if (!isMobile) {
+      carousel.style.transform = 'translateZ(' + -result + 'px)';
+    } else {
+      carousel.style.transform = 'translateZ(' + -resultMobile + 'px)';
+    }
 
     for (let i = 0; i < cells.length; i++) {
       let cell = cells[i];
@@ -201,49 +206,38 @@ styleCarousel()
       g = d.getElementsByTagName('body')[0],
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       result = (x*52)/100;
+      resultMobile = (x*120)/100;
 
   function rotateCarousel() {
     var angle = selectedIndex / cellCount * -360;
-    //alert(angle)
-    //alert(result)
-    alert("le css ne marche pas")
-    carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
-    /*
     if (!isMobile) {
       carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
-      alert("le css ne marche pas")
     }else {
-      alert("le css ne marche pas (mobile)")
-      carousel.style.transform = 'translateZ(' + -result + 'px) rotateY(' + angle + 'deg)';
-      alert("le css ne marche pas (mobile)")
-    }*/
+      carousel.style.transform = 'translateZ(' + -resultMobile + 'px) rotateY(' + angle + 'deg)';
+    }
   }
 
   if (isMobile) {
     const prevButton = document.querySelector('.buttons--left');
   prevButton.addEventListener( 'touchstart', function() {
-    //alert('TKT Marion on va y arriver')
     selectedIndex--;
     rotateCarousel();
   });
   
   const nextButton = document.querySelector('.buttons--right');
   nextButton.addEventListener( 'touchstart', function() {
-    //alert('TKT Marion on va y arriver')
     selectedIndex++;
     rotateCarousel();
   });
   } else {
     let prevButton = document.querySelector('.buttons--left');
   prevButton.addEventListener( 'click', function() {
-    //alert('TKT Marion on va y arriver')
     selectedIndex--;
     rotateCarousel();
   });
   
   let nextButton = document.querySelector('.buttons--right');
   nextButton.addEventListener( 'click', function() {
-    //alert('TKT Marion on va y arriver')
     selectedIndex++;
     rotateCarousel();
   });

@@ -100,7 +100,7 @@
 .loader h5 {
   position: absolute;
   opacity: 0;
-  bottom: 5%;
+  bottom: 10%;
   left: 50%;
   text-align: center;
   -webkit-transform: translate(-50%, -50%);
@@ -340,12 +340,26 @@
           transform: translateY(0);
 }
 
+.fade-up-little {
+  opacity: 0;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+}
+
+.fade-up-little.reveal--visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 footer .line.reveal--visible {
   width: 50vw;
 }
 
 .contact .line.reveal--visible {
-  width: 90%;
+  width: 90% !important;
 }
 
 * {
@@ -946,7 +960,6 @@ body::-webkit-scrollbar {
 }
 
 .portfolio .portfolio__content {
-  margin: 5vw 0;
   width: 100%;
 }
 
@@ -958,17 +971,11 @@ body::-webkit-scrollbar {
           transform: rotateY(180deg);
 }
 
-.portfolio .container {
-  width: 100vw;
-  padding: 0 3vw;
-  margin: auto 0;
-}
-
 .portfolio .container .carousel {
   position: relative;
   height: 60vw;
   width: 60vw;
-  margin: 80px auto;
+  margin: 2vh auto;
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }
@@ -1237,6 +1244,12 @@ body::-webkit-scrollbar {
   #pack--isRes.res #pack__img--res {
     display: block;
     margin: 10vw 0;
+  }
+  .portfolio .container .carousel .carousel__cell .cell {
+    height: 50vw;
+    width: 50vw;
+    left: 5vw;
+    top: 5vw;
   }
   .contact .separation {
     margin: 9vw 0 !important;
