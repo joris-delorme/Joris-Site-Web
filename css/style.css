@@ -1314,15 +1314,15 @@ body::-webkit-scrollbar {
   #pack--isRes.res .pack__reaval .pack__container .pack__content .button p {
     font-size: 6vw;
   }
-  #pack--isRes.res .pack__img {
-    height: 50vw !important;
-    width: 38vw !important;
-  }
   #pack--isRes.res #pack__img {
     display: none;
   }
   #pack--isRes.res #pack__img--res {
     display: block;
+  }
+  .presets .pack .pack__container .pack__img {
+    height: 50vw;
+    width: 38vw;
   }
   .portfolio .container .carousel .carousel__cell .cell {
     height: 50vw;
