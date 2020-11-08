@@ -788,9 +788,9 @@ body::-webkit-scrollbar {
 }
 
 .presets .pack .pack__container #pack__img--res.active {
-  height: 43vw;
-  width: 31vw;
-  top: -15vw;
+  height: 45vw;
+  width: 33vw;
+  top: -10vw;
 }
 
 .presets .pack .pack__container #pack__img--res.close {
@@ -1283,7 +1283,7 @@ body::-webkit-scrollbar {
     height: 0%;
   }
   #pack--isRes.res .pack__img--container {
-    height: 65vw;
+    height: 55vw;
   }
   #pack--isRes.res .pack__reaval .pack__container {
     height: 100%;
@@ -1315,15 +1315,14 @@ body::-webkit-scrollbar {
     font-size: 6vw;
   }
   #pack--isRes.res .pack__reaval .pack__container .pack__img {
-    height: 50vw;
-    width: 38vw;
+    height: 50vw !important;
+    width: 38vw !important;
   }
   #pack--isRes.res #pack__img {
     display: none;
   }
   #pack--isRes.res #pack__img--res {
     display: block;
-    margin: 10vw 0;
   }
   .portfolio .container .carousel .carousel__cell .cell {
     height: 50vw;
