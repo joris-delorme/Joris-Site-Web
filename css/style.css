@@ -1314,7 +1314,7 @@ body::-webkit-scrollbar {
   #pack--isRes.res .pack__reaval .pack__container .pack__content .button p {
     font-size: 6vw;
   }
-  #pack--isRes.res .pack__reaval .pack__container .pack__img {
+  #pack--isRes.res .pack__img {
     height: 50vw !important;
     width: 38vw !important;
   }
